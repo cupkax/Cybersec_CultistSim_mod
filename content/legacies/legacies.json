@@ -1,0 +1,23 @@
+{
+  "legacies": [
+    {
+      "id": "hospitaladminlegacy",
+      "label": "Hospital Systems Administrator",
+      "image": "hospital_admin_legacy.png",
+      "startingVerbId": "adminwork",
+      "description": "As the systems-admin of a bustling hospital, you are tasked with managing both the medical and digital well-being of the institution. Your choices will shape the future of healthcare in this facility.",
+      "startdescription": "Your first day at the hospital dawns with a myriad of challenges. Secure the hospital's data, manage medical resources, and navigate the intricacies of healthcare bureaucracy.",
+      "newstart": true,
+      "availableWithoutEndingMatch": true,
+      "effects": {
+        "gamestart.startwork": 1
+      },
+      "statusbarelements": [
+        "status.employeemorale",
+        "status.hospitalreputation",
+        "status.hospitalmortality",
+        "phys.hospitalfunds"
+      ]
+    }
+  ]
+}

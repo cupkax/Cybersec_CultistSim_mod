@@ -1,0 +1,37 @@
+{
+    "verbs": [
+        {
+            "id": "adminwork",
+            "label": "Admin Work",
+            "description": "Oversee the hospital's daily operations. Allocate resources to incoming patients and conduct cybersecurity checks when necessary.",
+            "slot": {
+                "id": "work.slot",
+                "label": "Daily Operations",
+                "description": "Place a card here to perform administrative duties."
+            }
+        },
+        {
+            "id": "treat",
+            "label": "Treat Patient",
+            "description": "Allocate medical resources to treat a patient.",
+            "slot": {
+                "id": "treatment.slot",
+                "label": "Treatment Slot",
+                "description": "Place a patient card here to allocate treatment.",
+                "required": {
+                    "patient": 1
+                },
+                "actionId": "treat",
+                "consumes": true
+            }
+        },
+        {
+            "id": "time",
+            "label": "Time",
+            "description": "The sundial's shadow.",
+            "slot": {
+                "id": "time"
+            }
+        }
+    ]
+}

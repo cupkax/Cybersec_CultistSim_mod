@@ -1,0 +1,24 @@
+{
+    "elements": [
+        {
+            "id": "dayjob",
+            "isAspect": true
+        },
+        {
+            "id": "physicalresource",
+            "isAspect": true
+        },
+        {
+            "id": "patient",
+            "isAspect": true
+        },
+        {
+            "id": "lowrisk",
+            "isAspect": true
+        },
+        {
+            "id": "highrisk",
+            "isAspect": true
+        }
+    ]
+}

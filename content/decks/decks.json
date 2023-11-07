@@ -1,0 +1,11 @@
+{
+    "decks": [
+        {
+            "id": "deck.patients",
+            "shuffleAfterDraw": true,
+            "spec": [],
+            "resetonexhaustion": true,
+            "defaultcard": "patientlowrisk"
+        }
+    ]
+}

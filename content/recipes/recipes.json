@@ -1,0 +1,126 @@
+{
+    "recipes": [
+        {
+            "id": "daystart",
+            "label": "The Day Begins",
+            "maxexecutions": 1,
+            "warmup": 5,
+            "craftable": true,
+            "description": "A new day begins with new challenges.",
+            "requirements": {
+                "gamestart.startwork": 1
+            },
+            "effects": {
+                "phys.medicalresources": 3,
+                "phys.cybersecurityresources": 5,
+                "phys.hospitalfunds": 10,
+                "gamestart.startwork": -1,
+                "patient.lowrisk": 2,
+                "patient.highrisk": 2
+            },
+            "actionId": "adminwork",
+            "inductions": [
+                {
+                    "id": "treat.patient"
+                }
+            ],
+            "movements": {
+                "~/tabletop": [
+                    {
+                        "filter": "[physicalresource] || [patient]"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "treat.patient",
+            "label": "Treat Patient",
+            "warmup": 5,
+            "description": "Allocate the necessary medical resources to treat the patient.",
+            "actionId": "treat"
+        },
+        {
+            "id": "treatlowriskpatient",
+            "label": "Treat Low-Risk Patient",
+            "warmup": 10,
+            "craftable": true,
+            "description": "Allocate the necessary medical resources to treat the patient.",
+            "requirements": {
+                "lowrisk": 1
+            },
+            "tablereqs": {
+                "phys.medicalresources": 1
+            },
+            "effects": {
+                "phys.hospitalfunds": 5
+            },
+            "actionId": "treat",
+            "slots": [
+                {
+                    "id": "usemedicalresource",
+                    "label": "Medical Resources",
+                    "description": "Need resources to treat",
+                    "required": {
+                        "phys.medicalresources": 1
+                    },
+                    "actionId": "treat",
+                    "consumes": true,
+                    "greedy": true
+                }
+            ]
+        },
+        {
+            "id": "treathighriskpatient",
+            "label": "Treat High-Risk Patient",
+            "warmup": 15,
+            "craftable": true,
+            "description": "Allocate the necessary medical resources to treat the patient.",
+            "requirements": {
+                "highrisk": 1
+            },
+            "tablereqs": {
+                "phys.medicalresources": 2
+            },
+            "effects": {
+                "phys.hospitalfunds": 5
+            },
+            "actionId": "treat",
+            "slots": [
+                {
+                    "id": "usemedicalresource",
+                    "label": "Medical Resources",
+                    "description": "Need resources to treat",
+                    "required": {
+                        "phys.medicalresources": 1
+                    },
+                    "actionId": "treat",
+                    "consumes": true,
+                    "greedy": true
+                },
+                {
+                    "id": "usemedicalresourceagain",
+                    "label": "Medical Resources",
+                    "description": "Need resources to treat",
+                    "required": {
+                        "phys.medicalresources": 1
+                    },
+                    "actionId": "treat",
+                    "consumes": true,
+                    "greedy": true
+                }
+            ]
+        },
+        {
+            "id": "cybersecuritycheck",
+            "label": "Cybersecurity Check",
+            "description": "Use cybersecurity resources to protect the hospital's digital assets.",
+            "requirements": {
+                "cybersecurityresources": 1
+            },
+            "effects": {
+                "phys.cybersecurityresources": -1
+            },
+            "actionId": "work"
+        }
+    ]
+}

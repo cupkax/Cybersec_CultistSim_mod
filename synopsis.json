@@ -1,0 +1,9 @@
+{
+    "name": "Hospital Cybersecurity Simulator",
+    "author": "Vedant",
+    "version": "1.0",
+    "description": "A systems-based game that emulates the role of a hospital systems-admin, managing cybersecurity and facing ethical dilemmas. Players will resolve scenarios involving resource management and moral choices, impacting the hospital's operation and its staff and patients.",
+    "tags": [
+        "New Legacy"
+    ]
+}

@@ -1,0 +1,59 @@
+{
+    "achievements": [
+        {
+            "id": "CATEGORY_BOTANIST",
+            "isCategory": true,
+            "label": "Botanist",
+            "iconUnlocked": "plant"
+        },
+        {
+            "id": "A_CULT_MALACHITE",
+            "iconUnlocked": "cultmalachite",
+            "label": "Apiarian Court",
+            "descriptionLocked": "I dedicated myself to the nectar of life.",
+            "descriptionUnlocked": "I dedicated myself to the nectar of life.",
+            "category": "CATEGORY_BOTANIST"
+        },
+        {
+            "id": "A_ALL_PLANTS",
+            "iconUnlocked": "plantshop",
+            "label": "Botanists' Envy",
+            "descriptionLocked": "My collection is as extensive as it ever will be.",
+            "descriptionUnlocked": "My collection is as extensive as it ever will be.",
+            "category": "CATEGORY_BOTANIST"
+        },
+        {
+            "id": "A_ALL_ENTRIES",
+            "iconUnlocked": "plantbook",
+            "label": "Organized Catalogue",
+            "descriptionLocked": "I've unlocked secrets from every corner of botany.",
+            "descriptionUnlocked": "I've unlocked secrets from every corner of botany.",
+            "category": "CATEGORY_BOTANIST"
+        },
+        {
+            "id": "A_MARE_DEATH",
+            "iconUnlocked": "seed.woodear",
+            "label": "Rotten Mulch",
+            "descriptionLocked": "The Mare took me in her arms, and I was joined with the earth.",
+            "descriptionUnlocked": "The Mare took me in her arms, and I was joined with the earth.",
+            "category": "CATEGORY_BOTANIST"
+        },
+        {
+            "id": "A_MALACHITE_VICTORY",
+            "iconUnlocked": "ascensiongrowth.e",
+            "label": "The Succulent Garden",
+            "descriptionLocked": "The Ring-Yew bore me fruit. My cycle of life will never end.",
+            "descriptionUnlocked": "The Ring-Yew bore me fruit. My cycle of life will never end.",
+            "category": "CATEGORY_BOTANIST"
+        },
+        {
+            "id": "A_APPLEBRIGHT_VICTORY",
+            "iconUnlocked": "ascensionungrowth.e",
+            "label": "The Blissful Orchard",
+            "descriptionLocked": "The Applebright nourished my desires to their malignant fruition.",
+            "descriptionUnlocked": "The Applebright nourished my desires to their malignant fruition.",
+            "isHidden": true,
+            "category": "CATEGORY_BOTANIST"
+        }
+    ]
+}
