@@ -26,12 +26,14 @@
             }
         },
         {
-            "id": "time",
-            "label": "Time",
-            "description": "The sundial's shadow.",
-            "slot": {
-                "id": "time"
-            }
+            "id": "steal",
+            "label": "Steal a resource",
+            "description": "Stealing resource description."
+        },
+        {
+            "id": "scenarioprocessor",
+            "label": "Triggers scenarios",
+            "description": " "
         }
     ]
 }

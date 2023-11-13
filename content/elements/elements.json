@@ -92,6 +92,20 @@
             "aspects": {
                 "dayjob": 1
             }
+        },
+        {
+            "id": "timer.triggerthiefscenario",
+            "label": "Thief Scenario Timer",
+            "description": "A timer for the thief to appear and start stealing resources.",
+            "aspects": {
+                "scenario.trigger.medicalthief": 1
+            },
+            "induces": [
+                {
+                    "id": "resourcethief",
+                    "chance": 100
+                }
+            ]
         }
     ]
 }

@@ -16,18 +16,49 @@
                 "phys.hospitalfunds": 10,
                 "gamestart.startwork": -1,
                 "patient.lowrisk": 2,
-                "patient.highrisk": 2
+                "patient.highrisk": 2,
+                "timer.triggerthiefscenario": 1
+            },
+            "rootEffects": {
+                "status.employeemorale": 10,
+                "status.hospitalreputation": 10,
+                "status.hospitalmortality": 10
             },
             "actionId": "adminwork",
             "inductions": [
                 {
                     "id": "treat.patient"
+                },
+                {
+                    "id": "triggermedicalscenario"
                 }
             ],
             "movements": {
                 "~/tabletop": [
                     {
-                        "filter": "[physicalresource] || [patient]"
+                        "filter": "[physicalresource] || [patient] || [scenario.trigger]"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "trade.medicalresources",
+            "label": "Trade Medical Resources",
+            "warmup": 5,
+            "description": "Trade goods for money",
+            "craftable": true,
+            "actionId": "adminwork",
+            "requirements": {
+                "phys.hospitalfunds": 1
+            },
+            "effects": {
+                "phys.hospitalfunds": -1,
+                "phys.medicalresources": 2
+            },
+            "movements": {
+                "~/tabletop": [
+                    {
+                        "filter": "[physicalresource]"
                     }
                 ]
             }
@@ -111,16 +142,56 @@
             ]
         },
         {
-            "id": "cybersecuritycheck",
-            "label": "Cybersecurity Check",
-            "description": "Use cybersecurity resources to protect the hospital's digital assets.",
-            "requirements": {
-                "cybersecurityresources": 1
+            "id": "triggermedicalscenario",
+            "label": "Triggers Medical Thief Scenario",
+            "warmup": 10,
+            "description": "New scenario starting",
+            "actionId": "scenarioprocessor",
+            "deleteverb": {
+                "scenarioprocessor": 1
             },
-            "effects": {
-                "phys.cybersecurityresources": -1
-            },
-            "actionId": "work"
+            "slots": [
+                {
+                    "id": "scenariobeingprocessed",
+                    "label": " ",
+                    "description": " ",
+                    "required": {
+                        "scenario.trigger.medicalthief": 1
+                    },
+                    "consumes": true,
+                    "greedy": true
+                }
+            ],
+            "inductions": [
+                {
+                    "id": "resourcethief"
+                }
+            ]
+        },
+        {
+            "id": "resourcethief",
+            "label": "Thief stealing resources",
+            "warmup": 10,
+            "description": "A thief is trying to steal a medical resource.",
+            "actionId": "steal",
+            "slots": [
+                {
+                    "id": "resourcebeingstolen",
+                    "label": "Theft",
+                    "description": "A man in need",
+                    "required": {
+                        "phys.medicalresources": 1
+                    },
+                    "consumes": true,
+                    "greedy": true
+                }
+            ],
+            "linked": [
+                {
+                    "id": "resourcethief",
+                    "chance": 100
+                }
+            ]
         }
     ]
 }

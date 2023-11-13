@@ -19,6 +19,10 @@
         {
             "id": "highrisk",
             "isAspect": true
+        },
+        {
+            "id": "scenario.trigger.medicalthief",
+            "isAspect": true
         }
     ]
 }
