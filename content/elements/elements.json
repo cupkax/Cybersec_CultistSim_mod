@@ -1,21 +1,21 @@
 {
     "elements": [
         {
-            "id": "status.employeemorale",
+            "id": "statusemployeemorale",
             "label": "Morale",
             "description": "Indicates the overall spirit and motivation of your hospital staff.",
             "icon": "employeeMorale_icon.png",
             "slots": []
         },
         {
-            "id": "status.hospitalreputation",
+            "id": "statushospitalreputation",
             "label": "Reputation",
             "description": "Reflects the public's trust in your hospital.",
             "icon": "hospitalReputation_icon.png",
             "slots": []
         },
         {
-            "id": "status.hospitalmortality",
+            "id": "statushospitalmortality",
             "label": "Mortality Rate",
             "description": "Indicates the overall mortality rate of the hospital.",
             "icon": "hospitalMortality_icon.png",
@@ -25,7 +25,7 @@
             "id": "phys.medicalresources",
             "label": "Medical Resources",
             "description": "Vital supplies and equipment necessary for patient care. Proper management is essential to maintain hospital operations.",
-            "icon": "medical_resources.png",
+            "icon": "health",
             "slots": [],
             "aspects": {
                 "physicalresource": 1
@@ -35,7 +35,7 @@
             "id": "phys.cybersecurityresources",
             "label": "Cybersecurity Resources",
             "description": "Resources allocated for the protection of hospital digital infrastructure against cyber threats.",
-            "icon": "cybersecurity_resources.png",
+            "icon": "cybersecurityresources_icon",
             "slots": [],
             "aspects": {
                 "physicalresource": 1
@@ -45,7 +45,7 @@
             "id": "phys.hospitalfunds",
             "label": "Hospital Funds",
             "description": "The financial resources available to the hospital. Funds are required for everything from purchasing medical supplies to paying staff salaries.",
-            "icon": "hospital_funds.png",
+            "icon": "hospitalfunds_icon",
             "slots": [],
             "aspects": {
                 "physicalresource": 1
@@ -54,7 +54,7 @@
         {
             "id": "patient.lowrisk",
             "label": "Low Risk Patient",
-            "icon": "patient_low.png",
+            "icon": "patient_low_icon",
             "slots": [],
             "aspects": {
                 "patient": 1,
@@ -66,7 +66,7 @@
         {
             "id": "patient.highrisk",
             "label": "High Risk Patient",
-            "icon": "patient_high.png",
+            "icon": "patient_high_icon",
             "slots": [],
             "aspects": {
                 "patient": 1,
@@ -78,7 +78,7 @@
         {
             "id": "cybersec.corpse",
             "label": "A Corpse",
-            "icon": "patient_high.png",
+            "icon": "corpse_icon",
             "slots": [],
             "aspects": {
                 "death": 1
@@ -87,7 +87,7 @@
         {
             "id": "gamestart.startwork",
             "label": "Work as Usual",
-            "icon": "startwork.png",
+            "icon": "startwork_icon",
             "slots": [],
             "aspects": {
                 "dayjob": 1
@@ -97,6 +97,8 @@
             "id": "timer.triggerthiefscenario",
             "label": "Thief Scenario Timer",
             "description": "A timer for the thief to appear and start stealing resources.",
+            "lifetime": 30,
+            "resaturate": true,
             "aspects": {
                 "scenario.trigger.medicalthief": 1
             },
