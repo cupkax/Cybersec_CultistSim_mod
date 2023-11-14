@@ -16,13 +16,12 @@
                 "phys.hospitalfunds": 10,
                 "gamestart.startwork": -1,
                 "patient.lowrisk": 2,
-                "patient.highrisk": 2,
-                "timer.triggerthiefscenario": 1
+                "patient.highrisk": 2
             },
             "rootEffects": {
-                "status.employeemorale": 10,
-                "status.hospitalreputation": 10,
-                "status.hospitalmortality": 10
+                "statusemployeemorale": 10,
+                "statushospitalreputation": 10,
+                "statushospitalmortality": 10
             },
             "actionId": "adminwork",
             "inductions": [
@@ -66,9 +65,16 @@
         {
             "id": "treat.patient",
             "label": "Treat Patient",
-            "warmup": 5,
+            "warmup": 0,
             "description": "Allocate the necessary medical resources to treat the patient.",
-            "actionId": "treat"
+            "actionId": "treat",
+            "movements": {
+                "~/tabletop": [
+                    {
+                        "filter": "*"
+                    }
+                ]
+            }
         },
         {
             "id": "treatlowriskpatient",
@@ -83,7 +89,8 @@
                 "phys.medicalresources": 1
             },
             "effects": {
-                "phys.hospitalfunds": 5
+                "phys.hospitalfunds": 5,
+                "patient.lowrisk": -1
             },
             "actionId": "treat",
             "slots": [
@@ -97,6 +104,12 @@
                     "actionId": "treat",
                     "consumes": true,
                     "greedy": true
+                }
+            ],
+            "alt": [
+                {
+                    "id": "medicalscenariocardspawn",
+                    "chance": 0
                 }
             ]
         },
@@ -113,7 +126,8 @@
                 "phys.medicalresources": 2
             },
             "effects": {
-                "phys.hospitalfunds": 5
+                "phys.hospitalfunds": 5,
+                "patient.highrisk": -1
             },
             "actionId": "treat",
             "slots": [
@@ -139,7 +153,22 @@
                     "consumes": true,
                     "greedy": true
                 }
+            ],
+            "alt": [
+                {
+                    "id": "medicalscenariocardspawn",
+                    "chance": 0
+                }
             ]
+        },
+        {
+            "id": "medicalscenariocardspawn",
+            "label": " ",
+            "warmup": 10,
+            "description": " ",
+            "effects": {
+                "timer.triggerthiefscenario": 1
+            }
         },
         {
             "id": "triggermedicalscenario",
@@ -171,7 +200,7 @@
         {
             "id": "resourcethief",
             "label": "Thief stealing resources",
-            "warmup": 10,
+            "warmup": 45,
             "description": "A thief is trying to steal a medical resource.",
             "actionId": "steal",
             "slots": [

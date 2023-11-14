@@ -2,6 +2,7 @@
     "verbs": [
         {
             "id": "adminwork",
+            "icon": "adminwork_icon",
             "label": "Admin Work",
             "description": "Oversee the hospital's daily operations. Allocate resources to incoming patients and conduct cybersecurity checks when necessary.",
             "slot": {
@@ -12,6 +13,7 @@
         },
         {
             "id": "treat",
+            "icon": "treat_icon",
             "label": "Treat Patient",
             "description": "Allocate medical resources to treat a patient.",
             "slot": {
@@ -20,18 +22,24 @@
                 "description": "Place a patient card here to allocate treatment.",
                 "required": {
                     "patient": 1
-                },
-                "actionId": "treat",
-                "consumes": true
+                }
             }
         },
         {
+            "id": "usemedicine",
+            "icon": "usemedicine_icon",
+            "label": "Applying meds",
+            "description": " "
+        },
+        {
             "id": "steal",
+            "icon": "steal_icon",
             "label": "Steal a resource",
             "description": "Stealing resource description."
         },
         {
             "id": "scenarioprocessor",
+            "icon": "scenarioprocessor_icon",
             "label": "Triggers scenarios",
             "description": " "
         }
