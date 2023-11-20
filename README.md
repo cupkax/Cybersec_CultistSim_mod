@@ -24,6 +24,7 @@ The game relies on three existing mods from the steam workshop:
    ```git clone https://github.com/cupkax/Cybersec_CultistSim_mod Cybersec```
 4. Make sure directory structure is as follows:
 ```
+WINDOWS
 %userprofile%
 └── appdata
     └── locallow
@@ -31,6 +32,15 @@ The game relies on three existing mods from the steam workshop:
             └── Cultist Simulator
                 └── mods
                     └── Cybersec
+```
+```
+MACOS
+$HOME
+└── Library
+    └── Application Support
+        └── biz.weatherfactory.cultistsimulator
+            └── mods
+                └── Cybersec
 ```
 
 4. Run the game and navigate to **Secret Histories** on top right. A new legacy, Hospital Systems Administrator, should appear.
