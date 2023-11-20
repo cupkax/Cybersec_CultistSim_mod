@@ -42,6 +42,14 @@
             "icon": "scenarioprocessor_icon",
             "label": "Triggers scenarios",
             "description": " "
+        },
+        {
+            "id": "spawner",
+            "icon": "",
+            "label": "Spawns Patients",
+            "description": "A patient is coming",
+            "spontaneous": true,
+            "multiple": true
         }
     ]
 }
