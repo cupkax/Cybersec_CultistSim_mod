@@ -13,11 +13,12 @@ The game relies on three existing mods from the steam workshop:
   a. [GHIRBI](https://steamcommunity.com/sharedfiles/filedetails/?id=2901287611)
   b. [AchieveIntegrations](https://steamcommunity.com/sharedfiles/filedetails/?id=2363532185)
   c. [The Roost Machine](https://steamcommunity.com/workshop/filedetails/?id=2625527332)
-## Windows
-1. Clone the the repository in %userprofile%\appdata\locallow\Weather Factory\Cultist Simulator\mods in Cybersec directory
-2. Create the mods folder, if it doesn't exist
+## Cloning the repo
+1. (Windows) Clone the repository in %userprofile%\appdata\locallow\Weather Factory\Cultist Simulator\mods in Cybersec directory
+2. (MacOS) Clone the repository in $HOME/Library/Application Support/biz.weatherfactory.cultistsimulator/mods in Cybersec directory.
+3. Create the mods folder, if it doesn't exist
    ```git clone https://github.com/cupkax/Cybersec_CultistSim_mod Cybersec```
-3. Make sure directory structure is as follows:
+4. Make sure directory structure is as follows:
 ```
 %userprofile%
 └── appdata
@@ -27,9 +28,6 @@ The game relies on three existing mods from the steam workshop:
                 └── mods
                     └── Cybersec
 ```
-
-## MacOS
-**Haven't found instructions yet.**
 
 4. Run the game and navigate to **Secret Histories** on top right. A new legacy, Hospital Systems Administrator, should appear.
 5. Make sure the mod order is as follows:
