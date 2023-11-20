@@ -10,9 +10,13 @@ This is a Cultist Simulator mod to explore moral gameplay in cybersecurity space
 ## Prerequisites
 The game relies on three existing mods from the steam workshop:
 1.Download the following mods from steam workshop links:
+
   a. [GHIRBI](https://steamcommunity.com/sharedfiles/filedetails/?id=2901287611)
+  
   b. [AchieveIntegrations](https://steamcommunity.com/sharedfiles/filedetails/?id=2363532185)
+  
   c. [The Roost Machine](https://steamcommunity.com/workshop/filedetails/?id=2625527332)
+  
 ## Cloning the repo
 1. (Windows) Clone the repository in %userprofile%\appdata\locallow\Weather Factory\Cultist Simulator\mods in Cybersec directory
 2. (MacOS) Clone the repository in $HOME/Library/Application Support/biz.weatherfactory.cultistsimulator/mods in Cybersec directory.
