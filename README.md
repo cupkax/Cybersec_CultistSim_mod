@@ -35,7 +35,11 @@ The game relies on three existing mods from the steam workshop:
 
 4. Run the game and navigate to **Secret Histories** on top right. A new legacy, Hospital Systems Administrator, should appear.
 5. Make sure the mod order is as follows:
+   
    i. GHIRBI (loads first)
+   
    ii. achieveIntegrations
+   
    iii. The Roost Machine
+   
    iv. Hospital Cybersecurity Simulator
