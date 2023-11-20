@@ -16,7 +16,7 @@
                 "phys.hospitalfunds": 10,
                 "gamestart.startwork": -1,
                 "patient.lowrisk": 2,
-                "patient.highrisk": 2
+                "patient.highrisk": 1
             },
             "rootEffects": {
                 "statusemployeemorale": 10,
@@ -30,6 +30,9 @@
                 },
                 {
                     "id": "triggermedicalscenario"
+                },
+                {
+                    "id": "patientspawnerlowrisk"
                 }
             ],
             "movements": {
@@ -173,7 +176,7 @@
         {
             "id": "triggermedicalscenario",
             "label": "Triggers Medical Thief Scenario",
-            "warmup": 10,
+            "warmup": 30,
             "description": "New scenario starting",
             "actionId": "scenarioprocessor",
             "deleteverb": {
@@ -200,8 +203,11 @@
         {
             "id": "resourcethief",
             "label": "Thief stealing resources",
-            "warmup": 45,
+            "warmup": 15,
             "description": "A thief is trying to steal a medical resource.",
+            "deleteverb": {
+                "scenarioprocessor": 1
+            },
             "actionId": "steal",
             "slots": [
                 {
@@ -209,7 +215,7 @@
                     "label": "Theft",
                     "description": "A man in need",
                     "required": {
-                        "phys.medicalresources": 1
+                        "phys.medicalresources": 2
                     },
                     "consumes": true,
                     "greedy": true
@@ -221,6 +227,52 @@
                     "chance": 100
                 }
             ]
+        },
+        {
+            "id": "patientspawnerlowrisk",
+            "label": "High Risk patient in bound",
+            "warmup": 5,
+            "description": "A patient with minor ailment",
+            "actionId": "spawner",
+            "effects": {
+                "patient.lowrisk": 1
+            },
+            "linked": [
+                {
+                    "id": "patientspawner*",
+                    "randomPick": true
+                }
+            ],
+            "movements": {
+                "~/tabletop": [
+                    {
+                        "filter": "*"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "patientspawnerhighrisk",
+            "label": "High Risk patient in bound",
+            "warmup": 5,
+            "description": "A patient with major ailment",
+            "actionId": "spawner",
+            "effects": {
+                "patient.highrisk": 1
+            },
+            "linked": [
+                {
+                    "id": "patientspawner*",
+                    "randomPick": true
+                }
+            ],
+            "movements": {
+                "~/tabletop": [
+                    {
+                        "filter": "*"
+                    }
+                ]
+            }
         }
     ]
 }
