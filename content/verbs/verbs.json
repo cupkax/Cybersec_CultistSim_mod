@@ -12,44 +12,37 @@
             }
         },
         {
-            "id": "treat",
+            "id": "cybersec.treat",
             "icon": "treat_icon",
             "label": "Treat Patient",
             "description": "Allocate medical resources to treat a patient.",
             "slot": {
-                "id": "treatment.slot",
+                "id": "cybersec.treatment.slot",
                 "label": "Treatment Slot",
                 "description": "Place a patient card here to allocate treatment.",
                 "required": {
                     "patient": 1
                 }
-            }
+            },
+            "multiple": true
         },
         {
-            "id": "usemedicine",
-            "icon": "usemedicine_icon",
-            "label": "Applying meds",
-            "description": " "
+            "id": "cybersec.dispose",
+            "icon": "dispose_icon",
+            "label": "Disposing body",
+            "description": "Disposes a body"
         },
         {
-            "id": "steal",
+            "id": "cybersec.steal",
             "icon": "steal_icon",
             "label": "Steal a resource",
             "description": "Stealing resource description."
         },
         {
-            "id": "scenarioprocessor",
-            "icon": "scenarioprocessor_icon",
-            "label": "Triggers scenarios",
-            "description": " "
-        },
-        {
-            "id": "spawner",
-            "icon": "",
+            "id": "cybersec.spawnerer",
+            "icon": "spawnerer_icon",
             "label": "Spawns Patients",
-            "description": "A patient is coming",
-            "spontaneous": true,
-            "multiple": true
+            "description": "A patient is coming"
         }
     ]
 }
