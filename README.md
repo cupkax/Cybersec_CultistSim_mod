@@ -1,9 +1,20 @@
 # Cybersec_CultistSim_mod
-This is a Cultist Simulator mod to explore moral gameplay in cybersecurity space
+This is a Cultist Simulator mod to explore moral gameplay in cybersecurity space.
 
 # Resources
 - [Modding Guide for the game](https://docs.google.com/document/d/1BZiUrSiT8kKvWIEvx5DObThL4HMGVI1CluJR20CWBU0/edit#heading=h.nzan7yxetc3l)
+- [All game assets and descriptions](https://uadaf.theevilroot.xyz/frangiclave/)
 
+# Checklist
+- [x] Core loop - Randomly generate low/hisk patients at intervals.
+- [x] Core loop - Use medical resources to treat patients and generate hospital funds.
+- [x] Core loop - Generate medical resources using hospital funds.
+- [x] Core loop - Convert low-risk patients to high-risk | high-risk patients to corpses after x seconds
+- [x] Scenario1 - Create a drain on medical resources after x seconds
+- [x] Scenario1 - Use cybersecurity resources to remove the drain
+- [ ] Scenario1 - Use investigate card on the drain tile
+- [ ] Scenario1 - Generate scenario after using investigate tile
+- [ ] Scenario1 - Ignore drain tile -> causes more drain tiles to spawn
 
 
 # Installation
