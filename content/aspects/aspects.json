@@ -9,6 +9,10 @@
             "isAspect": true
         },
         {
+            "id": "defence",
+            "isAspect": true
+        },
+        {
             "id": "patient",
             "isAspect": true
         },

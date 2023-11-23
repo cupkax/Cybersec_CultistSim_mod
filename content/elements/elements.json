@@ -38,7 +38,8 @@
             "icon": "cybersecurityresources_icon",
             "slots": [],
             "aspects": {
-                "physicalresource": 1
+                "physicalresource": 1,
+                "defence": 10
             }
         },
         {
