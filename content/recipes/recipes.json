@@ -14,9 +14,7 @@
                 "phys.medicalresources": 3,
                 "phys.cybersecurityresources": 5,
                 "phys.hospitalfunds": 10,
-                "gamestart.startwork": -1,
-                "patient.lowrisk": 2,
-                "patient.highrisk": 1
+                "gamestart.startwork": -1
             },
             "rootEffects": {
                 "statusemployeemorale": 10,
@@ -29,38 +27,19 @@
                     "id": "treat.patient"
                 },
                 {
-                    "id": "triggermedicalscenario"
+                    "id": "treat.patient1"
                 },
                 {
-                    "id": "patientspawnerlowrisk"
+                    "id": "corpsedisposal"
+                },
+                {
+                    "id": "spawnsickpatients"
                 }
             ],
             "movements": {
                 "~/tabletop": [
                     {
-                        "filter": "[physicalresource] || [patient] || [scenario.trigger]"
-                    }
-                ]
-            }
-        },
-        {
-            "id": "trade.medicalresources",
-            "label": "Trade Medical Resources",
-            "warmup": 5,
-            "description": "Trade goods for money",
-            "craftable": true,
-            "actionId": "adminwork",
-            "requirements": {
-                "phys.hospitalfunds": 1
-            },
-            "effects": {
-                "phys.hospitalfunds": -1,
-                "phys.medicalresources": 2
-            },
-            "movements": {
-                "~/tabletop": [
-                    {
-                        "filter": "[physicalresource]"
+                        "filter": "[physicalresource] || [patient]"
                     }
                 ]
             }
@@ -70,7 +49,21 @@
             "label": "Treat Patient",
             "warmup": 0,
             "description": "Allocate the necessary medical resources to treat the patient.",
-            "actionId": "treat",
+            "actionId": "cybersec.treat",
+            "movements": {
+                "~/tabletop": [
+                    {
+                        "filter": "*"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "treat.patient1",
+            "label": "Treat Patient",
+            "warmup": 0,
+            "description": "Allocate the necessary medical resources to treat the patient.",
+            "actionId": "cybersec.treat",
             "movements": {
                 "~/tabletop": [
                     {
@@ -95,7 +88,7 @@
                 "phys.hospitalfunds": 5,
                 "patient.lowrisk": -1
             },
-            "actionId": "treat",
+            "actionId": "cybersec.treat",
             "slots": [
                 {
                     "id": "usemedicalresource",
@@ -104,15 +97,9 @@
                     "required": {
                         "phys.medicalresources": 1
                     },
-                    "actionId": "treat",
+                    "actionId": "cybersec.treat",
                     "consumes": true,
                     "greedy": true
-                }
-            ],
-            "alt": [
-                {
-                    "id": "medicalscenariocardspawn",
-                    "chance": 0
                 }
             ]
         },
@@ -132,7 +119,7 @@
                 "phys.hospitalfunds": 5,
                 "patient.highrisk": -1
             },
-            "actionId": "treat",
+            "actionId": "cybersec.treat",
             "slots": [
                 {
                     "id": "usemedicalresource",
@@ -141,7 +128,7 @@
                     "required": {
                         "phys.medicalresources": 1
                     },
-                    "actionId": "treat",
+                    "actionId": "cybersec.treat",
                     "consumes": true,
                     "greedy": true
                 },
@@ -152,70 +139,25 @@
                     "required": {
                         "phys.medicalresources": 1
                     },
-                    "actionId": "treat",
+                    "actionId": "cybersec.treat",
                     "consumes": true,
                     "greedy": true
-                }
-            ],
-            "alt": [
-                {
-                    "id": "medicalscenariocardspawn",
-                    "chance": 0
                 }
             ]
         },
         {
-            "id": "medicalscenariocardspawn",
-            "label": " ",
-            "warmup": 10,
-            "description": " ",
-            "effects": {
-                "timer.triggerthiefscenario": 1
-            }
-        },
-        {
-            "id": "triggermedicalscenario",
-            "label": "Triggers Medical Thief Scenario",
-            "warmup": 30,
-            "description": "New scenario starting",
-            "actionId": "scenarioprocessor",
-            "deleteverb": {
-                "scenarioprocessor": 1
-            },
+            "id": "corpsedisposal",
+            "label": "The morgue",
+            "warmup": 15,
+            "description": "A corpse headed to the morgue.",
+            "actionId": "cybersec.dispose",
             "slots": [
                 {
-                    "id": "scenariobeingprocessed",
-                    "label": " ",
+                    "id": "corposeslot",
+                    "label": "A corpse",
                     "description": " ",
                     "required": {
-                        "scenario.trigger.medicalthief": 1
-                    },
-                    "consumes": true,
-                    "greedy": true
-                }
-            ],
-            "inductions": [
-                {
-                    "id": "resourcethief"
-                }
-            ]
-        },
-        {
-            "id": "resourcethief",
-            "label": "Thief stealing resources",
-            "warmup": 15,
-            "description": "A thief is trying to steal a medical resource.",
-            "deleteverb": {
-                "scenarioprocessor": 1
-            },
-            "actionId": "steal",
-            "slots": [
-                {
-                    "id": "resourcebeingstolen",
-                    "label": "Theft",
-                    "description": "A man in need",
-                    "required": {
-                        "phys.medicalresources": 2
+                        "cybersec.corpse": 1
                     },
                     "consumes": true,
                     "greedy": true
@@ -223,53 +165,52 @@
             ],
             "linked": [
                 {
-                    "id": "resourcethief",
+                    "id": "corpsedisposal",
                     "chance": 100
                 }
             ]
         },
         {
-            "id": "patientspawnerlowrisk",
-            "label": "High Risk patient in bound",
-            "warmup": 5,
+            "id": "spawnsickpatients",
+            "label": "A patient in bound",
+            "warmup": 15,
             "description": "A patient with minor ailment",
-            "actionId": "spawner",
-            "effects": {
-                "patient.lowrisk": 1
+            "actionId": "cybersec.spawnerer",
+            "deckeffects": {
+                "cybersec.deck.patients": 1
             },
-            "linked": [
-                {
-                    "id": "patientspawner*",
-                    "randomPick": true
-                }
-            ],
             "movements": {
                 "~/tabletop": [
                     {
-                        "filter": "*"
+                        "filter": "[patient]"
                     }
                 ]
-            }
-        },
-        {
-            "id": "patientspawnerhighrisk",
-            "label": "High Risk patient in bound",
-            "warmup": 5,
-            "description": "A patient with major ailment",
-            "actionId": "spawner",
-            "effects": {
-                "patient.highrisk": 1
             },
             "linked": [
                 {
-                    "id": "patientspawner*",
-                    "randomPick": true
+                    "id": "spawnsickpatients",
+                    "chance": 100
                 }
-            ],
+            ]
+        },
+        {
+            "id": "trade.medicalresources",
+            "label": "Trade Medical Resources",
+            "warmup": 5,
+            "description": "Trade goods for money",
+            "craftable": true,
+            "actionId": "adminwork",
+            "requirements": {
+                "phys.hospitalfunds": 1
+            },
+            "effects": {
+                "phys.hospitalfunds": -1,
+                "phys.medicalresources": 2
+            },
             "movements": {
                 "~/tabletop": [
                     {
-                        "filter": "*"
+                        "filter": "[physicalresource]"
                     }
                 ]
             }

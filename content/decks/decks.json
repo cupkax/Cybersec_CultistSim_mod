@@ -1,11 +1,17 @@
 {
     "decks": [
         {
-            "id": "deck.patients",
+            "id": "cybersec.deck.patients",
             "shuffleAfterDraw": true,
-            "spec": [],
-            "resetonexhaustion": true,
-            "defaultcard": "patientlowrisk"
+            "spec": [
+                "patient.lowrisk",
+                "patient.highrisk",
+                "patient.lowrisk",
+                "patient.lowrisk",
+                "patient.lowrisk",
+                "patient.highrisk"
+            ],
+            "resetonexhaustion": true
         }
     ]
 }

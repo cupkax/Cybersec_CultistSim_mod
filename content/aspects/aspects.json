@@ -13,15 +13,15 @@
             "isAspect": true
         },
         {
+            "id": "death",
+            "isAspect": true
+        },
+        {
             "id": "lowrisk",
             "isAspect": true
         },
         {
             "id": "highrisk",
-            "isAspect": true
-        },
-        {
-            "id": "scenario.trigger.medicalthief",
             "isAspect": true
         }
     ]
