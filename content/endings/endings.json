@@ -1,0 +1,11 @@
+{
+    "endings": [
+        {
+            "id": "nomoretheft",
+            "label": "Thievery has ended",
+            "flavour": "Grand",
+            "anim": "DramaticLightEvil",
+            "achievement": "XXX"
+        }
+    ]
+}

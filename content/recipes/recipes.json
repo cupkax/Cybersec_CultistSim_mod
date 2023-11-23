@@ -13,7 +13,7 @@
             "effects": {
                 "phys.medicalresources": 3,
                 "phys.cybersecurityresources": 5,
-                "phys.hospitalfunds": 10,
+                "phys.hospitalfunds": 1,
                 "gamestart.startwork": -1
             },
             "rootEffects": {
@@ -35,14 +35,7 @@
                 {
                     "id": "spawnsickpatients"
                 }
-            ],
-            "movements": {
-                "~/tabletop": [
-                    {
-                        "filter": "[physicalresource] || [patient]"
-                    }
-                ]
-            }
+            ]
         },
         {
             "id": "treat.patient",
@@ -85,7 +78,7 @@
                 "phys.medicalresources": 1
             },
             "effects": {
-                "phys.hospitalfunds": 5,
+                "phys.hospitalfunds": 2,
                 "patient.lowrisk": -1
             },
             "actionId": "cybersec.treat",
@@ -100,6 +93,12 @@
                     "actionId": "cybersec.treat",
                     "consumes": true,
                     "greedy": true
+                }
+            ],
+            "inductions": [
+                {
+                    "id": "medicalthiefscenario",
+                    "chance": 30
                 }
             ]
         },
@@ -116,7 +115,7 @@
                 "phys.medicalresources": 2
             },
             "effects": {
-                "phys.hospitalfunds": 5,
+                "phys.hospitalfunds": 2,
                 "patient.highrisk": -1
             },
             "actionId": "cybersec.treat",
@@ -142,6 +141,12 @@
                     "actionId": "cybersec.treat",
                     "consumes": true,
                     "greedy": true
+                }
+            ],
+            "inductions": [
+                {
+                    "id": "medicalthiefscenario",
+                    "chance": 30
                 }
             ]
         },
@@ -214,6 +219,57 @@
                     }
                 ]
             }
+        },
+        {
+            "id": "medicalthiefscenario",
+            "label": "A Thief",
+            "description": "A thief amongus",
+            "warmup": 10,
+            "tablereqs": {
+                "phys.medicalresources": 1
+            },
+            "actionId": "cybersec.steal",
+            "slots": [
+                {
+                    "id": "stealingmedicalresources",
+                    "label": "Someones stealing the meds!",
+                    "description": "",
+                    "required": {
+                        "phys.medicalresources": 1
+                    },
+                    "consumes": true,
+                    "greedy": true
+                },
+                {
+                    "id": "cybersecslot",
+                    "label": "Measures",
+                    "description": "",
+                    "required": {
+                        "phys.cybersecurityresources": 1
+                    },
+                    "consumes": true
+                }
+            ],
+            "linked": [
+                {
+                    "id": "medicalthiefscenario",
+                    "chance": 100
+                }
+            ],
+            "alt": [
+                {
+                    "id": "stopthief",
+                    "chance": 100
+                }
+            ]
+        },
+        {
+            "id": "stopthief",
+            "ending": "nomoretheft",
+            "requirements": {
+                "defence": 1
+            },
+            "warmup": 0
         }
     ]
 }
