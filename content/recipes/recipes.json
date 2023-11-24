@@ -4,7 +4,7 @@
             "id": "daystart",
             "label": "The Day Begins",
             "maxexecutions": 1,
-            "warmup": 5,
+            "warmup": 10,
             "craftable": true,
             "description": "A new day begins with new challenges.",
             "requirements": {
@@ -17,9 +17,7 @@
                 "gamestart.startwork": -1
             },
             "rootEffects": {
-                "statusemployeemorale": 10,
-                "statushospitalreputation": 10,
-                "statushospitalmortality": 10
+                "medicalthiefscenariotrigger": 1
             },
             "actionId": "adminwork",
             "inductions": [
@@ -68,7 +66,7 @@
         {
             "id": "treatlowriskpatient",
             "label": "Treat Low-Risk Patient",
-            "warmup": 10,
+            "warmup": 20,
             "craftable": true,
             "description": "Allocate the necessary medical resources to treat the patient.",
             "requirements": {
@@ -98,14 +96,14 @@
             "inductions": [
                 {
                     "id": "medicalthiefscenario",
-                    "chance": 30
+                    "chance": 60
                 }
             ]
         },
         {
             "id": "treathighriskpatient",
             "label": "Treat High-Risk Patient",
-            "warmup": 15,
+            "warmup": 25,
             "craftable": true,
             "description": "Allocate the necessary medical resources to treat the patient.",
             "requirements": {
@@ -178,7 +176,7 @@
         {
             "id": "spawnsickpatients",
             "label": "A patient in bound",
-            "warmup": 15,
+            "warmup": 30,
             "description": "A patient with minor ailment",
             "actionId": "cybersec.spawnerer",
             "deckeffects": {
@@ -201,7 +199,7 @@
         {
             "id": "trade.medicalresources",
             "label": "Trade Medical Resources",
-            "warmup": 5,
+            "warmup": 10,
             "description": "Trade goods for money",
             "craftable": true,
             "actionId": "adminwork",
@@ -211,22 +209,15 @@
             "effects": {
                 "phys.hospitalfunds": -1,
                 "phys.medicalresources": 2
-            },
-            "movements": {
-                "~/tabletop": [
-                    {
-                        "filter": "[physicalresource]"
-                    }
-                ]
             }
         },
         {
             "id": "medicalthiefscenario",
             "label": "A Thief",
             "description": "A thief amongus",
-            "warmup": 10,
-            "tablereqs": {
-                "phys.medicalresources": 1
+            "warmup": 30,
+            "grandReqs": {
+                "root/medicalthiefscenariotrigger": 1
             },
             "actionId": "cybersec.steal",
             "slots": [
@@ -261,15 +252,29 @@
                     "id": "stopthief",
                     "chance": 100
                 }
+            ],
+            "inductions": [
+                {
+                    "id": "medicalthiefscenario",
+                    "chance": 40
+                }
             ]
         },
         {
             "id": "stopthief",
-            "ending": "nomoretheft",
+            "haltverb": {
+                "steal": 1
+            },
+            "deleteverb": {
+                "steal": 1
+            },
             "requirements": {
                 "defence": 1
             },
-            "warmup": 0
+            "warmup": 0,
+            "rootEffects": {
+                "medicalthiefscenariotrigger": -1
+            }
         }
     ]
 }

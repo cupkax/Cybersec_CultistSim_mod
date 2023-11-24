@@ -27,6 +27,10 @@
         {
             "id": "highrisk",
             "isAspect": true
+        },
+        {
+            "id": "scenario",
+            "isAspect": true
         }
     ]
 }
