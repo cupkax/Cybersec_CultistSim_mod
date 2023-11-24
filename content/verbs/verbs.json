@@ -36,7 +36,9 @@
             "id": "cybersec.steal",
             "icon": "steal_icon",
             "label": "Steal a resource",
-            "description": "Stealing resource description."
+            "description": "Stealing resource description.",
+            "spontaneous": true,
+            "maxUnique": 3
         },
         {
             "id": "cybersec.spawnerer",

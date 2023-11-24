@@ -93,6 +93,12 @@
             "aspects": {
                 "dayjob": 1
             }
+        },
+        {
+            "id": "medicalthiefscenariotrigger",
+            "aspects": {
+                "scenario": 1
+            }
         }
     ]
 }
