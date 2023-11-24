@@ -1,3 +1,5 @@
+# Branch Info
+This is the release branch of the mod. Ideally, there should be no errors while running this branch.
 # Cybersec_CultistSim_mod
 This is a Cultist Simulator mod to explore moral gameplay in cybersecurity space.
 
