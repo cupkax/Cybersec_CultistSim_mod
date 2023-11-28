@@ -12,9 +12,9 @@ This is a Cultist Simulator mod to explore moral gameplay in cybersecurity space
 - [x] Core loop - Convert low-risk patients to high-risk | high-risk patients to corpses after x seconds
 - [x] Scenario1 - Create a drain on medical resources after x seconds
 - [x] Scenario1 - Use cybersecurity resources to remove the drain
-- [ ] Scenario1 - Use investigate card on the drain tile
+- [x] Scenario1 - Use investigate card on the drain tile
 - [ ] Scenario1 - Generate scenario after using investigate tile
-- [ ] Scenario1 - Ignore drain tile -> causes more drain tiles to spawn
+- [x] Scenario1 - Ignore drain tile -> causes more drain tiles to spawn
 
 
 # Installation
