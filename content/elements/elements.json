@@ -89,7 +89,6 @@
             "id": "gamestart.startwork",
             "label": "Work as Usual",
             "icon": "startwork_icon",
-            "slots": [],
             "aspects": {
                 "dayjob": 1
             }
@@ -99,6 +98,33 @@
             "aspects": {
                 "scenario": 1
             }
+        },
+        {
+            "id": "tool.investigate",
+            "label": "Investiagte",
+            "aspects": {
+                "duty": 1
+            }
+        },
+        {
+            "id": "cybersec.scenario.rockandahardplace",
+            "label": "What's more important than saving a patient?",
+            "aspects": {
+                "email": 1
+            },
+            "unique": true,
+            "slots": [
+                {
+                    "id": "rockandahardplace.measure",
+                    "label": "",
+                    "description": "",
+                    "actionid": "adminwork",
+                    "required": {
+                        "phys.cybersecurityresources": 1,
+                        "phys.hospitalfunds": 1
+                    }
+                }
+            ]
         }
     ]
 }

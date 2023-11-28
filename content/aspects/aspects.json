@@ -31,6 +31,14 @@
         {
             "id": "scenario",
             "isAspect": true
+        },
+        {
+            "id": "duty",
+            "isAspect": true
+        },
+        {
+            "id": "email",
+            "isAspect": true
         }
     ]
 }
