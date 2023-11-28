@@ -12,8 +12,9 @@
             },
             "effects": {
                 "phys.medicalresources": 3,
-                "phys.cybersecurityresources": 5,
+                "phys.cybersecurityresources": 2,
                 "phys.hospitalfunds": 1,
+                "tool.investigate": 1,
                 "gamestart.startwork": -1
             },
             "rootEffects": {
@@ -103,7 +104,7 @@
         {
             "id": "treathighriskpatient",
             "label": "Treat High-Risk Patient",
-            "warmup": 25,
+            "warmup": 30,
             "craftable": true,
             "description": "Allocate the necessary medical resources to treat the patient.",
             "requirements": {
@@ -176,7 +177,7 @@
         {
             "id": "spawnsickpatients",
             "label": "A patient in bound",
-            "warmup": 30,
+            "warmup": 20,
             "description": "A patient with minor ailment",
             "actionId": "cybersec.spawnerer",
             "deckeffects": {
@@ -236,7 +237,8 @@
                     "label": "Measures",
                     "description": "",
                     "required": {
-                        "phys.cybersecurityresources": 1
+                        "phys.cybersecurityresources": 1,
+                        "tool.investigate": 1
                     },
                     "consumes": true
                 }
@@ -251,12 +253,16 @@
                 {
                     "id": "stopthief",
                     "chance": 100
+                },
+                {
+                    "id": "investigatetheft",
+                    "chance": 100
                 }
             ],
             "inductions": [
                 {
                     "id": "medicalthiefscenario",
-                    "chance": 40
+                    "chance": 20
                 }
             ]
         },
@@ -274,6 +280,40 @@
             "warmup": 0,
             "rootEffects": {
                 "medicalthiefscenariotrigger": -1
+            }
+        },
+        {
+            "id": "investigatetheft",
+            "label": "Investigating the theft",
+            "warmup": 5,
+            "description": "People are in need and essentials are being lost",
+            "requirements": {
+                "duty": 1
+            },
+            "effects": {
+                "cybersec.scenario.rockandahardplace": 1
+            },
+            "inductions": [
+                {
+                    "id": "medicalthiefscenario",
+                    "chance": 100
+                }
+            ]
+        },
+        {
+            "id": "readingthiefemail",
+            "label": "Investigating the theft",
+            "craftable": true,
+            "warmup": 5,
+            "description": "People are in need and essentials are being lost",
+            "actionId": "adminwork",
+            "requirements": {
+                "email": 1,
+                "phys.cybersecurityresources": 1
+            },
+            "effects": {
+                "cybersec.scenario.rockandahardplace": -1,
+                "phys.cybersecurityresources": 1
             }
         }
     ]

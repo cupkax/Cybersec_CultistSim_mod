@@ -45,6 +45,12 @@
             "icon": "spawnerer_icon",
             "label": "Spawns Patients",
             "description": "A patient is coming"
+        },
+        {
+            "id": "cybersec.investigate",
+            "icon": "investigate_icon",
+            "label": "Perform an investigate",
+            "description": "A patient is coming"
         }
     ]
 }
