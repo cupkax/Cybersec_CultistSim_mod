@@ -304,6 +304,7 @@
             "id": "readingthiefemail",
             "label": "Investigating the theft",
             "craftable": true,
+            "ending": "nomoretheft",
             "warmup": 5,
             "description": "People are in need and essentials are being lost",
             "actionId": "adminwork",
@@ -312,8 +313,7 @@
                 "phys.cybersecurityresources": 1
             },
             "effects": {
-                "cybersec.scenario.rockandahardplace": -1,
-                "phys.cybersecurityresources": 1
+                "cybersec.scenario.rockandahardplace": -1
             }
         }
     ]
