@@ -15,7 +15,8 @@
                 "phys.cybersecurityresources": 2,
                 "phys.hospitalfunds": 1,
                 "tool.investigate": 1,
-                "gamestart.startwork": -1
+                "gamestart.startwork": -1,
+                "cybersec.scenario.thief.sickchild": 1
             },
             "rootEffects": {
                 "medicalthiefscenariotrigger": 1
@@ -262,7 +263,7 @@
             "inductions": [
                 {
                     "id": "medicalthiefscenario",
-                    "chance": 20
+                    "chance": 15
                 }
             ]
         },
@@ -291,7 +292,7 @@
                 "duty": 1
             },
             "effects": {
-                "cybersec.scenario.rockandahardplace": 1
+                "cybersec.scenario.thief.rockandahardplace": 1
             },
             "inductions": [
                 {
@@ -302,19 +303,23 @@
         },
         {
             "id": "readingthiefemail",
-            "label": "Investigating the theft",
+            "label": "Reading The Thief's Private Mail",
             "craftable": true,
-            "ending": "nomoretheft",
             "warmup": 5,
-            "description": "People are in need and essentials are being lost",
+            "description": "People are in need and essentials  being lost. But does that give me the right to violate privacy",
             "actionId": "adminwork",
             "requirements": {
                 "email": 1,
                 "phys.cybersecurityresources": 1
             },
             "effects": {
-                "cybersec.scenario.rockandahardplace": -1
+                "phys.cybersecurityresources": -1,
+                "cybersec.scenario.thief.rockandahardplace": -1,
+                "cybersec.scenario.thief.sickchild": 1
             }
+        },
+        {
+            "id": "helpthethief"
         }
     ]
 }

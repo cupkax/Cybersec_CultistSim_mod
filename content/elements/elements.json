@@ -107,12 +107,33 @@
             }
         },
         {
-            "id": "cybersec.scenario.rockandahardplace",
+            "id": "cybersec.scenario.thief.rockandahardplace",
             "label": "What's more important than saving a patient?",
             "aspects": {
                 "email": 1
             },
             "unique": true,
+            "slots": [
+                {
+                    "id": "rockandahardplace.measure",
+                    "label": "",
+                    "description": "",
+                    "actionid": "adminwork",
+                    "required": {
+                        "phys.cybersecurityresources": 1,
+                        "phys.hospitalfunds": 1
+                    }
+                }
+            ]
+        },
+        {
+            "id": "cybersec.scenario.thief.sickchild",
+            "label": "A Thief's Dilemma",
+            "description": " <margin=5em> <align=center><#FF0000>'...My child is sick. <page> It pains me to resort to thievery.<page> But if I had to choose...'</color> </align></margin>",
+            "unique": true,
+            "aspects": {
+                "moneysolveseverything": 1
+            },
             "slots": [
                 {
                     "id": "rockandahardplace.measure",
