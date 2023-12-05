@@ -101,6 +101,7 @@
         },
         {
             "id": "tool.investigate",
+            "icon": "reason",
             "label": "Investiagte",
             "aspects": {
                 "duty": 1
@@ -108,26 +109,30 @@
         },
         {
             "id": "cybersec.scenario.thief.rockandahardplace",
-            "label": "What's more important than saving a patient?",
+            "icon": "evidence",
+            "label": "What's more important than saving a life?",
             "aspects": {
                 "email": 1
             },
             "unique": true,
             "slots": [
                 {
-                    "id": "rockandahardplace.measure",
+                    "id": "rockandahardplace.investigate",
                     "label": "",
                     "description": "",
                     "actionid": "adminwork",
                     "required": {
-                        "phys.cybersecurityresources": 1,
-                        "phys.hospitalfunds": 1
+                        "tool.investigate": 1
+                    },
+                    "forbidden": {
+                        "phys.medicalresources": 1
                     }
                 }
             ]
         },
         {
             "id": "cybersec.scenario.thief.sickchild",
+            "icon": "apostlegrail.pillar2.dormant",
             "label": "A Thief's Dilemma",
             "description": " <margin=5em> <align=center><#FF0000>'...My child is sick. <page> It pains me to resort to thievery.<page> But if I had to choose...'</color> </align></margin>",
             "unique": true,
@@ -141,7 +146,6 @@
                     "description": "",
                     "actionid": "adminwork",
                     "required": {
-                        "phys.cybersecurityresources": 1,
                         "phys.hospitalfunds": 1
                     }
                 }

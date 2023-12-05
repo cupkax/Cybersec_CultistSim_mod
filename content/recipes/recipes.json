@@ -16,6 +16,7 @@
                 "phys.hospitalfunds": 1,
                 "tool.investigate": 1,
                 "gamestart.startwork": -1,
+                "cybersec.scenario.thief.rockandahardplace": 1,
                 "cybersec.scenario.thief.sickchild": 1
             },
             "rootEffects": {
@@ -306,20 +307,46 @@
             "label": "Reading The Thief's Private Mail",
             "craftable": true,
             "warmup": 5,
-            "description": "People are in need and essentials  being lost. But does that give me the right to violate privacy",
+            "description": "People are in need and essentials being lost. But does that give me the right to violate privacy",
             "actionId": "adminwork",
             "requirements": {
                 "email": 1,
-                "phys.cybersecurityresources": 1
+                "tool.investigate": 1
             },
+            "slots": [
+                {
+                    "id": "usecybersecurityresource",
+                    "label": "Cybersec Resource",
+                    "description": "Need resources to Investiagate",
+                    "required": {
+                        "phys.cybersecurityresources": 1
+                    },
+                    "actionId": "adminwork",
+                    "consumes": true,
+                    "greedy": true
+                }
+            ],
             "effects": {
-                "phys.cybersecurityresources": -1,
                 "cybersec.scenario.thief.rockandahardplace": -1,
                 "cybersec.scenario.thief.sickchild": 1
             }
         },
         {
-            "id": "helpthethief"
+            "id": "solveacrimewithmoney",
+            "label": "Money Solves everything",
+            "description": "Use money to resolve a situation",
+            "craftable": true,
+            "burnimage": "moneysolveseverything",
+            "actionId": "cybersec.usehopsitalmoney",
+            "requirements": {
+                "moneysolveseverything": 1,
+                "phys.hospitalfunds": 1
+            },
+            "effects": {
+                "phys.hospitalfunds": -1,
+                "moneysolveseverything": -1,
+                "phys.medicalresources": -10
+            }
         }
     ]
 }
