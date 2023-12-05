@@ -51,6 +51,12 @@
             "icon": "investigate_icon",
             "label": "Perform an investigate",
             "description": "A patient is coming"
+        },
+        {
+            "id": "cybersec.usehopsitalmoney",
+            "icon": "investigate_icon",
+            "label": "Perform an investigate",
+            "description": "A patient is coming"
         }
     ]
 }
