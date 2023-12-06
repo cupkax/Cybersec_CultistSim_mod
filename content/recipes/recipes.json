@@ -17,7 +17,8 @@
                 "tool.investigate": 3,
                 "gamestart.startwork": -1,
                 "cybersec.scenario.thief.rockandahardplace": 3,
-                "cybersec.scenario.thief.sickchild": 1
+                "cybersec.scenario.thief.sickchild": 1,
+                "cybersec.scenario.thief.drugaddict": 1
             },
             "rootEffects": {
                 "medicalthiefscenariotrigger": 1
@@ -335,10 +336,12 @@
         {
             "id": "solveacrimewithmoney",
             "label": "Money Solves everything",
+            "startdescription": "Use money to resolve a situation",
             "description": "Use money to resolve a situation",
             "craftable": true,
             "burnimage": "moneysolveseverything",
-            "actionId": "cybersec.usehopsitalmoney",
+            "warmup": 10,
+            "actionId": "adminwork",
             "requirements": {
                 "moneysolveseverything": 1,
                 "phys.medicalresources": 1

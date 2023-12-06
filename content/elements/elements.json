@@ -164,7 +164,7 @@
                     "description": "",
                     "actionid": "adminwork",
                     "required": {
-                        "phys.hospitalfunds": 1
+                        "phys.medicalresources": 1
                     }
                 }
             ]
@@ -172,6 +172,7 @@
         {
             "id": "cybersec.scenario.thief.drugaddict",
             "label": "An Irresistable Craving",
+            "icon": "ingredientforged",
             "description": " <margin=10em> <align=center><#FF0000>'Just One More Hit'</color> </align></margin>",
             "unique": true,
             "aspects": {
