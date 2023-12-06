@@ -37,11 +37,20 @@
             "isAspect": true
         },
         {
+            "id": "investigateexhausted",
+            "isAspect": true
+        },
+        {
             "id": "email",
             "isAspect": true
         },
         {
             "id": "moneysolveseverything",
+            "isAspect": true,
+            "isHidden": true
+        },
+        {
+            "id": "medicalresourcesolution",
             "isAspect": true,
             "isHidden": true
         }
