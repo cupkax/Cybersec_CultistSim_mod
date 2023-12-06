@@ -14,9 +14,9 @@
                 "phys.medicalresources": 3,
                 "phys.cybersecurityresources": 2,
                 "phys.hospitalfunds": 1,
-                "tool.investigate": 1,
+                "tool.investigate": 3,
                 "gamestart.startwork": -1,
-                "cybersec.scenario.thief.rockandahardplace": 1,
+                "cybersec.scenario.thief.rockandahardplace": 3,
                 "cybersec.scenario.thief.sickchild": 1
             },
             "rootEffects": {
@@ -241,10 +241,12 @@
                     "required": {
                         "phys.cybersecurityresources": 1,
                         "tool.investigate": 1
-                    },
-                    "consumes": true
+                    }
                 }
             ],
+            "effects": {
+                "phys.cybersecurityresources": -1
+            },
             "linked": [
                 {
                     "id": "medicalthiefscenario",
@@ -294,13 +296,7 @@
             },
             "effects": {
                 "cybersec.scenario.thief.rockandahardplace": 1
-            },
-            "inductions": [
-                {
-                    "id": "medicalthiefscenario",
-                    "chance": 100
-                }
-            ]
+            }
         },
         {
             "id": "readingthiefemail",
@@ -308,6 +304,12 @@
             "craftable": true,
             "warmup": 5,
             "description": "People are in need and essentials being lost. But does that give me the right to violate privacy",
+            "aspects": {
+                "investigateexhausted": 1
+            },
+            "deckeffects": {
+                "cybersec.deck.thiefscenarios": 1
+            },
             "actionId": "adminwork",
             "requirements": {
                 "email": 1,
@@ -317,7 +319,7 @@
                 {
                     "id": "usecybersecurityresource",
                     "label": "Cybersec Resource",
-                    "description": "Need resources to Investiagate",
+                    "description": "Need resources to Investigate",
                     "required": {
                         "phys.cybersecurityresources": 1
                     },
@@ -327,8 +329,7 @@
                 }
             ],
             "effects": {
-                "cybersec.scenario.thief.rockandahardplace": -1,
-                "cybersec.scenario.thief.sickchild": 1
+                "cybersec.scenario.thief.rockandahardplace": -1
             }
         },
         {
@@ -340,12 +341,11 @@
             "actionId": "cybersec.usehopsitalmoney",
             "requirements": {
                 "moneysolveseverything": 1,
-                "phys.hospitalfunds": 1
+                "phys.medicalresources": 1
             },
             "effects": {
-                "phys.hospitalfunds": -1,
                 "moneysolveseverything": -1,
-                "phys.medicalresources": -10
+                "phys.medicalresources": -1
             }
         }
     ]

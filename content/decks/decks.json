@@ -12,6 +12,12 @@
                 "patient.highrisk"
             ],
             "resetonexhaustion": true
+        },
+        {
+            "id": "cybersec.deck.thiefscenarios",
+            "spec": [
+                "cybersec.scenario.thief.drugaddict"
+            ]
         }
     ]
 }
