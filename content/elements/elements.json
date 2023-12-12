@@ -32,6 +32,11 @@
             }
         },
         {
+            "id": "shitty.medicalresources",
+            "label": "Adulerated Medical Resources",
+            "description": " "
+        },
+        {
             "id": "phys.cybersecurityresources",
             "label": "Cybersecurity Resources",
             "description": "Resources allocated for the protection of hospital digital infrastructure against cyber threats.",
@@ -94,7 +99,16 @@
             }
         },
         {
+            "id": "reqcorposedisposaltrigger"
+        },
+        {
             "id": "medicalthiefscenariotrigger",
+            "aspects": {
+                "scenario": 1
+            }
+        },
+        {
+            "id": "organharvetscenariotrigger",
             "aspects": {
                 "scenario": 1
             }

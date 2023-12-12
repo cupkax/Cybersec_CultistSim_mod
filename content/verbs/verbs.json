@@ -27,6 +27,18 @@
             "multiple": true
         },
         {
+            "id": "cybersec.healthypatientbilled",
+            "label": "Billing Patients",
+            "description": "Another recovery",
+            "spontaneous": true
+        },
+        {
+            "id": "cybersec.stillillpatient",
+            "label": "Billing Patients",
+            "description": "Another recovery",
+            "spontaneous": true
+        },
+        {
             "id": "cybersec.dispose",
             "icon": "dispose_icon",
             "label": "Disposing body",
@@ -39,6 +51,13 @@
             "description": "Stealing resource description.",
             "spontaneous": true,
             "maxUnique": 3
+        },
+        {
+            "id": "cybersec.organharvester",
+            "label": "Steal a resource",
+            "description": "Stealing resource description.",
+            "spontaneous": true,
+            "maxUnique": 1
         },
         {
             "id": "cybersec.spawnerer",

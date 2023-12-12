@@ -12,16 +12,17 @@
             },
             "effects": {
                 "phys.medicalresources": 3,
+                "shitty.medicalresources": 3,
                 "phys.cybersecurityresources": 2,
                 "phys.hospitalfunds": 1,
-                "tool.investigate": 3,
+                "tool.investigate": 1,
                 "gamestart.startwork": -1,
-                "cybersec.scenario.thief.rockandahardplace": 3,
-                "cybersec.scenario.thief.sickchild": 1,
-                "cybersec.scenario.thief.drugaddict": 1
+                "patient.lowrisk": 2
             },
             "rootEffects": {
-                "medicalthiefscenariotrigger": 1
+                "medicalthiefscenariotrigger": 1,
+                "organharvetscenariotrigger": 1,
+                "reqcorposedisposaltrigger": 1
             },
             "actionId": "adminwork",
             "inductions": [
@@ -80,7 +81,6 @@
                 "phys.medicalresources": 1
             },
             "effects": {
-                "phys.hospitalfunds": 2,
                 "patient.lowrisk": -1
             },
             "actionId": "cybersec.treat",
@@ -90,17 +90,31 @@
                     "label": "Medical Resources",
                     "description": "Need resources to treat",
                     "required": {
-                        "phys.medicalresources": 1
+                        "phys.medicalresources": 1,
+                        "shitty.medicalresources": 1
                     },
                     "actionId": "cybersec.treat",
-                    "consumes": true,
                     "greedy": true
+                }
+            ],
+            "alt": [
+                {
+                    "id": "patientstillill",
+                    "chance": 100
                 }
             ],
             "inductions": [
                 {
                     "id": "medicalthiefscenario",
-                    "chance": 60
+                    "chance": 15
+                },
+                {
+                    "id": "organharvesterscenario",
+                    "chance": 100
+                },
+                {
+                    "id": "lowriskpatientrestored",
+                    "chance": 100
                 }
             ]
         },
@@ -145,18 +159,58 @@
                     "greedy": true
                 }
             ],
+            "alt": [
+                {
+                    "id": "patientstillill",
+                    "chance": 100
+                }
+            ],
             "inductions": [
                 {
                     "id": "medicalthiefscenario",
-                    "chance": 30
+                    "chance": 15
+                },
+                {
+                    "id": "organharvesterscenario",
+                    "chance": 100
+                },
+                {
+                    "id": "lowriskpatientrestored",
+                    "chance": 100
                 }
             ]
+        },
+        {
+            "id": "lowriskpatientrestored",
+            "warmup": 5,
+            "requirements": {
+                "phys.medicalresources": 1
+            },
+            "effects": {
+                "phys.hospitalfunds": 2
+            },
+            "actionId": "cybersec.healthypatientbilled"
+        },
+        {
+            "id": "patientstillill",
+            "warmup": 5,
+            "signalimportantloop": true,
+            "requirements": {
+                "shitty.medicalresources": 1
+            },
+            "effects": {
+                "shitty.medicalresources": -1
+            },
+            "actionId": "cybersec.stillillpatient"
         },
         {
             "id": "corpsedisposal",
             "label": "The morgue",
             "warmup": 15,
             "description": "A corpse headed to the morgue.",
+            "grandReqs": {
+                "root/reqcorposedisposaltrigger": 1
+            },
             "actionId": "cybersec.dispose",
             "slots": [
                 {
@@ -197,6 +251,12 @@
                 {
                     "id": "spawnsickpatients",
                     "chance": 100
+                }
+            ],
+            "induced": [
+                {
+                    "id": "aransomwareattack",
+                    "chance": 15
                 }
             ]
         },
@@ -268,6 +328,52 @@
                 {
                     "id": "medicalthiefscenario",
                     "chance": 15
+                }
+            ]
+        },
+        {
+            "id": "organharvesterscenario",
+            "label": "An Organ Thief",
+            "description": "Where are the dead going?",
+            "warmup": 30,
+            "haltverb": {
+                "cybersec.dispose": 1
+            },
+            "grandReqs": {
+                "root/organharvetscenariotrigger": 1
+            },
+            "rootEffects": {
+                "reqcorposedisposaltrigger": 1
+            },
+            "actionId": "cybersec.organharvester",
+            "slots": [
+                {
+                    "id": "stealingcorpses",
+                    "label": "The bodies are gone",
+                    "description": "",
+                    "required": {
+                        "cybersec.corpse": 1
+                    },
+                    "consumes": true,
+                    "greedy": true
+                },
+                {
+                    "id": "cybersecslot",
+                    "label": "Measures",
+                    "description": "",
+                    "required": {
+                        "phys.cybersecurityresources": 1,
+                        "tool.investigate": 1
+                    }
+                }
+            ],
+            "effects": {
+                "phys.cybersecurityresources": -1
+            },
+            "linked": [
+                {
+                    "id": "organharvesterscenario",
+                    "chance": 100
                 }
             ]
         },
@@ -349,6 +455,16 @@
             "effects": {
                 "moneysolveseverything": -1,
                 "phys.medicalresources": -1
+            }
+        },
+        {
+            "id": "aransomwareattack",
+            "label": "Our systems are down and the demand is money",
+            "description": "",
+            "warmup": 30,
+            "actionId": "slowdownhospitalfunctions",
+            "effects": {
+                "shitty.medicalresources": 1
             }
         }
     ]
