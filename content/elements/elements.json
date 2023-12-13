@@ -31,10 +31,10 @@
             }
         },
         {
-            "id": "phys.medicalresources",
+            "id": "medicalresources",
             "label": "Medical Resources",
             "description": "Vital supplies and equipment necessary for patient care. Proper management is essential to maintain hospital operations.",
-            "icon": "health",
+            "icon": "medicalresources",
             "slots": [],
             "aspects": {
                 "physicalresource": 1
@@ -46,10 +46,10 @@
             "description": " "
         },
         {
-            "id": "phys.cybersecurityresources",
+            "id": "cybersecurityresources",
             "label": "Cybersecurity Resources",
             "description": "Resources allocated for the protection of hospital digital infrastructure against cyber threats.",
-            "icon": "cybersecurityresources_icon",
+            "icon": "cybersecurityresources",
             "slots": [],
             "aspects": {
                 "physicalresource": 1,
@@ -57,10 +57,10 @@
             }
         },
         {
-            "id": "phys.hospitalfunds",
+            "id": "hospitalfunds",
             "label": "Hospital Funds",
             "description": "The financial resources available to the hospital. Funds are required for everything from purchasing medical supplies to paying staff salaries.",
-            "icon": "hospitalfunds_icon",
+            "icon": "hospitalfunds",
             "slots": [],
             "aspects": {
                 "physicalresource": 1
@@ -123,8 +123,8 @@
             }
         },
         {
-            "id": "tool.investigate",
-            "icon": "reason",
+            "id": "investigatescenario",
+            "icon": "investigatescenario",
             "label": "Investigate",
             "aspects": {
                 "duty": 1
@@ -133,13 +133,13 @@
                 "investigateexhausted": [
                     {
                         "morpheffect": "transform",
-                        "id": "tool.investigate.exhausted"
+                        "id": "investigatescenario.exhausted"
                     }
                 ]
             }
         },
         {
-            "id": "tool.investigate.exhausted",
+            "id": "investigatescenario.exhausted",
             "icon": "passion",
             "label": "Investigate (Exhausted)",
             "aspects": {
@@ -163,10 +163,10 @@
                     "description": "",
                     "actionid": "adminwork",
                     "required": {
-                        "tool.investigate": 1
+                        "investigatescenario": 1
                     },
                     "forbidden": {
-                        "phys.medicalresources": 1
+                        "medicalresources": 1
                     }
                 }
             ]
@@ -189,7 +189,7 @@
                     "description": "",
                     "actionid": "adminwork",
                     "required": {
-                        "phys.hospitalfunds": 1
+                        "hospitalfunds": 1
                     }
                 }
             ]

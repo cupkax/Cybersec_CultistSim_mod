@@ -13,10 +13,10 @@
         "gamestart.startwork": 1
       },
       "statusbarelements": [
-        "phys.medicalresources",
-        "phys.cybersecurityresources",
-        "tool.investigate",
-        "phys.hospitalfunds"
+        "medicalresources",
+        "cybersecurityresources",
+        "investigatescenario",
+        "hospitalfunds"
       ]
     }
   ]

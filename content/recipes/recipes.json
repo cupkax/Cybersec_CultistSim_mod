@@ -11,13 +11,12 @@
                 "gamestart.startwork": 1
             },
             "effects": {
-                "phys.medicalresources": 3,
-                "phys.cybersecurityresources": 2,
-                "phys.hospitalfunds": 1,
-                "tool.investigate": 1,
+                "medicalresources": 3,
+                "cybersecurityresources": 2,
+                "hospitalfunds": 1,
+                "investigatescenario": 1,
                 "gamestart.startwork": -1,
-                "patient.lowrisk": 2,
-                "cybersec.scenario.thief.sickchild": 1
+                "patient.lowrisk": 2
             },
             "rootEffects": {
                 "medicalthiefscenariotrigger": 1,
@@ -84,10 +83,10 @@
                 "lowrisk": 1
             },
             "tablereqs": {
-                "phys.medicalresources": 1
+                "medicalresources": 1
             },
             "effects": {
-                "phys.hospitalfunds": 1,
+                "hospitalfunds": 1,
                 "patient.lowrisk": -1
             },
             "actionId": "cybersec.treat",
@@ -97,7 +96,7 @@
                     "label": "Medical Resources",
                     "description": "Need resources to treat",
                     "required": {
-                        "phys.medicalresources": 1,
+                        "medicalresources": 1,
                         "shitty.medicalresources": 1
                     },
                     "actionId": "cybersec.treat",
@@ -136,10 +135,10 @@
                 "highrisk": 1
             },
             "tablereqs": {
-                "phys.medicalresources": 2
+                "medicalresources": 2
             },
             "effects": {
-                "phys.hospitalfunds": 1,
+                "hospitalfunds": 1,
                 "patient.highrisk": -1
             },
             "actionId": "cybersec.treat",
@@ -149,7 +148,7 @@
                     "label": "Medical Resources",
                     "description": "Need resources to treat",
                     "required": {
-                        "phys.medicalresources": 1,
+                        "medicalresources": 1,
                         "shitty.medicalresources": 1
                     },
                     "actionId": "cybersec.treat",
@@ -161,7 +160,7 @@
                     "label": "Medical Resources",
                     "description": "Need resources to treat",
                     "required": {
-                        "phys.medicalresources": 1,
+                        "medicalresources": 1,
                         "shitty.medicalresources": 1
                     },
                     "actionId": "cybersec.treat",
@@ -192,10 +191,10 @@
             "id": "lowriskpatientrestored",
             "warmup": 5,
             "requirements": {
-                "phys.medicalresources": 1
+                "medicalresources": 1
             },
             "effects": {
-                "phys.hospitalfunds": 2
+                "hospitalfunds": 2
             },
             "actionId": "cybersec.healthypatientbilled"
         },
@@ -277,11 +276,11 @@
             "craftable": true,
             "actionId": "traderesources",
             "requirements": {
-                "phys.hospitalfunds": 1
+                "hospitalfunds": 1
             },
             "effects": {
-                "phys.hospitalfunds": -1,
-                "phys.medicalresources": 2
+                "hospitalfunds": -1,
+                "medicalresources": 2
             }
         },
         {
@@ -299,7 +298,7 @@
                     "label": "Someones stealing the meds!",
                     "description": "",
                     "required": {
-                        "phys.medicalresources": 1
+                        "medicalresources": 1
                     },
                     "consumes": true,
                     "greedy": true
@@ -309,13 +308,13 @@
                     "label": "Measures",
                     "description": "",
                     "required": {
-                        "phys.cybersecurityresources": 1,
-                        "tool.investigate": 1
+                        "cybersecurityresources": 1,
+                        "investigatescenario": 1
                     }
                 }
             ],
             "effects": {
-                "phys.cybersecurityresources": -1
+                "cybersecurityresources": -1
             },
             "linked": [
                 {
@@ -371,13 +370,13 @@
                     "label": "Measures",
                     "description": "",
                     "required": {
-                        "phys.cybersecurityresources": 1,
-                        "tool.investigate": 1
+                        "cybersecurityresources": 1,
+                        "investigatescenario": 1
                     }
                 }
             ],
             "effects": {
-                "phys.cybersecurityresources": -1
+                "cybersecurityresources": -1
             },
             "linked": [
                 {
@@ -432,7 +431,7 @@
             "actionId": "adminwork",
             "requirements": {
                 "email": 1,
-                "tool.investigate": 1
+                "investigatescenario": 1
             },
             "slots": [
                 {
@@ -440,7 +439,7 @@
                     "label": "Cybersec Resource",
                     "description": "Need resources to Investigate",
                     "required": {
-                        "phys.cybersecurityresources": 1
+                        "cybersecurityresources": 1
                     },
                     "actionId": "adminwork",
                     "consumes": true,
@@ -464,11 +463,11 @@
             "actionId": "adminwork",
             "requirements": {
                 "moneysolveseverything": 1,
-                "phys.hospitalfunds": 1
+                "hospitalfunds": 1
             },
             "effects": {
                 "moneysolveseverything": -1,
-                "phys.hospitalfunds": -1
+                "hospitalfunds": -1
             }
         },
         {
