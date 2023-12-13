@@ -14,7 +14,7 @@
         {
             "id": "traderesources",
             "label": "Trade supplies for money",
-            "icon": "compensationd",
+            "icon": "trader",
             "description": "Buy necessary supplies",
             "slot": {
                 "id": "traderesources.slot",

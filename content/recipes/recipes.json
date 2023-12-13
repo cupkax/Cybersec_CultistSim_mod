@@ -11,7 +11,6 @@
                 "gamestart.startwork": 1
             },
             "effects": {
-                "medicalresources": 3,
                 "cybersecurityresources": 2,
                 "hospitalfunds": 1,
                 "investigatescenario": 1,
@@ -180,7 +179,7 @@
                 },
                 {
                     "id": "organharvesterscenario",
-                    "chance": 100
+                    "chance": 15
                 },
                 {
                     "id": "lowriskpatientrestored"
@@ -331,12 +330,6 @@
                     "id": "investigatetheft",
                     "chance": 100
                 }
-            ],
-            "inductions": [
-                {
-                    "id": "medicalthiefscenario",
-                    "chance": 15
-                }
             ]
         },
         {
@@ -370,8 +363,7 @@
                     "label": "Measures",
                     "description": "",
                     "required": {
-                        "cybersecurityresources": 1,
-                        "investigatescenario": 1
+                        "cybersecurityresources": 1
                     }
                 }
             ],
@@ -381,6 +373,12 @@
             "linked": [
                 {
                     "id": "organharvesterscenario",
+                    "chance": 100
+                }
+            ],
+            "alt": [
+                {
+                    "id": "stoporganharvest",
                     "chance": 100
                 }
             ]
@@ -396,7 +394,7 @@
             "requirements": {
                 "defence": 1
             },
-            "warmup": 0,
+            "warmup": 5,
             "rootEffects": {
                 "medicalthiefscenariotrigger": -1
             }
@@ -469,6 +467,21 @@
                 "moneysolveseverything": -1,
                 "hospitalfunds": -1
             }
+        },
+        {
+            "id": "stoporganharvest",
+            "label": "A Hard Rule",
+            "requirements": {
+                "cybersecurityresources": 1
+            },
+            "effects": {
+                "cybersecurityresources": -1
+            },
+            "description": "Increase hospital security",
+            "burnimage": "nomorefreedom",
+            "signalEndingFlavour": "Melancholy",
+            "signalimportantloop": true,
+            "warmup": 10
         },
         {
             "id": "aransomwareattack",

@@ -15,9 +15,13 @@
         },
         {
             "id": "cybersec.deck.thiefscenarios",
+            "shuffleAfterDraw": true,
             "spec": [
-                "cybersec.scenario.thief.drugaddict"
-            ]
+                "cybersec.scenario.thief.drugaddict",
+                "cybersec.scenario.thief.drugaddict",
+                "cybersec.scenario.thief.sickchild"
+            ],
+            "resetonexhaustion": true
         }
     ]
 }
