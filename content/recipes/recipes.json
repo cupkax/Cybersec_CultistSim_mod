@@ -12,20 +12,26 @@
             },
             "effects": {
                 "phys.medicalresources": 3,
-                "shitty.medicalresources": 3,
                 "phys.cybersecurityresources": 2,
                 "phys.hospitalfunds": 1,
                 "tool.investigate": 1,
                 "gamestart.startwork": -1,
-                "patient.lowrisk": 2
+                "patient.lowrisk": 2,
+                "cybersec.scenario.thief.sickchild": 1
             },
             "rootEffects": {
                 "medicalthiefscenariotrigger": 1,
                 "organharvetscenariotrigger": 1,
                 "reqcorposedisposaltrigger": 1
             },
+            "movements": {
+                "~/tabletop": "status"
+            },
             "actionId": "adminwork",
             "inductions": [
+                {
+                    "id": "trade.medicalresources"
+                },
                 {
                     "id": "treat.patient"
                 },
@@ -43,7 +49,7 @@
         {
             "id": "treat.patient",
             "label": "Treat Patient",
-            "warmup": 0,
+            "warmup": 1,
             "description": "Allocate the necessary medical resources to treat the patient.",
             "actionId": "cybersec.treat",
             "movements": {
@@ -57,7 +63,7 @@
         {
             "id": "treat.patient1",
             "label": "Treat Patient",
-            "warmup": 0,
+            "warmup": 1,
             "description": "Allocate the necessary medical resources to treat the patient.",
             "actionId": "cybersec.treat",
             "movements": {
@@ -81,6 +87,7 @@
                 "phys.medicalresources": 1
             },
             "effects": {
+                "phys.hospitalfunds": 1,
                 "patient.lowrisk": -1
             },
             "actionId": "cybersec.treat",
@@ -94,7 +101,8 @@
                         "shitty.medicalresources": 1
                     },
                     "actionId": "cybersec.treat",
-                    "greedy": true
+                    "greedy": true,
+                    "consumes": true
                 }
             ],
             "alt": [
@@ -131,7 +139,7 @@
                 "phys.medicalresources": 2
             },
             "effects": {
-                "phys.hospitalfunds": 2,
+                "phys.hospitalfunds": 1,
                 "patient.highrisk": -1
             },
             "actionId": "cybersec.treat",
@@ -141,7 +149,8 @@
                     "label": "Medical Resources",
                     "description": "Need resources to treat",
                     "required": {
-                        "phys.medicalresources": 1
+                        "phys.medicalresources": 1,
+                        "shitty.medicalresources": 1
                     },
                     "actionId": "cybersec.treat",
                     "consumes": true,
@@ -152,7 +161,8 @@
                     "label": "Medical Resources",
                     "description": "Need resources to treat",
                     "required": {
-                        "phys.medicalresources": 1
+                        "phys.medicalresources": 1,
+                        "shitty.medicalresources": 1
                     },
                     "actionId": "cybersec.treat",
                     "consumes": true,
@@ -161,8 +171,7 @@
             ],
             "alt": [
                 {
-                    "id": "patientstillill",
-                    "chance": 100
+                    "id": "patientstillill"
                 }
             ],
             "inductions": [
@@ -175,8 +184,7 @@
                     "chance": 100
                 },
                 {
-                    "id": "lowriskpatientrestored",
-                    "chance": 100
+                    "id": "lowriskpatientrestored"
                 }
             ]
         },
@@ -194,6 +202,7 @@
         {
             "id": "patientstillill",
             "warmup": 5,
+            "signalEndingFlavour": "Melancholy",
             "signalimportantloop": true,
             "requirements": {
                 "shitty.medicalresources": 1
@@ -266,7 +275,7 @@
             "warmup": 10,
             "description": "Trade goods for money",
             "craftable": true,
-            "actionId": "adminwork",
+            "actionId": "traderesources",
             "requirements": {
                 "phys.hospitalfunds": 1
             },
@@ -398,6 +407,9 @@
             "label": "Investigating the theft",
             "warmup": 5,
             "description": "People are in need and essentials are being lost",
+            "aspects": {
+                "investigateexhausted": 1
+            },
             "requirements": {
                 "duty": 1
             },
@@ -446,15 +458,17 @@
             "description": "Use money to resolve a situation",
             "craftable": true,
             "burnimage": "moneysolveseverything",
+            "signalEndingFlavour": "Melancholy",
+            "signalimportantloop": true,
             "warmup": 10,
             "actionId": "adminwork",
             "requirements": {
                 "moneysolveseverything": 1,
-                "phys.medicalresources": 1
+                "phys.hospitalfunds": 1
             },
             "effects": {
                 "moneysolveseverything": -1,
-                "phys.medicalresources": -1
+                "phys.hospitalfunds": -1
             }
         },
         {
