@@ -12,6 +12,22 @@
             }
         },
         {
+            "id": "traderesources",
+            "label": "Trade supplies for money",
+            "icon": "compensationd",
+            "description": "Buy necessary supplies",
+            "slot": {
+                "id": "traderesources.slot",
+                "label": "What to buy?",
+                "description": "Place a card here to buy stuff."
+            }
+        },
+        {
+            "id": "scenariosolve",
+            "label": "Solve Scenario",
+            "description": " "
+        },
+        {
             "id": "cybersec.treat",
             "icon": "treat_icon",
             "label": "Treat Patient",

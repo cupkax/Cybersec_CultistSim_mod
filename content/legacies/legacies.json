@@ -13,9 +13,9 @@
         "gamestart.startwork": 1
       },
       "statusbarelements": [
-        "root/statusemployeemorale",
-        "root/statushospitalreputation",
-        "root/statushospitalmortality",
+        "phys.medicalresources",
+        "phys.cybersecurityresources",
+        "tool.investigate",
         "phys.hospitalfunds"
       ]
     }

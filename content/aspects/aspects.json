@@ -5,6 +5,10 @@
             "isAspect": true
         },
         {
+            "id": "status",
+            "isAspect": true
+        },
+        {
             "id": "physicalresource",
             "isAspect": true
         },

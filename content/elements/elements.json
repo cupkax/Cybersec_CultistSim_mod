@@ -5,21 +5,30 @@
             "label": "Morale",
             "description": "Indicates the overall spirit and motivation of your hospital staff.",
             "icon": "employeeMorale_icon.png",
-            "slots": []
+            "slots": [],
+            "aspects": {
+                "status": 1
+            }
         },
         {
             "id": "statushospitalreputation",
             "label": "Reputation",
             "description": "Reflects the public's trust in your hospital.",
             "icon": "hospitalReputation_icon.png",
-            "slots": []
+            "slots": [],
+            "aspects": {
+                "status": 1
+            }
         },
         {
             "id": "statushospitalmortality",
             "label": "Mortality Rate",
             "description": "Indicates the overall mortality rate of the hospital.",
             "icon": "hospitalMortality_icon.png",
-            "slots": []
+            "slots": [],
+            "aspects": {
+                "status": 1
+            }
         },
         {
             "id": "phys.medicalresources",
@@ -165,6 +174,8 @@
         {
             "id": "cybersec.scenario.thief.sickchild",
             "icon": "apostlegrail.pillar2.dormant",
+            "lifetime": 30,
+            "decayTo": "cybersec.scenario.thief.sickchild.exhausted",
             "label": "A Thief's Dilemma",
             "description": " <margin=5em> <align=center><#FF0000>'...My child is sick. <page> It pains me to resort to thievery.<page> But if I had to choose...'</color> </align></margin>",
             "unique": true,
@@ -178,16 +189,22 @@
                     "description": "",
                     "actionid": "adminwork",
                     "required": {
-                        "phys.medicalresources": 1
+                        "phys.hospitalfunds": 1
                     }
                 }
             ]
         },
         {
+            "id": "cybersec.scenario.thief.deadchild",
+            "icon": "location.cemetery",
+            "label": "The child has passed away",
+            "description": "You were too late. Did you make the right choice?"
+        },
+        {
             "id": "cybersec.scenario.thief.drugaddict",
             "label": "An Irresistable Craving",
             "icon": "ingredientforged",
-            "description": " <margin=10em> <align=center><#FF0000>'Just One More Hit'</color> </align></margin>",
+            "description": " <margin=10em> <align=center><#FF0000>'Just... ...One... ...More... ...Hit'</color> </align></margin>",
             "unique": true,
             "aspects": {
                 "moneysolveseverything": 1,
