@@ -15,7 +15,9 @@
                 "hospitalfunds": 1,
                 "investigatescenario": 1,
                 "gamestart.startwork": -1,
-                "patient.lowrisk": 2
+                "patient.lowrisk": 2,
+                "cybersec.scenario.thief.sickchild": 1,
+                "cybersec.scenario.thief.drugaddict": 1
             },
             "rootEffects": {
                 "medicalthiefscenariotrigger": 1,
