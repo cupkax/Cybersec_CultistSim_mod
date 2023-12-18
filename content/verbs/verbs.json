@@ -8,7 +8,10 @@
             "slot": {
                 "id": "travel.slot",
                 "label": "Go Where?",
-                "description": "I need a direction."
+                "description": "I need a direction.",
+                "required": {
+                    "place": 1
+                }
             }
         },
         {
@@ -19,18 +22,24 @@
             "slot": {
                 "id": "converse.slot",
                 "label": "Speak To Whom?",
-                "description": "Who should I speak to?"
+                "description": "Who should I speak to?",
+                "required": {
+                    "cantalk": 1
+                }
             }
         },
         {
-            "id": "adminwork",
-            "icon": "adminwork_icon",
-            "label": "Admin Work",
-            "description": "Oversee the hospital's daily operations. Allocate resources to incoming patients and conduct cybersecurity checks when necessary.",
+            "id": "sometasking",
+            "icon": "sometasking",
+            "label": "Day To Day Tasks",
+            "description": "Things I need to tend to.",
             "slot": {
-                "id": "work.slot",
-                "label": "Daily Operations",
-                "description": "Place a card here to perform administrative duties."
+                "id": "sometasking.slot",
+                "label": "The Task",
+                "description": "What needs my attention?",
+                "required": {
+                    "dailythings": 1
+                }
             }
         },
         {

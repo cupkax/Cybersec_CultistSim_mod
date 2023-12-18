@@ -5,7 +5,7 @@
             "label": "Morale",
             "description": "Indicates the overall spirit and motivation of your hospital staff.",
             "icon": "statusemployeemorale",
-            "slots": [],
+            "unique": true,
             "aspects": {
                 "status": 1,
                 "employeemorale": 10
@@ -16,7 +16,7 @@
             "label": "Reputation",
             "description": "Reflects the public's trust in your hospital.",
             "icon": "statushospitalreputation",
-            "slots": [],
+            "unique": true,
             "aspects": {
                 "status": 1,
                 "reputation": 10
@@ -27,7 +27,7 @@
             "label": "Mortality Rate",
             "description": "Indicates the overall mortality rate of the hospital.",
             "icon": "statushospitalmortality",
-            "slots": [],
+            "unique": true,
             "aspects": {
                 "status": 1,
                 "mortality": 0
@@ -111,16 +111,16 @@
             }
         },
         {
-            "id": "gamepre.thehospital",
+            "id": "pregame.thehospital",
             "label": "The Hospital",
             "icon": "thehospital",
             "description": "This is where I work.",
             "aspects": {
-                "dayjob": 1
+                "place": 1
             }
         },
         {
-            "id": "gamepre.receptionist",
+            "id": "pregame.receptionist",
             "label": "Martin The Receptionist",
             "icon": "receptionist",
             "description": "Martin. A recent hire, good at their job.",
@@ -133,8 +133,20 @@
             "id": "myoffice",
             "label": "My Office",
             "aspects": {
-                "dayjob": 1
+                "place": 1
             }
+        },
+        {
+            "id": "drink.coffee",
+            "label": "Coffee",
+            "icon": "coffee",
+            "aspects": {
+                "beverage": 1,
+                "dailythings": 1
+            }
+        },
+        {
+            "id": "reqbeveragetostarttheday"
         },
         {
             "id": "reqcorposedisposaltrigger"
@@ -190,7 +202,7 @@
                     "id": "rockandahardplace.investigate",
                     "label": "",
                     "description": "",
-                    "actionid": "adminwork",
+                    "actionid": "sometasking",
                     "required": {
                         "investigatescenario": 1
                     },
@@ -216,7 +228,7 @@
                     "id": "sickchild.measure",
                     "label": "",
                     "description": "",
-                    "actionid": "adminwork",
+                    "actionid": "sometasking",
                     "required": {
                         "hospitalfunds": 1
                     }

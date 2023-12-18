@@ -10,7 +10,7 @@
       "newstart": true,
       "availableWithoutEndingMatch": true,
       "effects": {
-        "gamepre.thehospital": 1
+        "pregame.thehospital": 1
       },
       "statusbarelements": [
         "reputation",

@@ -24,7 +24,11 @@
             "resetonexhaustion": true
         },
         {
-            "id": "cybersec.deck.dailytasks"
+            "id": "cybersec.deck.dailytasks",
+            "spec": [
+                "drink.coffee",
+                "drink.coffe"
+            ]
         }
     ]
 }
