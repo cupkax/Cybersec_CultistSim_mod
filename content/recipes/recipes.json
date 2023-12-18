@@ -8,11 +8,11 @@
             "craftable": true,
             "actionId": "travelling",
             "requirements": {
-                "gamepre.thehospital": 1
+                "pregame.thehospital": 1
             },
             "effects": {
-                "gamepre.receptionist": 1,
-                "gamepre.thehospital": -1
+                "pregame.receptionist": 1,
+                "pregame.thehospital": -1
             },
             "inductions": [
                 {
@@ -41,7 +41,7 @@
             "actionId": "converse",
             "effects": {
                 "myoffice": 1,
-                "gamepre.receptionist": -1
+                "pregame.receptionist": -1
             }
         },
         {
@@ -49,13 +49,51 @@
             "label": "To My Office",
             "description": "I was a given a office last year.",
             "warmup": 10,
-            "actionId": "",
             "craftable": true,
             "actionid": "travelling",
             "effects": {
-                "drink.coffee": 1,
-                "drink.tea": 1
+                "myoffice": -1,
+                "drink.coffee": 1
+            },
+            "rootEffects": {
+                "reqbeveragetostarttheday": 1
+            },
+            "inductions": [
+                {
+                    "id": "dailytasksspawn"
+                }
+            ]
+        },
+        {
+            "id": "dailytasksspawn",
+            "warmup": 1,
+            "actionId": "sometasking",
+            "movements": {
+                "~/tabletop": [
+                    {
+                        "filter": "*"
+                    }
+                ]
             }
+        },
+        {
+            "id": "dailytasks.drink",
+            "label": "Cup of Coffee",
+            "description": "I need a cup",
+            "warmup": 10,
+            "craftable": true,
+            "tablereqs": {
+                "drink.coffee": 1
+            },
+            "actionId": "sometasking",
+            "effects": {
+                "drink.coffee": -1
+            },
+            "alt": [
+                {
+                    "id": "daystart"
+                }
+            ]
         },
         {
             "id": "daystart",
@@ -64,8 +102,11 @@
             "warmup": 10,
             "craftable": true,
             "description": "A new day begins with new challenges.",
-            "requirements": {
-                "gamestart.startwork": 1
+            "grandReqs": {
+                "root/reqbeveragetostarttheday": 1
+            },
+            "deleteverb": {
+                "travelling": 1
             },
             "effects": {
                 "cybersecurityresources": 2,
@@ -78,12 +119,13 @@
             "rootEffects": {
                 "medicalthiefscenariotrigger": 1,
                 "organharvetscenariotrigger": 1,
-                "reqcorposedisposaltrigger": 1
+                "reqcorposedisposaltrigger": 1,
+                "reqbeveragetostarttheday": -1
             },
             "movements": {
                 "~/tabletop": "status"
             },
-            "actionId": "adminwork",
+            "actionId": "sometasking",
             "inductions": [
                 {
                     "id": "trade.medicalresources"
@@ -484,7 +526,7 @@
             "deckeffects": {
                 "cybersec.deck.thiefscenarios": 1
             },
-            "actionId": "adminwork",
+            "actionId": "sometasking",
             "requirements": {
                 "email": 1,
                 "investigatescenario": 1
@@ -497,7 +539,7 @@
                     "required": {
                         "cybersecurityresources": 1
                     },
-                    "actionId": "adminwork",
+                    "actionId": "sometasking",
                     "consumes": true,
                     "greedy": true
                 }
@@ -516,7 +558,7 @@
             "signalEndingFlavour": "Melancholy",
             "signalimportantloop": true,
             "warmup": 10,
-            "actionId": "adminwork",
+            "actionId": "sometasking",
             "requirements": {
                 "moneysolveseverything": 1,
                 "hospitalfunds": 1

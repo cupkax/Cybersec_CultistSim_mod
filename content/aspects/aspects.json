@@ -32,6 +32,18 @@
             "isAspect": true
         },
         {
+            "id": "place",
+            "isAspect": true
+        },
+        {
+            "id": "beverage",
+            "isAspect": true
+        },
+        {
+            "id": "dailythings",
+            "isAspect": true
+        },
+        {
             "id": "physicalresource",
             "isAspect": true
         },
