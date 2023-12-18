@@ -22,6 +22,9 @@
                 "cybersec.scenario.thief.sickchild"
             ],
             "resetonexhaustion": true
+        },
+        {
+            "id": "cybersec.deck.dailytasks"
         }
     ]
 }

@@ -4,30 +4,33 @@
             "id": "statusemployeemorale",
             "label": "Morale",
             "description": "Indicates the overall spirit and motivation of your hospital staff.",
-            "icon": "employeeMorale_icon.png",
+            "icon": "statusemployeemorale",
             "slots": [],
             "aspects": {
-                "status": 1
+                "status": 1,
+                "employeemorale": 10
             }
         },
         {
             "id": "statushospitalreputation",
             "label": "Reputation",
             "description": "Reflects the public's trust in your hospital.",
-            "icon": "hospitalReputation_icon.png",
+            "icon": "statushospitalreputation",
             "slots": [],
             "aspects": {
-                "status": 1
+                "status": 1,
+                "reputation": 10
             }
         },
         {
             "id": "statushospitalmortality",
             "label": "Mortality Rate",
             "description": "Indicates the overall mortality rate of the hospital.",
-            "icon": "hospitalMortality_icon.png",
+            "icon": "statushospitalmortality",
             "slots": [],
             "aspects": {
-                "status": 1
+                "status": 1,
+                "mortality": 0
             }
         },
         {
@@ -103,6 +106,32 @@
             "id": "gamestart.startwork",
             "label": "Work as Usual",
             "icon": "startwork_icon",
+            "aspects": {
+                "dayjob": 1
+            }
+        },
+        {
+            "id": "gamepre.thehospital",
+            "label": "The Hospital",
+            "icon": "thehospital",
+            "description": "This is where I work.",
+            "aspects": {
+                "dayjob": 1
+            }
+        },
+        {
+            "id": "gamepre.receptionist",
+            "label": "Martin The Receptionist",
+            "icon": "receptionist",
+            "description": "Martin. A recent hire, good at their job.",
+            "aspects": {
+                "person": 1,
+                "cantalk": 1
+            }
+        },
+        {
+            "id": "myoffice",
+            "label": "My Office",
             "aspects": {
                 "dayjob": 1
             }

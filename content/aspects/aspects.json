@@ -9,6 +9,29 @@
             "isAspect": true
         },
         {
+            "id": "reputation",
+            "icon": "statushospitalreputation",
+            "isAspect": true
+        },
+        {
+            "id": "mortality",
+            "icon": "statushospitalmortality",
+            "isAspect": true
+        },
+        {
+            "id": "employeemorale",
+            "icon": "statusemployeemorale",
+            "isAspect": true
+        },
+        {
+            "id": "person",
+            "isAspect": true
+        },
+        {
+            "id": "cantalk",
+            "isAspect": true
+        },
+        {
             "id": "physicalresource",
             "isAspect": true
         },
