@@ -1,6 +1,28 @@
 {
     "verbs": [
         {
+            "id": "travelling",
+            "icon": "travelling",
+            "label": "Go Somewhere",
+            "description": "Head to a place",
+            "slot": {
+                "id": "travel.slot",
+                "label": "Go Where?",
+                "description": "I need a direction."
+            }
+        },
+        {
+            "id": "converse",
+            "icon": "converse",
+            "label": "Talk With Someone",
+            "description": "Talk to them or at them",
+            "slot": {
+                "id": "converse.slot",
+                "label": "Speak To Whom?",
+                "description": "Who should I speak to?"
+            }
+        },
+        {
             "id": "adminwork",
             "icon": "adminwork_icon",
             "label": "Admin Work",

@@ -1,6 +1,63 @@
 {
     "recipes": [
         {
+            "id": "tothehospital",
+            "label": "The Way To The Hospital",
+            "description": "It is quite a drive to the hospital.",
+            "warmup": 5,
+            "craftable": true,
+            "actionId": "travelling",
+            "requirements": {
+                "gamepre.thehospital": 1
+            },
+            "effects": {
+                "gamepre.receptionist": 1,
+                "gamepre.thehospital": -1
+            },
+            "inductions": [
+                {
+                    "id": "talk.people"
+                }
+            ]
+        },
+        {
+            "id": "talk.people",
+            "warmup": 1,
+            "actionId": "converse",
+            "movements": {
+                "~/tabletop": [
+                    {
+                        "filter": "*"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "talk.receptionist",
+            "label": "Speak with Arthur",
+            "description": "Long a day today huh?",
+            "craftable": true,
+            "warmup": 10,
+            "actionId": "converse",
+            "effects": {
+                "myoffice": 1,
+                "gamepre.receptionist": -1
+            }
+        },
+        {
+            "id": "travel.tomyoffice",
+            "label": "To My Office",
+            "description": "I was a given a office last year.",
+            "warmup": 10,
+            "actionId": "",
+            "craftable": true,
+            "actionid": "travelling",
+            "effects": {
+                "drink.coffee": 1,
+                "drink.tea": 1
+            }
+        },
+        {
             "id": "daystart",
             "label": "The Day Begins",
             "maxexecutions": 1,
@@ -13,11 +70,10 @@
             "effects": {
                 "cybersecurityresources": 2,
                 "hospitalfunds": 1,
-                "investigatescenario": 1,
                 "gamestart.startwork": -1,
-                "patient.lowrisk": 2,
-                "cybersec.scenario.thief.sickchild": 1,
-                "cybersec.scenario.thief.drugaddict": 1
+                "statusemployeemorale": 1,
+                "statushospitalreputation": 1,
+                "statushospitalmortality": 1
             },
             "rootEffects": {
                 "medicalthiefscenariotrigger": 1,
