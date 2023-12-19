@@ -137,13 +137,44 @@
             }
         },
         {
-            "id": "drink.coffee",
+            "id": "pregame.drink.coffee",
             "label": "Coffee",
             "icon": "coffee",
             "aspects": {
                 "beverage": 1,
                 "dailythings": 1
             }
+        },
+        {
+            "id": "dailytask.drink.coffee",
+            "label": "Coffee",
+            "icon": "coffee",
+            "aspects": {
+                "beverage": 1,
+                "dailythings": 1
+            },
+            "lifetime": 10
+        },
+        {
+            "id": "dailytask.read.email",
+            "label": "An Email",
+            "icon": "email",
+            "aspects": {
+                "read": 1,
+                "email": 1,
+                "dailythings": 1
+            },
+            "lifetime": 15
+        },
+        {
+            "id": "dailytask.read.logs",
+            "label": "Logs",
+            "icon": "logs",
+            "aspects": {
+                "read": 1,
+                "dailythings": 1
+            },
+            "lifetime": 15
         },
         {
             "id": "reqbeveragetostarttheday"
@@ -153,12 +184,6 @@
         },
         {
             "id": "medicalthiefscenariotrigger",
-            "aspects": {
-                "scenario": 1
-            }
-        },
-        {
-            "id": "organharvetscenariotrigger",
             "aspects": {
                 "scenario": 1
             }
@@ -190,7 +215,7 @@
             "lifetime": 30
         },
         {
-            "id": "cybersec.scenario.thief.rockandahardplace",
+            "id": "cybersec.scenario.email.thief.rockandahardplace",
             "icon": "evidence",
             "label": "What's more important than saving a life?",
             "aspects": {
@@ -213,10 +238,10 @@
             ]
         },
         {
-            "id": "cybersec.scenario.thief.sickchild",
+            "id": "cybersec.scenario.email.thief.sickchild",
             "icon": "apostlegrail.pillar2.dormant",
             "lifetime": 30,
-            "decayTo": "cybersec.scenario.thief.sickchild.exhausted",
+            "decayTo": "cybersec.scenario.email.thief.sickchild.exhausted",
             "label": "A Thief's Dilemma",
             "description": " <margin=5em> <align=center><#FF0000>'...My child is sick. <page> It pains me to resort to thievery.<page> But if I had to choose...'</color> </align></margin>",
             "unique": true,
@@ -236,13 +261,13 @@
             ]
         },
         {
-            "id": "cybersec.scenario.thief.deadchild",
+            "id": "cybersec.scenario.email.thief.deadchild",
             "icon": "location.cemetery",
             "label": "The child has passed away",
             "description": "You were too late. Did you make the right choice?"
         },
         {
-            "id": "cybersec.scenario.thief.drugaddict",
+            "id": "cybersec.scenario.email.thief.drugaddict",
             "label": "An Irresistable Craving",
             "icon": "ingredientforged",
             "description": " <margin=10em> <align=center><#FF0000>'Just... ...One... ...More... ...Hit'</color> </align></margin>",
@@ -250,6 +275,14 @@
             "aspects": {
                 "moneysolveseverything": 1,
                 "medicalresourcesolution": 1
+            }
+        },
+        {
+            "id": "cybersec.scenario.thief",
+            "label": "A thief",
+            "description": "A thief among us",
+            "aspects": {
+                "scenario": 1
             }
         }
     ]

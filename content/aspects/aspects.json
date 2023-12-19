@@ -40,6 +40,10 @@
             "isAspect": true
         },
         {
+            "id": "read",
+            "isAspect": true
+        },
+        {
             "id": "dailythings",
             "isAspect": true
         },
