@@ -43,6 +43,11 @@
             }
         },
         {
+            "id": "cybersec.scenariogeneratorer",
+            "label": "Things to do",
+            "description": "A patient is coming"
+        },
+        {
             "id": "traderesources",
             "label": "Trade supplies for money",
             "icon": "trader",
@@ -52,11 +57,6 @@
                 "label": "What to buy?",
                 "description": "Place a card here to buy stuff."
             }
-        },
-        {
-            "id": "scenariosolve",
-            "label": "Solve Scenario",
-            "description": " "
         },
         {
             "id": "cybersec.treat",
@@ -80,31 +80,12 @@
             "spontaneous": true
         },
         {
-            "id": "cybersec.stillillpatient",
-            "label": "Billing Patients",
-            "description": "Another recovery",
-            "spontaneous": true
-        },
-        {
-            "id": "cybersec.dispose",
-            "icon": "dispose_icon",
-            "label": "Disposing body",
-            "description": "Disposes a body"
-        },
-        {
             "id": "cybersec.steal",
             "icon": "steal_icon",
             "label": "Steal a resource",
             "description": "Stealing resource description.",
             "spontaneous": true,
             "maxUnique": 3
-        },
-        {
-            "id": "cybersec.organharvester",
-            "label": "Steal a resource",
-            "description": "Stealing resource description.",
-            "spontaneous": true,
-            "maxUnique": 1
         },
         {
             "id": "cybersec.spawnerer",
@@ -115,8 +96,16 @@
         {
             "id": "cybersec.investigate",
             "icon": "investigate_icon",
-            "label": "Perform an investigate",
-            "description": "A patient is coming"
+            "label": "Investigate a phenomena or a situation",
+            "description": " ",
+            "slot": {
+                "id": "cybersec.investigate.slot",
+                "label": "What to investiate?",
+                "description": "Place a patient card here to start an investigation.",
+                "required": {
+                    "scenario": 1
+                }
+            }
         },
         {
             "id": "cybersec.usehopsitalmoney",

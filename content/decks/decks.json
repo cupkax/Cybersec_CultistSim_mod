@@ -2,7 +2,6 @@
     "decks": [
         {
             "id": "cybersec.deck.patients",
-            "shuffleAfterDraw": true,
             "spec": [
                 "patient.lowrisk",
                 "patient.highrisk",
@@ -15,20 +14,28 @@
         },
         {
             "id": "cybersec.deck.thiefscenarios",
-            "shuffleAfterDraw": true,
             "spec": [
-                "cybersec.scenario.thief.drugaddict",
-                "cybersec.scenario.thief.drugaddict",
-                "cybersec.scenario.thief.sickchild"
+                "cybersec.scenario.email.thief.sickchild",
+                "cybersec.scenario.email.thief.drugaddict"
             ],
             "resetonexhaustion": true
         },
         {
             "id": "cybersec.deck.dailytasks",
             "spec": [
-                "drink.coffee",
-                "drink.coffe"
-            ]
+                "dailytask.read.email",
+                "dailytask.read.email",
+                "dailytask.drink.coffee",
+                "cybersec.scenario.thief",
+                "dailytask.read.logs",
+                "dailytask.drink.coffe",
+                "dailytask.read.email",
+                "dailytask.read.logs",
+                "dailytask.read.email",
+                "dailytask.read.email",
+                "dailytask.drink.coffe"
+            ],
+            "resetonexhaustion": true
         }
     ]
 }

@@ -2,18 +2,19 @@
     "recipes": [
         {
             "id": "tothehospital",
-            "label": "The Way To The Hospital",
-            "description": "It is quite a drive to the hospital.",
-            "warmup": 5,
-            "craftable": true,
             "actionId": "travelling",
             "requirements": {
                 "pregame.thehospital": 1
             },
+            "craftable": true,
+            "label": "The Way To The Hospital",
+            "startdescription": "It is quite a drive to the hospital.",
+            "description": "I have arrived at the hospital.",
             "effects": {
                 "pregame.receptionist": 1,
                 "pregame.thehospital": -1
             },
+            "warmup": 5,
             "inductions": [
                 {
                     "id": "talk.people"
@@ -22,23 +23,20 @@
         },
         {
             "id": "talk.people",
-            "warmup": 1,
             "actionId": "converse",
-            "movements": {
-                "~/tabletop": [
-                    {
-                        "filter": "*"
-                    }
-                ]
-            }
+            "warmup": 5
         },
         {
             "id": "talk.receptionist",
-            "label": "Speak with Arthur",
-            "description": "Long a day today huh?",
-            "craftable": true,
-            "warmup": 10,
             "actionId": "converse",
+            "requirements": {
+                "pregame.receptionist": 1
+            },
+            "craftable": true,
+            "label": "Speak with Martin",
+            "startdescription": "Might as well say hello to Martin.",
+            "description": "Looks like today is going to be a quite a long day for him.",
+            "warmup": 10,
             "effects": {
                 "myoffice": 1,
                 "pregame.receptionist": -1
@@ -46,18 +44,22 @@
         },
         {
             "id": "travel.tomyoffice",
-            "label": "To My Office",
-            "description": "I was a given a office last year.",
-            "warmup": 10,
-            "craftable": true,
             "actionid": "travelling",
+            "requirements": {
+                "myoffice": 1
+            },
+            "craftable": true,
+            "label": "To My Office",
+            "startdescription": "I was a given a office last year.",
+            "description": "Time to get to work.",
             "effects": {
                 "myoffice": -1,
-                "drink.coffee": 1
+                "pregame.drink.coffee": 1
             },
             "rootEffects": {
                 "reqbeveragetostarttheday": 1
             },
+            "warmup": 10,
             "inductions": [
                 {
                     "id": "dailytasksspawn"
@@ -66,28 +68,22 @@
         },
         {
             "id": "dailytasksspawn",
-            "warmup": 1,
             "actionId": "sometasking",
-            "movements": {
-                "~/tabletop": [
-                    {
-                        "filter": "*"
-                    }
-                ]
-            }
+            "warmup": 1
         },
         {
             "id": "dailytasks.drink",
+            "actionId": "sometasking",
+            "requirements": {
+                "pregame.drink.coffee": 1,
+                "dailytask.drink.coffee": 1
+            },
+            "craftable": true,
             "label": "Cup of Coffee",
             "description": "I need a cup",
             "warmup": 10,
-            "craftable": true,
-            "tablereqs": {
-                "drink.coffee": 1
-            },
-            "actionId": "sometasking",
             "effects": {
-                "drink.coffee": -1
+                "dailytask.drink.coffee": -1
             },
             "alt": [
                 {
@@ -102,6 +98,9 @@
             "warmup": 10,
             "craftable": true,
             "description": "A new day begins with new challenges.",
+            "requirements": {
+                "pregame.drink.coffee": 1
+            },
             "grandReqs": {
                 "root/reqbeveragetostarttheday": 1
             },
@@ -109,17 +108,15 @@
                 "travelling": 1
             },
             "effects": {
+                "pregame.drink.coffee": -1,
                 "cybersecurityresources": 2,
                 "hospitalfunds": 1,
-                "gamestart.startwork": -1,
                 "statusemployeemorale": 1,
                 "statushospitalreputation": 1,
                 "statushospitalmortality": 1
             },
             "rootEffects": {
                 "medicalthiefscenariotrigger": 1,
-                "organharvetscenariotrigger": 1,
-                "reqcorposedisposaltrigger": 1,
                 "reqbeveragetostarttheday": -1
             },
             "movements": {
@@ -137,10 +134,10 @@
                     "id": "treat.patient1"
                 },
                 {
-                    "id": "corpsedisposal"
+                    "id": "spawnsickpatients"
                 },
                 {
-                    "id": "spawnsickpatients"
+                    "id": "createtask"
                 }
             ]
         },
@@ -195,31 +192,16 @@
                     "label": "Medical Resources",
                     "description": "Need resources to treat",
                     "required": {
-                        "medicalresources": 1,
-                        "shitty.medicalresources": 1
+                        "medicalresources": 1
                     },
                     "actionId": "cybersec.treat",
                     "greedy": true,
                     "consumes": true
                 }
             ],
-            "alt": [
-                {
-                    "id": "patientstillill",
-                    "chance": 100
-                }
-            ],
             "inductions": [
                 {
-                    "id": "medicalthiefscenario",
-                    "chance": 15
-                },
-                {
-                    "id": "organharvesterscenario",
-                    "chance": 100
-                },
-                {
-                    "id": "lowriskpatientrestored",
+                    "id": "patientrestored",
                     "chance": 100
                 }
             ]
@@ -247,8 +229,7 @@
                     "label": "Medical Resources",
                     "description": "Need resources to treat",
                     "required": {
-                        "medicalresources": 1,
-                        "shitty.medicalresources": 1
+                        "medicalresources": 1
                     },
                     "actionId": "cybersec.treat",
                     "consumes": true,
@@ -259,35 +240,21 @@
                     "label": "Medical Resources",
                     "description": "Need resources to treat",
                     "required": {
-                        "medicalresources": 1,
-                        "shitty.medicalresources": 1
+                        "medicalresources": 1
                     },
                     "actionId": "cybersec.treat",
                     "consumes": true,
                     "greedy": true
                 }
             ],
-            "alt": [
-                {
-                    "id": "patientstillill"
-                }
-            ],
             "inductions": [
                 {
-                    "id": "medicalthiefscenario",
-                    "chance": 15
-                },
-                {
-                    "id": "organharvesterscenario",
-                    "chance": 15
-                },
-                {
-                    "id": "lowriskpatientrestored"
+                    "id": "patientrestored"
                 }
             ]
         },
         {
-            "id": "lowriskpatientrestored",
+            "id": "patientrestored",
             "warmup": 5,
             "requirements": {
                 "medicalresources": 1
@@ -298,43 +265,30 @@
             "actionId": "cybersec.healthypatientbilled"
         },
         {
-            "id": "patientstillill",
-            "warmup": 5,
-            "signalEndingFlavour": "Melancholy",
-            "signalimportantloop": true,
-            "requirements": {
-                "shitty.medicalresources": 1
+            "id": "createtask",
+            "label": "Something to do",
+            "warmup": 10,
+            "description": "Work and break",
+            "actionId": "cybersec.scenariogeneratorer",
+            "deckeffects": {
+                "cybersec.deck.dailytasks": 1
             },
-            "effects": {
-                "shitty.medicalresources": -1
+            "movements": {
+                "~/tabletop": [
+                    {
+                        "filter": "*"
+                    }
+                ]
             },
-            "actionId": "cybersec.stillillpatient"
-        },
-        {
-            "id": "corpsedisposal",
-            "label": "The morgue",
-            "warmup": 15,
-            "description": "A corpse headed to the morgue.",
-            "grandReqs": {
-                "root/reqcorposedisposaltrigger": 1
-            },
-            "actionId": "cybersec.dispose",
-            "slots": [
-                {
-                    "id": "corposeslot",
-                    "label": "A corpse",
-                    "description": " ",
-                    "required": {
-                        "cybersec.corpse": 1
-                    },
-                    "consumes": true,
-                    "greedy": true
-                }
-            ],
             "linked": [
                 {
-                    "id": "corpsedisposal",
+                    "id": "createtask",
                     "chance": 100
+                }
+            ],
+            "inductions": [
+                {
+                    "id": "medicalthiefscenario"
                 }
             ]
         },
@@ -350,7 +304,7 @@
             "movements": {
                 "~/tabletop": [
                     {
-                        "filter": "[patient]"
+                        "filter": "*"
                     }
                 ]
             },
@@ -358,12 +312,6 @@
                 {
                     "id": "spawnsickpatients",
                     "chance": 100
-                }
-            ],
-            "induced": [
-                {
-                    "id": "aransomwareattack",
-                    "chance": 15
                 }
             ]
         },
@@ -387,8 +335,8 @@
             "label": "A Thief",
             "description": "A thief amongus",
             "warmup": 30,
-            "grandReqs": {
-                "root/medicalthiefscenariotrigger": 1
+            "tablereqs": {
+                "cybersec.scenario.thief": 1
             },
             "actionId": "cybersec.steal",
             "slots": [
@@ -433,57 +381,6 @@
             ]
         },
         {
-            "id": "organharvesterscenario",
-            "label": "An Organ Thief",
-            "description": "Where are the dead going?",
-            "warmup": 30,
-            "haltverb": {
-                "cybersec.dispose": 1
-            },
-            "grandReqs": {
-                "root/organharvetscenariotrigger": 1
-            },
-            "rootEffects": {
-                "reqcorposedisposaltrigger": 1
-            },
-            "actionId": "cybersec.organharvester",
-            "slots": [
-                {
-                    "id": "stealingcorpses",
-                    "label": "The bodies are gone",
-                    "description": "",
-                    "required": {
-                        "cybersec.corpse": 1
-                    },
-                    "consumes": true,
-                    "greedy": true
-                },
-                {
-                    "id": "cybersecslot",
-                    "label": "Measures",
-                    "description": "",
-                    "required": {
-                        "cybersecurityresources": 1
-                    }
-                }
-            ],
-            "effects": {
-                "cybersecurityresources": -1
-            },
-            "linked": [
-                {
-                    "id": "organharvesterscenario",
-                    "chance": 100
-                }
-            ],
-            "alt": [
-                {
-                    "id": "stoporganharvest",
-                    "chance": 100
-                }
-            ]
-        },
-        {
             "id": "stopthief",
             "haltverb": {
                 "steal": 1
@@ -502,50 +399,28 @@
         {
             "id": "investigatetheft",
             "label": "Investigating the theft",
+            "craftable": true,
             "warmup": 5,
             "description": "People are in need and essentials are being lost",
-            "aspects": {
-                "investigateexhausted": 1
-            },
             "requirements": {
-                "duty": 1
+                "cybersec.scenario.thief": 1
             },
-            "effects": {
-                "cybersec.scenario.thief.rockandahardplace": 1
+            "actionId": "cybersec.investigate",
+            "deckeffects": {
+                "cybersec.deck.thiefscenarios": 1
             }
         },
         {
-            "id": "readingthiefemail",
-            "label": "Reading The Thief's Private Mail",
+            "id": "readingemail",
+            "label": "Reading An Email",
             "craftable": true,
-            "warmup": 5,
-            "description": "People are in need and essentials being lost. But does that give me the right to violate privacy",
-            "aspects": {
-                "investigateexhausted": 1
-            },
-            "deckeffects": {
-                "cybersec.deck.thiefscenarios": 1
-            },
+            "warmup": 15,
             "actionId": "sometasking",
             "requirements": {
-                "email": 1,
-                "investigatescenario": 1
+                "email": 1
             },
-            "slots": [
-                {
-                    "id": "usecybersecurityresource",
-                    "label": "Cybersec Resource",
-                    "description": "Need resources to Investigate",
-                    "required": {
-                        "cybersecurityresources": 1
-                    },
-                    "actionId": "sometasking",
-                    "consumes": true,
-                    "greedy": true
-                }
-            ],
             "effects": {
-                "cybersec.scenario.thief.rockandahardplace": -1
+                "dailytask.read.email": -1
             }
         },
         {
@@ -566,31 +441,6 @@
             "effects": {
                 "moneysolveseverything": -1,
                 "hospitalfunds": -1
-            }
-        },
-        {
-            "id": "stoporganharvest",
-            "label": "A Hard Rule",
-            "requirements": {
-                "cybersecurityresources": 1
-            },
-            "effects": {
-                "cybersecurityresources": -1
-            },
-            "description": "Increase hospital security",
-            "burnimage": "nomorefreedom",
-            "signalEndingFlavour": "Melancholy",
-            "signalimportantloop": true,
-            "warmup": 10
-        },
-        {
-            "id": "aransomwareattack",
-            "label": "Our systems are down and the demand is money",
-            "description": "",
-            "warmup": 30,
-            "actionId": "slowdownhospitalfunctions",
-            "effects": {
-                "shitty.medicalresources": 1
             }
         }
     ]
