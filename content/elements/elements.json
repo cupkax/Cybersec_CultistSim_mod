@@ -131,6 +131,7 @@
         },
         {
             "id": "myoffice",
+            "icon": "myoffice",
             "label": "My Office",
             "aspects": {
                 "place": 1
@@ -240,8 +241,8 @@
         {
             "id": "cybersec.scenario.email.thief.sickchild",
             "icon": "apostlegrail.pillar2.dormant",
-            "lifetime": 30,
-            "decayTo": "cybersec.scenario.email.thief.sickchild.exhausted",
+            "lifetime": 15,
+            "decayTo": "cybersec.scenario.email.thief.deadchild",
             "label": "A Thief's Dilemma",
             "description": " <margin=5em> <align=center><#FF0000>'...My child is sick. <page> It pains me to resort to thievery.<page> But if I had to choose...'</color> </align></margin>",
             "unique": true,
@@ -279,6 +280,7 @@
         },
         {
             "id": "cybersec.scenario.thief",
+            "icon": "thief",
             "label": "A thief",
             "description": "A thief among us",
             "aspects": {

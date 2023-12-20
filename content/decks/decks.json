@@ -24,16 +24,16 @@
             "id": "cybersec.deck.dailytasks",
             "spec": [
                 "dailytask.read.email",
-                "dailytask.read.email",
                 "dailytask.drink.coffee",
+                "dailytask.read.logs",
+                "dailytask.read.email",
                 "cybersec.scenario.thief",
+                "dailytask.read.email",
+                "dailytask.drink.coffe",
                 "dailytask.read.logs",
                 "dailytask.drink.coffe",
-                "dailytask.read.email",
-                "dailytask.read.logs",
-                "dailytask.read.email",
-                "dailytask.read.email",
-                "dailytask.drink.coffe"
+                "cybersec.scenario.thief",
+                "dailytask.read.email"
             ],
             "resetonexhaustion": true
         }

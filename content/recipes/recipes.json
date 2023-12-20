@@ -24,7 +24,7 @@
         {
             "id": "talk.people",
             "actionId": "converse",
-            "warmup": 5
+            "warmup": 2
         },
         {
             "id": "talk.receptionist",
@@ -113,7 +113,7 @@
                 "hospitalfunds": 1,
                 "statusemployeemorale": 1,
                 "statushospitalreputation": 1,
-                "statushospitalmortality": 1
+                "statushospitalmortality": "cybersec.corpse"
             },
             "rootEffects": {
                 "medicalthiefscenariotrigger": 1,
@@ -125,9 +125,6 @@
             "actionId": "sometasking",
             "inductions": [
                 {
-                    "id": "trade.medicalresources"
-                },
-                {
                     "id": "treat.patient"
                 },
                 {
@@ -138,8 +135,25 @@
                 },
                 {
                     "id": "createtask"
+                },
+                {
+                    "id": "scenario.investiate"
                 }
             ]
+        },
+        {
+            "id": "scenario.investiate",
+            "label": "Investigating",
+            "warmup": 1,
+            "description": "Investigating.",
+            "actionId": "cybersec.investigate",
+            "movements": {
+                "~/tabletop": [
+                    {
+                        "filter": "*"
+                    }
+                ]
+            }
         },
         {
             "id": "treat.patient",
@@ -276,7 +290,7 @@
             "movements": {
                 "~/tabletop": [
                     {
-                        "filter": "*"
+                        "filter": "[dailythings] || [scenario]"
                     }
                 ]
             },
@@ -304,7 +318,7 @@
             "movements": {
                 "~/tabletop": [
                     {
-                        "filter": "*"
+                        "filter": "[patient]"
                     }
                 ]
             },
@@ -321,7 +335,7 @@
             "warmup": 10,
             "description": "Trade goods for money",
             "craftable": true,
-            "actionId": "traderesources",
+            "actionId": "sometasking",
             "requirements": {
                 "hospitalfunds": 1
             },
@@ -355,27 +369,16 @@
                     "label": "Measures",
                     "description": "",
                     "required": {
-                        "cybersecurityresources": 1,
-                        "investigatescenario": 1
+                        "cybersecurityresources": 1
                     }
                 }
             ],
             "effects": {
                 "cybersecurityresources": -1
             },
-            "linked": [
-                {
-                    "id": "medicalthiefscenario",
-                    "chance": 100
-                }
-            ],
             "alt": [
                 {
                     "id": "stopthief",
-                    "chance": 100
-                },
-                {
-                    "id": "investigatetheft",
                     "chance": 100
                 }
             ]
@@ -408,19 +411,23 @@
             "actionId": "cybersec.investigate",
             "deckeffects": {
                 "cybersec.deck.thiefscenarios": 1
+            },
+            "effects": {
+                "cybersec.scenario.thief": -1
             }
         },
         {
-            "id": "readingemail",
-            "label": "Reading An Email",
+            "id": "readingemailandlogs",
+            "label": "Going Through The Steps",
             "craftable": true,
             "warmup": 15,
             "actionId": "sometasking",
             "requirements": {
-                "email": 1
+                "read": 1
             },
             "effects": {
-                "dailytask.read.email": -1
+                "dailytask.read.email": -1,
+                "dailytask.read.logs": -1
             }
         },
         {
@@ -433,7 +440,7 @@
             "signalEndingFlavour": "Melancholy",
             "signalimportantloop": true,
             "warmup": 10,
-            "actionId": "sometasking",
+            "actionId": "cybersec.investigate",
             "requirements": {
                 "moneysolveseverything": 1,
                 "hospitalfunds": 1
