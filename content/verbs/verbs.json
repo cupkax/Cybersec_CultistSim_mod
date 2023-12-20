@@ -81,7 +81,7 @@
         },
         {
             "id": "cybersec.steal",
-            "icon": "steal_icon",
+            "icon": "steal",
             "label": "Steal a resource",
             "description": "Stealing resource description.",
             "spontaneous": true,
@@ -95,7 +95,7 @@
         },
         {
             "id": "cybersec.investigate",
-            "icon": "investigate_icon",
+            "icon": "investigate",
             "label": "Investigate a phenomena or a situation",
             "description": " ",
             "slot": {
@@ -103,7 +103,9 @@
                 "label": "What to investiate?",
                 "description": "Place a patient card here to start an investigation.",
                 "required": {
-                    "scenario": 1
+                    "scenario": 1,
+                    "moneysolveseverything": 1,
+                    "medicalresourcesolution": 1
                 }
             }
         },
