@@ -111,6 +111,7 @@
                 "pregame.drink.coffee": -1,
                 "cybersecurityresources": 2,
                 "hospitalfunds": 1,
+                "medicalresources": 3,
                 "statusemployeemorale": 1,
                 "statushospitalreputation": 1,
                 "statushospitalmortality": "cybersec.corpse"
@@ -376,6 +377,11 @@
             "effects": {
                 "cybersecurityresources": -1
             },
+            "linked": [
+                {
+                    "id": "medicalthiefscenario"
+                }
+            ],
             "alt": [
                 {
                     "id": "stopthief",
@@ -417,8 +423,8 @@
             }
         },
         {
-            "id": "readingemailandlogs",
-            "label": "Going Through The Steps",
+            "id": "readingemail",
+            "label": "Reading An Email",
             "craftable": true,
             "warmup": 15,
             "actionId": "sometasking",
@@ -426,7 +432,19 @@
                 "read": 1
             },
             "effects": {
-                "dailytask.read.email": -1,
+                "dailytask.read.email": -1
+            }
+        },
+        {
+            "id": "readinglogs",
+            "label": "Going Through The Logs",
+            "craftable": true,
+            "warmup": 15,
+            "actionId": "sometasking",
+            "requirements": {
+                "read": 1
+            },
+            "effects": {
                 "dailytask.read.logs": -1
             }
         },

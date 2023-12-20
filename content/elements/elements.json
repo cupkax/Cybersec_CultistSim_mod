@@ -51,7 +51,7 @@
         {
             "id": "cybersecurityresources",
             "label": "Cybersecurity Resources",
-            "description": "Resources allocated for the protection of hospital digital infrastructure against cyber threats.",
+            "description": "Resources allocated for the protection of hospital digital insickchildastructure against cyber threats.",
             "icon": "cybersecurityresources",
             "slots": [],
             "aspects": {
@@ -254,7 +254,6 @@
                     "id": "sickchild.measure",
                     "label": "",
                     "description": "",
-                    "actionid": "sometasking",
                     "required": {
                         "hospitalfunds": 1
                     }
