@@ -38,7 +38,8 @@
                 "label": "The Task",
                 "description": "What needs my attention?",
                 "required": {
-                    "dailythings": 1
+                    "dailythings": 1,
+                    "hospitalfunds": 1
                 }
             }
         },
@@ -85,7 +86,7 @@
             "label": "Steal a resource",
             "description": "Stealing resource description.",
             "spontaneous": true,
-            "maxUnique": 3
+            "maxUnique": 1
         },
         {
             "id": "cybersec.spawnerer",
