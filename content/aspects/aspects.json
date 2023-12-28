@@ -10,17 +10,17 @@
         },
         {
             "id": "reputation",
-            "icon": "statushospitalreputation",
+            "icon": "reputation",
             "isAspect": true
         },
         {
             "id": "mortality",
-            "icon": "statushospitalmortality",
+            "icon": "mortality",
             "isAspect": true
         },
         {
-            "id": "employeemorale",
-            "icon": "statusemployeemorale",
+            "id": "morale",
+            "icon": "morale",
             "isAspect": true
         },
         {
