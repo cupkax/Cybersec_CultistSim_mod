@@ -114,7 +114,7 @@
                 "medicalresources": 3,
                 "statusemployeemorale": 1,
                 "statushospitalreputation": 1,
-                "statushospitalmortality": "cybersec.corpse"
+                "statushospitalmortality": 0
             },
             "rootEffects": {
                 "medicalthiefscenariotrigger": 1,
@@ -132,10 +132,10 @@
                     "id": "treat.patient1"
                 },
                 {
-                    "id": "spawnsickpatients"
+                    "id": "temp.spawnsickpatients"
                 },
                 {
-                    "id": "createtask"
+                    "id": "temp.createtask"
                 }
             ]
         },
@@ -263,6 +263,26 @@
             "actionId": "cybersec.healthypatientbilled"
         },
         {
+            "id": "temp.createtask",
+            "label": "Something to do",
+            "warmup": 1,
+            "description": "Allocate the necessary medical resources to treat the patient.",
+            "actionId": "cybersec.scenariogeneratorer",
+            "movements": {
+                "~/tabletop": [
+                    {
+                        "filter": "*"
+                    }
+                ]
+            },
+            "linked": [
+                {
+                    "id": "createtask",
+                    "chance": 100
+                }
+            ]
+        },
+        {
             "id": "createtask",
             "label": "Something to do",
             "warmup": 10,
@@ -287,6 +307,26 @@
             "inductions": [
                 {
                     "id": "medicalthiefscenario"
+                }
+            ]
+        },
+        {
+            "id": "temp.spawnsickpatients",
+            "label": "A patient in bound",
+            "warmup": 1,
+            "description": " ",
+            "actionId": "cybersec.spawnerer",
+            "movements": {
+                "~/tabletop": [
+                    {
+                        "filter": "*"
+                    }
+                ]
+            },
+            "linked": [
+                {
+                    "id": "spawnsickpatients",
+                    "chance": 100
                 }
             ]
         },

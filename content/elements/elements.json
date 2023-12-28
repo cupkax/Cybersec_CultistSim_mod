@@ -4,18 +4,18 @@
             "id": "statusemployeemorale",
             "label": "Morale",
             "description": "Indicates the overall spirit and motivation of your hospital staff.",
-            "icon": "statusemployeemorale",
+            "icon": "morale",
             "unique": true,
             "aspects": {
                 "status": 1,
-                "employeemorale": 10
+                "morale": 10
             }
         },
         {
             "id": "statushospitalreputation",
             "label": "Reputation",
             "description": "Reflects the public's trust in your hospital.",
-            "icon": "statushospitalreputation",
+            "icon": "reputation",
             "unique": true,
             "aspects": {
                 "status": 1,
@@ -26,7 +26,7 @@
             "id": "statushospitalmortality",
             "label": "Mortality Rate",
             "description": "Indicates the overall mortality rate of the hospital.",
-            "icon": "statushospitalmortality",
+            "icon": "mortality",
             "unique": true,
             "aspects": {
                 "status": 1,

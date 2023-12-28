@@ -15,7 +15,7 @@
       "statusbarelements": [
         "reputation",
         "mortality",
-        "employeemorale",
+        "morale",
         "hospitalfunds"
       ]
     }

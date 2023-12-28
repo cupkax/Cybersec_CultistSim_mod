@@ -48,6 +48,7 @@
         },
         {
             "id": "cybersec.scenariogeneratorer",
+            "icon": "cybersec.scenariogeneratorer",
             "label": "Things to do",
             "description": "A patient is coming"
         },
