@@ -114,7 +114,9 @@
                 "medicalresources": 3,
                 "statusemployeemorale": 1,
                 "statushospitalreputation": 1,
-                "statushospitalmortality": 0
+                "statushospitalmortality": 0,
+                "cybersec.scenario.thief1": 1,
+                "cybersec.scenario.thief2": 1
             },
             "rootEffects": {
                 "medicalthiefscenariotrigger": 1,
@@ -268,13 +270,6 @@
             "warmup": 1,
             "description": "Allocate the necessary medical resources to treat the patient.",
             "actionId": "cybersec.scenariogeneratorer",
-            "movements": {
-                "~/tabletop": [
-                    {
-                        "filter": "*"
-                    }
-                ]
-            },
             "linked": [
                 {
                     "id": "createtask",
@@ -306,7 +301,10 @@
             ],
             "inductions": [
                 {
-                    "id": "medicalthiefscenario"
+                    "id": "temp.medicalthiefscenario1"
+                },
+                {
+                    "id": "temp.medicalthiefscenario2"
                 }
             ]
         },
@@ -314,15 +312,8 @@
             "id": "temp.spawnsickpatients",
             "label": "A patient in bound",
             "warmup": 1,
-            "description": " ",
+            "description": "A person with an ailment",
             "actionId": "cybersec.spawnerer",
-            "movements": {
-                "~/tabletop": [
-                    {
-                        "filter": "*"
-                    }
-                ]
-            },
             "linked": [
                 {
                     "id": "spawnsickpatients",
@@ -334,7 +325,7 @@
             "id": "spawnsickpatients",
             "label": "A patient in bound",
             "warmup": 20,
-            "description": "A patient with minor ailment",
+            "description": "A person with an ailment",
             "actionId": "cybersec.spawnerer",
             "deckeffects": {
                 "cybersec.deck.patients": 1
@@ -369,18 +360,92 @@
             }
         },
         {
-            "id": "medicalthiefscenario",
+            "id": "temp.medicalthiefscenario1",
             "label": "A Thief",
+            "warmup": 1,
+            "tablereqs": {
+                "cybersec.scenario.thief1": 1
+            },
+            "description": "Someone's stealing the meds!",
+            "actionId": "cybersec.steal",
+            "linked": [
+                {
+                    "id": "medicalthiefscenario1",
+                    "chance": 100
+                }
+            ]
+        },
+        {
+            "id": "temp.medicalthiefscenario2",
+            "label": "A Thief",
+            "warmup": 1,
+            "tablereqs": {
+                "cybersec.scenario.thief2  ": 1
+            },
             "description": "A thief amongus",
+            "actionId": "cybersec.steal",
+            "linked": [
+                {
+                    "id": "medicalthiefscenario2",
+                    "chance": 100
+                }
+            ]
+        },
+        {
+            "id": "medicalthiefscenario1",
+            "label": "A Thief",
+            "description": "Someone's stealing the meds!",
             "warmup": 30,
             "tablereqs": {
-                "cybersec.scenario.thief": 1
+                "cybersec.scenario.thief1": 1
             },
             "actionId": "cybersec.steal",
             "slots": [
                 {
                     "id": "stealingmedicalresources",
-                    "label": "Someones stealing the meds!",
+                    "label": "We are losing essentials",
+                    "required": {
+                        "medicalresources": 1
+                    },
+                    "consumes": true,
+                    "greedy": true
+                },
+                {
+                    "id": "cybersecslot",
+                    "label": "A measure must be taken",
+                    "required": {
+                        "cybersecurityresources": 1
+                    }
+                }
+            ],
+            "effects": {
+                "cybersecurityresources": -1
+            },
+            "linked": [
+                {
+                    "id": "medicalthiefscenario1"
+                }
+            ],
+            "alt": [
+                {
+                    "id": "stopthief",
+                    "chance": 100
+                }
+            ]
+        },
+        {
+            "id": "medicalthiefscenario2",
+            "label": "A Thief",
+            "description": "Someone's stealing the meds!",
+            "warmup": 30,
+            "tablereqs": {
+                "cybersec.scenario.thief2": 1
+            },
+            "actionId": "cybersec.steal",
+            "slots": [
+                {
+                    "id": "stealingmedicalresources",
+                    "label": "We are losing essentials",
                     "description": "",
                     "required": {
                         "medicalresources": 1
@@ -402,7 +467,7 @@
             },
             "linked": [
                 {
-                    "id": "medicalthiefscenario"
+                    "id": "medicalthiefscenario2"
                 }
             ],
             "alt": [
@@ -433,16 +498,17 @@
             "label": "Investigating the theft",
             "craftable": true,
             "warmup": 5,
-            "description": "People are in need and essentials are being lost",
+            "startdescription": "People are in need and essentials are being lost",
             "requirements": {
-                "cybersec.scenario.thief": 1
+                "thief": 1
             },
             "actionId": "enquire",
             "deckeffects": {
                 "cybersec.deck.thiefscenarios": 1
             },
             "effects": {
-                "cybersec.scenario.thief": -1
+                "cybersec.scenario.thief1": -1,
+                "cybersec.scenario.thief2": -1
             }
         },
         {
@@ -489,6 +555,81 @@
             "effects": {
                 "moneysolveseverything": -1,
                 "hospitalfunds": -1
+            }
+        },
+        {
+            "id": "averylongtreatment",
+            "label": "A Very Long Treatment",
+            "startdescription": "I can treat them and I would be treating for a long time",
+            "description": "The ailment is cured, I think... I think it was worth it.",
+            "craftable": true,
+            "signalEndingFlavour": "Grand",
+            "signalimportantloop": true,
+            "warmup": 60,
+            "actionId": "cybersec.treat",
+            "tablereqs": {
+                "medicalresources": 3
+            },
+            "requirements": {
+                "treatthecausenotthesymptom": 1
+            },
+            "slots": [
+                {
+                    "id": "usemedicalresource",
+                    "label": "Medical Resources",
+                    "description": "Need resources to treat",
+                    "required": {
+                        "medicalresources": 1
+                    },
+                    "actionId": "cybersec.treat",
+                    "consumes": true,
+                    "greedy": true
+                },
+                {
+                    "id": "usemedicalresourceagain",
+                    "label": "Medical Resources",
+                    "description": "Need resources to treat",
+                    "required": {
+                        "medicalresources": 1
+                    },
+                    "actionId": "cybersec.treat",
+                    "consumes": true,
+                    "greedy": true
+                },
+                {
+                    "id": "usemedicalresourceagainandagain",
+                    "label": "Medical Resources",
+                    "description": "Need resources to treat",
+                    "required": {
+                        "medicalresources": 1
+                    },
+                    "actionId": "cybersec.treat",
+                    "consumes": true,
+                    "greedy": true
+                }
+            ],
+            "effects": {
+                "treatthecausenotthesymptom": -1,
+                "reputation": 10,
+                "morale": 5
+            }
+        },
+        {
+            "id": "visitthedead",
+            "label": "A fault of our own doing",
+            "startdescription": "Consequences of placing law on a pedestal",
+            "description": "Hollow words may noy bring back the dead but may give you solace",
+            "craftable": true,
+            "signalEndingFlavour": "Melancholy",
+            "signalimportantloop": true,
+            "requirements": {
+                "regret": 1
+            },
+            "warmup": 30,
+            "actionId": "travelling",
+            "effects": {
+                "morale": 2,
+                "cybersec.scenario.email.thief.deadchild": -1
             }
         }
     ]

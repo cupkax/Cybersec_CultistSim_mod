@@ -2,6 +2,7 @@
     "decks": [
         {
             "id": "cybersec.deck.patients",
+            "resetonexhaustion": true,
             "spec": [
                 "patient.lowrisk",
                 "patient.highrisk",
@@ -9,33 +10,32 @@
                 "patient.lowrisk",
                 "patient.lowrisk",
                 "patient.highrisk"
-            ],
-            "resetonexhaustion": true
+            ]
         },
         {
             "id": "cybersec.deck.thiefscenarios",
+            "resetonexhaustion": true,
             "spec": [
                 "cybersec.scenario.email.thief.sickchild",
                 "cybersec.scenario.email.thief.drugaddict"
-            ],
-            "resetonexhaustion": true
+            ]
         },
         {
             "id": "cybersec.deck.dailytasks",
+            "resetonexhaustion": true,
             "spec": [
                 "dailytask.read.email",
                 "dailytask.drink.coffee",
                 "dailytask.read.logs",
                 "dailytask.read.email",
-                "cybersec.scenario.thief",
+                "cybersec.scenario.thief1",
                 "dailytask.read.email",
                 "dailytask.drink.coffe",
                 "dailytask.read.logs",
                 "dailytask.drink.coffe",
-                "cybersec.scenario.thief",
+                "cybersec.scenario.thief2",
                 "dailytask.read.email"
-            ],
-            "resetonexhaustion": true
+            ]
         }
     ]
 }
