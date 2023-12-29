@@ -26,8 +26,7 @@
                 "required": {
                     "cantalk": 1,
                     "scenario": 1,
-                    "moneysolveseverything": 1,
-                    "medicalresourcesolution": 1
+                    "moneysolveseverything": 1
                 }
             }
         },
@@ -73,7 +72,8 @@
                 "label": "Treatment Slot",
                 "description": "Place a patient card here to allocate treatment.",
                 "required": {
-                    "patient": 1
+                    "patient": 1,
+                    "treatthecausenotthesymptom": 1
                 }
             },
             "multiple": true

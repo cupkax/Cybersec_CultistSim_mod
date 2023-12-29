@@ -76,6 +76,14 @@
             "isAspect": true
         },
         {
+            "id": "regret",
+            "isAspect": true
+        },
+        {
+            "id": "thief",
+            "isAspect": true
+        },
+        {
             "id": "duty",
             "isAspect": true
         },
@@ -89,6 +97,11 @@
         },
         {
             "id": "moneysolveseverything",
+            "isAspect": true,
+            "isHidden": true
+        },
+        {
+            "id": "treatthecausenotthesymptom",
             "isAspect": true,
             "isHidden": true
         },

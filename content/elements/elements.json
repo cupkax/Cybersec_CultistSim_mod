@@ -245,45 +245,61 @@
             "decayTo": "cybersec.scenario.email.thief.deadchild",
             "label": "A Thief's Dilemma",
             "description": " <margin=5em> <align=center><#FF0000>'...My child is sick. <page> It pains me to resort to thievery.<page> But if I had to choose...'</color> </align></margin>",
-            "unique": true,
             "aspects": {
-                "moneysolveseverything": 1
-            },
-            "slots": [
-                {
-                    "id": "sickchild.measure",
-                    "label": "",
-                    "description": "",
-                    "required": {
-                        "hospitalfunds": 1
-                    }
-                }
-            ]
+                "moneysolveseverything": 1,
+                "treatthecausenotthesymptom": 1
+            }
         },
         {
             "id": "cybersec.scenario.email.thief.deadchild",
             "icon": "location.cemetery",
             "label": "The child has passed away",
-            "description": "You were too late. Did you make the right choice?"
+            "description": "You were too late. Did you make the right choice?",
+            "aspects": {
+                "regret": 1
+            },
+            "unique": true
         },
         {
             "id": "cybersec.scenario.email.thief.drugaddict",
             "label": "An Irresistable Craving",
             "icon": "ingredientforged",
-            "description": " <margin=10em> <align=center><#FF0000>'Just... ...One... ...More... ...Hit'</color> </align></margin>",
-            "unique": true,
+            "lifetime": 15,
+            "description": " <margin=10em> <align=center><#FF0000>'Just... ...Once... ...More... ...And... ...Not Again'</color> </align></margin>",
+            "decayTo": "cybersec.scenario.email.thief.deadaddict",
             "aspects": {
                 "moneysolveseverything": 1,
-                "medicalresourcesolution": 1
+                "treatthecausenotthesymptom": 1
             }
         },
         {
-            "id": "cybersec.scenario.thief",
-            "icon": "thief",
+            "id": "cybersec.scenario.email.thief.deadaddict",
+            "icon": "location.cemetery",
+            "label": "Once too many",
+            "description": "They took the wrong path. Did you too?",
+            "aspects": {
+                "regret": 1
+            },
+            "unique": true
+        },
+        {
+            "id": "cybersec.scenario.thief1",
+            "icon": "thief1",
+            "label": "Thief",
+            "description": "I can look for answers or should I make an example?",
+            "aspects": {
+                "scenario": 1,
+                "thief": 1
+            }
+        },
+        {
+            "id": "cybersec.scenario.thief2",
+            "icon": "thief2",
             "label": "A thief",
             "description": "A thief among us",
             "aspects": {
-                "scenario": 1
+                "scenario": 1,
+                "thief": 1
             }
         }
     ]
