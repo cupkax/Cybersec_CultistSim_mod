@@ -15,16 +15,19 @@
             }
         },
         {
-            "id": "converse",
-            "icon": "converse",
-            "label": "Talk With Someone",
-            "description": "Talk to them or at them",
+            "id": "enquire",
+            "icon": "enquire",
+            "label": "Enquire",
+            "description": "Speak with someone or look for things",
             "slot": {
-                "id": "converse.slot",
-                "label": "Speak To Whom?",
-                "description": "Who should I speak to?",
+                "id": "enquire.slot",
+                "label": " ",
+                "description": " ",
                 "required": {
-                    "cantalk": 1
+                    "cantalk": 1,
+                    "scenario": 1,
+                    "moneysolveseverything": 1,
+                    "medicalresourcesolution": 1
                 }
             }
         },
@@ -93,22 +96,6 @@
             "icon": "spawnerer_icon",
             "label": "Spawns Patients",
             "description": "A patient is coming"
-        },
-        {
-            "id": "cybersec.investigate",
-            "icon": "investigate",
-            "label": "Investigate a phenomena or a situation",
-            "description": " ",
-            "slot": {
-                "id": "cybersec.investigate.slot",
-                "label": "What to investiate?",
-                "description": "Place a patient card here to start an investigation.",
-                "required": {
-                    "scenario": 1,
-                    "moneysolveseverything": 1,
-                    "medicalresourcesolution": 1
-                }
-            }
         },
         {
             "id": "cybersec.usehopsitalmoney",

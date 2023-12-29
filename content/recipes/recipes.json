@@ -23,12 +23,12 @@
         },
         {
             "id": "talk.people",
-            "actionId": "converse",
+            "actionId": "enquire",
             "warmup": 2
         },
         {
             "id": "talk.receptionist",
-            "actionId": "converse",
+            "actionId": "enquire",
             "requirements": {
                 "pregame.receptionist": 1
             },
@@ -136,25 +136,8 @@
                 },
                 {
                     "id": "createtask"
-                },
-                {
-                    "id": "scenario.investiate"
                 }
             ]
-        },
-        {
-            "id": "scenario.investiate",
-            "label": "Investigating",
-            "warmup": 1,
-            "description": "Investigating.",
-            "actionId": "cybersec.investigate",
-            "movements": {
-                "~/tabletop": [
-                    {
-                        "filter": "*"
-                    }
-                ]
-            }
         },
         {
             "id": "treat.patient",
@@ -414,7 +397,7 @@
             "requirements": {
                 "cybersec.scenario.thief": 1
             },
-            "actionId": "cybersec.investigate",
+            "actionId": "enquire",
             "deckeffects": {
                 "cybersec.deck.thiefscenarios": 1
             },
@@ -458,7 +441,7 @@
             "signalEndingFlavour": "Melancholy",
             "signalimportantloop": true,
             "warmup": 10,
-            "actionId": "cybersec.investigate",
+            "actionId": "enquire",
             "requirements": {
                 "moneysolveseverything": 1,
                 "hospitalfunds": 1
