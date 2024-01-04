@@ -115,8 +115,7 @@
                 "statusemployeemorale": 1,
                 "statushospitalreputation": 1,
                 "statushospitalmortality": 0,
-                "cybersec.scenario.thief1": 1,
-                "cybersec.scenario.thief2": 1
+                "cybersec.scenario.thief1": 1
             },
             "rootEffects": {
                 "medicalthiefscenariotrigger": 1,
@@ -538,7 +537,7 @@
             }
         },
         {
-            "id": "solveacrimewithmoney",
+            "id": "resolution.solveacrimewithmoney",
             "label": "Money Solves everything",
             "startdescription": "Use money to resolve a situation",
             "description": "Use money to resolve a situation",
@@ -558,18 +557,15 @@
             }
         },
         {
-            "id": "averylongtreatment",
+            "id": "resolution.averylongtreatment",
             "label": "A Very Long Treatment",
-            "startdescription": "I can treat them and I would be treating for a long time",
+            "startdescription": "I can treat them and I would be treating for a long time.",
             "description": "The ailment is cured, I think... I think it was worth it.",
             "craftable": true,
             "signalEndingFlavour": "Grand",
             "signalimportantloop": true,
             "warmup": 60,
             "actionId": "cybersec.treat",
-            "tablereqs": {
-                "medicalresources": 3
-            },
             "requirements": {
                 "treatthecausenotthesymptom": 1
             },
