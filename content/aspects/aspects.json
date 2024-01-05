@@ -56,6 +56,10 @@
             "isAspect": true
         },
         {
+            "id": "resolution",
+            "isAspect": true
+        },
+        {
             "id": "patient",
             "isAspect": true
         },
@@ -72,7 +76,11 @@
             "isAspect": true
         },
         {
-            "id": "scenario",
+            "id": "scenario.thief",
+            "isAspect": true
+        },
+        {
+            "id": "scenario.email",
             "isAspect": true
         },
         {
@@ -93,6 +101,10 @@
         },
         {
             "id": "email",
+            "isAspect": true
+        },
+        {
+            "id": "logs",
             "isAspect": true
         },
         {
