@@ -288,7 +288,7 @@
             "movements": {
                 "~/tabletop": [
                     {
-                        "filter": "[dailythings] || [scenario]"
+                        "filter": "[dailythings] || [scenario.email] ||[scenario.thief]"
                     }
                 ]
             },
@@ -518,7 +518,8 @@
             "actionId": "sometasking",
             "requirements": {
                 "read": 1,
-                "dailytask": 1
+                "dailythings": 1,
+                "email": 1
             },
             "slots": [
                 {
@@ -540,7 +541,9 @@
             "warmup": 15,
             "actionId": "sometasking",
             "requirements": {
-                "read": 1
+                "read": 1,
+                "dailythings": 1,
+                "logs": 1
             },
             "slots": [
                 {
@@ -559,7 +562,7 @@
             "id": "resolution.solveacrimewithmoney",
             "label": "Money Solves everything",
             "startdescription": "Use money to resolve a situation",
-            "description": "Use money to resolve a situation",
+            "description": "Maybe I can pay them off",
             "craftable": true,
             "burnimage": "moneysolveseverything",
             "signalEndingFlavour": "Melancholy",
@@ -626,7 +629,7 @@
             "effects": {
                 "treatthecausenotthesymptom": -1,
                 "reputation": 10,
-                "morale": 5
+                "hospitalfunds": 5
             }
         },
         {
@@ -643,13 +646,13 @@
             "warmup": 30,
             "actionId": "travelling",
             "effects": {
-                "morale": 2,
+                "reputation": 2,
                 "cybersec.scenario.email.thief.deadchild": -1
             }
         },
         {
             "id": "scenario.readingemail",
-            "label": "Reading Faulty Email",
+            "label": "Reading An Email",
             "craftable": true,
             "warmup": 15,
             "actionId": "sometasking",
@@ -683,7 +686,7 @@
             "id": "temp.scenario.ransomware.start",
             "label": "A ransomware attack",
             "warmup": 1,
-            "actionId": "cybersec.stophospital",
+            "actionId": "cybersec.slowdownhospital",
             "linked": [
                 {
                     "id": "scenario.ransomware.start"
@@ -695,7 +698,8 @@
             "label": "A ransomware attack",
             "description": "I need a way to find a way stop this.",
             "signalimportantloop": true,
-            "warmup": 10,
+            "signalEndingFlavour": "Pale",
+            "warmup": 20,
             "haltverb": {
                 "cybersec.treat": 1
             },
@@ -715,14 +719,6 @@
                         "cybersecurityresources": 1,
                         "hospitalfunds": 1
                     }
-                },
-                {
-                    "id": "scenario.ransomware.cybersecslot3",
-                    "label": "Measures",
-                    "required": {
-                        "cybersecurityresources": 1,
-                        "hospitalfunds": 1
-                    }
                 }
             ],
             "actionId": "cybersec.slowdownhospital",
@@ -733,51 +729,37 @@
             ],
             "alt": [
                 {
-                    "id": "scenario.ransomware.stop.afterstart"
+                    "id": "scenario.ransomware.stop.afterstart.resolution"
                 }
             ]
         },
         {
             "id": "scenario.ransomware.stop.immediate",
-            "label": "A long and strenuous task.",
-            "haltverb": {
-                "cybersec.stophospital": 1
-            },
-            "deleteverb": {
-                "cybersec.stophospital": 1
+            "label": "A quick eye.",
+            "effects": {
+                "scenario.read.email": -1,
+                "cybersecurityresources": -1
             },
             "requirements": {
                 "defence": 1
-            },
-            "warmup": 30
+            }
         },
         {
-            "id": "scenario.ransomware.stop.afterstart.resolution.defence",
+            "id": "scenario.ransomware.stop.afterstart.resolution",
             "label": "A long and strenuous task.",
+            "description": "Finally, it's over at a hefty cost",
             "requirements": {
-                "defence": 3
+                "physicalresource": 2
             },
-            "haltverb": {
-                "cybersec.stophospital": 1
+            "effects": {
+                "physicalresource": -2
             },
             "deleteverb": {
-                "cybersec.stophospital": 1
-            },
-            "warmup": 60
-        },
-        {
-            "id": "scenario.ransomware.stop.afterstart.resolution.money",
-            "label": "A long and strenuous task.",
-            "requirements": {
-                "hospitalfunds": 3
+                "cybersec.slowdownhospital": 1
             },
             "haltverb": {
-                "cybersec.stophospital": 1
-            },
-            "deleteverb": {
-                "cybersec.stophospital": 1
-            },
-            "warmup": 15
+                "cybersec.slowdownhospital": 1
+            }
         }
     ]
 }

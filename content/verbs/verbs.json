@@ -10,7 +10,8 @@
                 "label": "Go Where?",
                 "description": "I need a direction.",
                 "required": {
-                    "place": 1
+                    "place": 1,
+                    "regret": 1
                 }
             }
         },
@@ -25,7 +26,7 @@
                 "description": " ",
                 "required": {
                     "cantalk": 1,
-                    "scenario": 1,
+                    "scenario.thief": 1,
                     "moneysolveseverything": 1
                 }
             }
@@ -42,7 +43,8 @@
                 "required": {
                     "dailythings": 1,
                     "hospitalfunds": 1,
-                    "scenario.read.email": 1
+                    "scenario.read.email": 1,
+                    "beverage": 1
                 }
             }
         },
@@ -106,10 +108,11 @@
             "description": "A patient is coming"
         },
         {
-            "id": "cybersec.stophospital",
+            "id": "cybersec.slowdownhospital",
             "icon": "",
             "label": "Hospital Stopped",
-            "description": "All hospital functionalities disabled"
+            "description": "All hospital functionalities disabled",
+            "spontaneous": true
         }
     ]
 }
