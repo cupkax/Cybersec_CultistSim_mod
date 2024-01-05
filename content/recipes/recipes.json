@@ -115,7 +115,7 @@
                 "statusemployeemorale": 1,
                 "statushospitalreputation": 1,
                 "statushospitalmortality": 0,
-                "cybersec.scenario.thief1": 1
+                "scenario.read.email": 1
             },
             "rootEffects": {
                 "medicalthiefscenariotrigger": 1,
@@ -517,8 +517,18 @@
             "warmup": 15,
             "actionId": "sometasking",
             "requirements": {
-                "read": 1
+                "read": 1,
+                "dailytask": 1
             },
+            "slots": [
+                {
+                    "id": "email.cybersecslot",
+                    "label": "Check?",
+                    "required": {
+                        "cybersecurityresources": 1
+                    }
+                }
+            ],
             "effects": {
                 "dailytask.read.email": -1
             }
@@ -532,6 +542,15 @@
             "requirements": {
                 "read": 1
             },
+            "slots": [
+                {
+                    "id": "logs.cybersecslot",
+                    "label": "Check?",
+                    "required": {
+                        "cybersecurityresources": 1
+                    }
+                }
+            ],
             "effects": {
                 "dailytask.read.logs": -1
             }
@@ -627,6 +646,138 @@
                 "morale": 2,
                 "cybersec.scenario.email.thief.deadchild": -1
             }
+        },
+        {
+            "id": "scenario.readingemail",
+            "label": "Reading Faulty Email",
+            "craftable": true,
+            "warmup": 15,
+            "actionId": "sometasking",
+            "requirements": {
+                "scenario.read.email": 1
+            },
+            "slots": [
+                {
+                    "id": "email.cybersecslot",
+                    "label": "Check?",
+                    "required": {
+                        "cybersecurityresources": 1
+                    }
+                }
+            ],
+            "effects": {
+                "scenario.read.email": -1
+            },
+            "inductions": [
+                {
+                    "id": "temp.scenario.ransomware.start"
+                }
+            ],
+            "alt": [
+                {
+                    "id": "scenario.ransomware.stop.immediate"
+                }
+            ]
+        },
+        {
+            "id": "temp.scenario.ransomware.start",
+            "label": "A ransomware attack",
+            "warmup": 1,
+            "actionId": "cybersec.stophospital",
+            "linked": [
+                {
+                    "id": "scenario.ransomware.start"
+                }
+            ]
+        },
+        {
+            "id": "scenario.ransomware.start",
+            "label": "A ransomware attack",
+            "description": "I need a way to find a way stop this.",
+            "signalimportantloop": true,
+            "warmup": 10,
+            "haltverb": {
+                "cybersec.treat": 1
+            },
+            "slots": [
+                {
+                    "id": "scenario.ransomware.cybersecslot1",
+                    "label": "Measures",
+                    "required": {
+                        "cybersecurityresources": 1,
+                        "hospitalfunds": 1
+                    }
+                },
+                {
+                    "id": "scenario.ransomware.cybersecslot2",
+                    "label": "Measures",
+                    "required": {
+                        "cybersecurityresources": 1,
+                        "hospitalfunds": 1
+                    }
+                },
+                {
+                    "id": "scenario.ransomware.cybersecslot3",
+                    "label": "Measures",
+                    "required": {
+                        "cybersecurityresources": 1,
+                        "hospitalfunds": 1
+                    }
+                }
+            ],
+            "actionId": "cybersec.slowdownhospital",
+            "linked": [
+                {
+                    "id": "scenario.ransomware.start"
+                }
+            ],
+            "alt": [
+                {
+                    "id": "scenario.ransomware.stop.afterstart"
+                }
+            ]
+        },
+        {
+            "id": "scenario.ransomware.stop.immediate",
+            "label": "A long and strenuous task.",
+            "haltverb": {
+                "cybersec.stophospital": 1
+            },
+            "deleteverb": {
+                "cybersec.stophospital": 1
+            },
+            "requirements": {
+                "defence": 1
+            },
+            "warmup": 30
+        },
+        {
+            "id": "scenario.ransomware.stop.afterstart.resolution.defence",
+            "label": "A long and strenuous task.",
+            "requirements": {
+                "defence": 3
+            },
+            "haltverb": {
+                "cybersec.stophospital": 1
+            },
+            "deleteverb": {
+                "cybersec.stophospital": 1
+            },
+            "warmup": 60
+        },
+        {
+            "id": "scenario.ransomware.stop.afterstart.resolution.money",
+            "label": "A long and strenuous task.",
+            "requirements": {
+                "hospitalfunds": 3
+            },
+            "haltverb": {
+                "cybersec.stophospital": 1
+            },
+            "deleteverb": {
+                "cybersec.stophospital": 1
+            },
+            "warmup": 15
         }
     ]
 }
