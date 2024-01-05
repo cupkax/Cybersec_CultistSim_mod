@@ -26,9 +26,11 @@
             "spec": [
                 "dailytask.read.email",
                 "dailytask.drink.coffee",
+                "scenario.read.email",
                 "dailytask.read.logs",
                 "dailytask.read.email",
                 "cybersec.scenario.thief1",
+                "scenario.read.email",
                 "dailytask.read.email",
                 "dailytask.drink.coffe",
                 "dailytask.read.logs",

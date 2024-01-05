@@ -41,7 +41,8 @@
                 "description": "What needs my attention?",
                 "required": {
                     "dailythings": 1,
-                    "hospitalfunds": 1
+                    "hospitalfunds": 1,
+                    "scenario.read.email": 1
                 }
             }
         },
@@ -103,6 +104,12 @@
             "icon": "investigate_icon",
             "label": "Perform an investigate",
             "description": "A patient is coming"
+        },
+        {
+            "id": "cybersec.stophospital",
+            "icon": "",
+            "label": "Hospital Stopped",
+            "description": "All hospital functionalities disabled"
         }
     ]
 }

@@ -159,23 +159,29 @@
         {
             "id": "dailytask.read.email",
             "label": "An Email",
+            "description": "A virtual scroll revealing tasks and directives.",
             "icon": "email",
             "aspects": {
                 "read": 1,
                 "email": 1,
                 "dailythings": 1
-            },
-            "lifetime": 15
+            }
+        },
+        {
+            "id": "scenario.read.email",
+            "label": "An Email",
+            "description": "A virtual scroll revealing tasks and directives.",
+            "icon": "scenarioemail"
         },
         {
             "id": "dailytask.read.logs",
             "label": "Logs",
+            "description": "Virtual chronicles, methodically recording the silent whispers and traversing the hidden pathways.",
             "icon": "logs",
             "aspects": {
                 "read": 1,
                 "dailythings": 1
-            },
-            "lifetime": 15
+            }
         },
         {
             "id": "reqbeveragetostarttheday"
@@ -188,32 +194,6 @@
             "aspects": {
                 "scenario": 1
             }
-        },
-        {
-            "id": "investigatescenario",
-            "icon": "investigatescenario",
-            "label": "Investigate",
-            "aspects": {
-                "duty": 1
-            },
-            "xtriggers": {
-                "investigateexhausted": [
-                    {
-                        "morpheffect": "transform",
-                        "id": "investigatescenario.exhausted"
-                    }
-                ]
-            }
-        },
-        {
-            "id": "investigatescenario.exhausted",
-            "icon": "passion",
-            "label": "Investigate (Exhausted)",
-            "aspects": {
-                "investigateexhausted": 1
-            },
-            "decayTo": "investigateexhausted",
-            "lifetime": 30
         },
         {
             "id": "cybersec.scenario.email.thief.rockandahardplace",
