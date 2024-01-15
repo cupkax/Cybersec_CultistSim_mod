@@ -161,13 +161,23 @@
                 "read": 1,
                 "email": 1,
                 "dailythings": 1
-            }
+            },
+            "lifetime": 15
         },
         {
             "id": "scenario.read.email",
             "label": "An Email",
             "description": "A virtual scroll revealing tasks and directives.",
             "icon": "scenarioemail",
+            "aspects": {
+                "scenario.email": 1
+            },
+            "lifetime": 30,
+            "decayTo": "scenario.ransomwarethreat"
+        },
+        {
+            "id": "scenario.ransomwarethreat",
+            "label": "An ignored email led to a ransom threat",
             "aspects": {
                 "scenario.email": 1
             }
@@ -181,7 +191,8 @@
                 "read": 1,
                 "logs": 1,
                 "dailythings": 1
-            }
+            },
+            "lifetime": 15
         },
         {
             "id": "reqbeveragetostarttheday"
@@ -285,7 +296,7 @@
         {
             "id": "cybersec.scenario.thief1",
             "icon": "thief1",
-            "label": "Thief",
+            "label": "A Thief!",
             "description": "I can look for answers or should I make an example?",
             "aspects": {
                 "scenario.thief": 1,
@@ -295,7 +306,7 @@
         {
             "id": "cybersec.scenario.thief2",
             "icon": "thief2",
-            "label": "A thief",
+            "label": "A Thief!",
             "description": "A thief among us",
             "aspects": {
                 "scenario.thief": 1,
