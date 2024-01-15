@@ -113,6 +113,10 @@
             "label": "Hospital Stopped",
             "description": "All hospital functionalities disabled",
             "spontaneous": true
+        },
+        {
+            "id": "cybersec.deletethief",
+            "spontaneous": true
         }
     ]
 }

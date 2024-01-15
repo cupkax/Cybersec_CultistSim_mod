@@ -114,8 +114,7 @@
                 "medicalresources": 3,
                 "statusemployeemorale": 1,
                 "statushospitalreputation": 1,
-                "statushospitalmortality": 0,
-                "scenario.read.email": 1
+                "statushospitalmortality": 0
             },
             "rootEffects": {
                 "medicalthiefscenariotrigger": 1,
@@ -304,6 +303,9 @@
                 },
                 {
                     "id": "temp.medicalthiefscenario2"
+                },
+                {
+                    "id": "temp.scenario.ransomware.startfromboard"
                 }
             ]
         },
@@ -490,7 +492,21 @@
             "warmup": 5,
             "rootEffects": {
                 "medicalthiefscenariotrigger": -1
-            }
+            },
+            "actionId": "cybersec.deletethief",
+            "effects": {
+                "defence": -1
+            },
+            "slots": [
+                {
+                    "id": "deletethieffromboard",
+                    "required": {
+                        "thief": 1
+                    },
+                    "greedy": true,
+                    "consumes": true
+                }
+            ]
         },
         {
             "id": "investigatetheft",
@@ -686,6 +702,32 @@
             "id": "temp.scenario.ransomware.start",
             "label": "A ransomware attack",
             "warmup": 1,
+            "actionId": "cybersec.slowdownhospital",
+            "linked": [
+                {
+                    "id": "scenario.ransomware.start"
+                }
+            ]
+        },
+        {
+            "id": "temp.scenario.ransomware.startfromboard",
+            "label": "A ransomware attack",
+            "description": "A ransomware attack is happening",
+            "tablereqs": {
+                "scenario.ransomwarethreat": 1
+            },
+            "warmup": 10,
+            "slots": [
+                {
+                    "id": "ransomware.startfromboard.slot",
+                    "label": "",
+                    "required": {
+                        "scenario.ransomwarethreat": 1
+                    },
+                    "consumes": true,
+                    "greedy": true
+                }
+            ],
             "actionId": "cybersec.slowdownhospital",
             "linked": [
                 {
