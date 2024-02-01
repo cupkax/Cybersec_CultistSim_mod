@@ -121,6 +121,10 @@
             "id": "medicalresourcesolution",
             "isAspect": true,
             "isHidden": true
+        },
+        {
+            "id": "missedtask",
+            "isAspect": true
         }
     ]
 }

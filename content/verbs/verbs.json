@@ -76,7 +76,8 @@
                 "description": "Place a patient card here to allocate treatment.",
                 "required": {
                     "patient": 1,
-                    "treatthecausenotthesymptom": 1
+                    "treatthecausenotthesymptom": 1,
+                    "dailtytask.read.task.missed": 1
                 }
             },
             "multiple": true

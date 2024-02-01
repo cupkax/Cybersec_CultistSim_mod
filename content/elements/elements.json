@@ -5,10 +5,8 @@
             "label": "Morale",
             "description": "Indicates the overall spirit and motivation of your hospital staff.",
             "icon": "morale",
-            "unique": true,
             "aspects": {
-                "status": 1,
-                "morale": 10
+                "status": 1
             }
         },
         {
@@ -16,10 +14,8 @@
             "label": "Reputation",
             "description": "Reflects the public's trust in your hospital.",
             "icon": "reputation",
-            "unique": true,
             "aspects": {
-                "status": 1,
-                "reputation": 10
+                "status": 1
             }
         },
         {
@@ -27,7 +23,6 @@
             "label": "Mortality Rate",
             "description": "Indicates the overall mortality rate of the hospital.",
             "icon": "mortality",
-            "unique": true,
             "aspects": {
                 "status": 1,
                 "mortality": 0
@@ -66,6 +61,24 @@
             "aspects": {
                 "physicalresource": 1,
                 "resolution": 1
+            }
+        },
+        {
+            "id": "patient.lowrisk.tutorial",
+            "label": "Low Risk Patient",
+            "icon": "patient_low_icon",
+            "aspects": {
+                "patient": 1,
+                "lowrisk": 1
+            }
+        },
+        {
+            "id": "patient.highrisk.tutorial",
+            "label": "High Risk Patient",
+            "icon": "patient_high_icon",
+            "aspects": {
+                "patient": 1,
+                "highrisk": 1
             }
         },
         {
