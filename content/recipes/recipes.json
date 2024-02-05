@@ -56,7 +56,7 @@
                 "myoffice": -1,
                 "pregame.drink.coffee": 1
             },
-            "rootEffects": {
+            "rootAdd": {
                 "reqbeveragetostarttheday": 1
             },
             "warmup": 10,
@@ -76,14 +76,16 @@
             "actionId": "sometasking",
             "requirements": {
                 "pregame.drink.coffee": 1,
-                "dailytask.drink.coffee": 1
+                "dailytask.drink.coffee": 1,
+                "dailytask.drink.coffee.tutorial": 1
             },
             "craftable": true,
-            "label": "Cup of Coffee",
-            "description": "I need a cup",
-            "warmup": 10,
+            "label": "Coffee Break",
+            "description": "A well needed break",
+            "warmup": 15,
             "effects": {
-                "dailytask.drink.coffee": -1
+                "dailytask.drink.coffee": -1,
+                "dailytask.drink.coffee.tutorial": -1
             },
             "alt": [
                 {
@@ -104,68 +106,171 @@
             "grandReqs": {
                 "root/reqbeveragetostarttheday": 1
             },
-            "deleteverb": {
-                "travelling": 1
-            },
             "effects": {
-                "pregame.drink.coffee": -1,
-                "cybersecurityresources": 2,
-                "hospitalfunds": 1,
-                "medicalresources": 3,
-                "statusemployeemorale": 1,
-                "statushospitalreputation": 1,
-                "statushospitalmortality": 0
+                "pregame.drink.coffee": -1
             },
-            "rootEffects": {
-                "medicalthiefscenariotrigger": 1,
+            "rootAdd": {
                 "reqbeveragetostarttheday": -1
-            },
-            "movements": {
-                "~/tabletop": "status"
             },
             "actionId": "sometasking",
             "inductions": [
                 {
-                    "id": "treat.patient"
-                },
-                {
-                    "id": "treat.patient1"
-                },
-                {
-                    "id": "temp.spawnsickpatients"
-                },
-                {
-                    "id": "temp.createtask"
+                    "id": "createtask.tutorial"
                 }
             ]
+        },
+        {
+            "id": "createtask.tutorial",
+            "label": "Something to do",
+            "warmup": 10,
+            "description": "Work and break",
+            "actionId": "cybersec.scenariogeneratorer.tutorial",
+            "deckeffects": {
+                "cybersec.deck.dailytasks.tutorial": 1
+            },
+            "movements": {
+                "~/tabletop": [
+                    {
+                        "filter": "[dailythings]"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "scenario.readingemail.tutorial",
+            "label": "Reading An Email",
+            "craftable": true,
+            "warmup": 15,
+            "actionId": "sometasking",
+            "requirements": {
+                "scenario.read.email": 1
+            },
+            "slots": [
+                {
+                    "id": "email.cybersecslot",
+                    "label": "Check?",
+                    "required": {
+                        "cybersecurityresources": 1
+                    }
+                }
+            ],
+            "effects": {
+                "scenario.read.email": -1
+            }
+        },
+        {
+            "id": "spawnsickpatients.tutorial",
+            "label": "A patient in bound",
+            "warmup": 5,
+            "description": "A person with an ailment",
+            "actionId": "cybersec.spawnerer.tutorial",
+            "deckeffects": {
+                "cybersec.deck.patients.tutorial": 1
+            },
+            "movements": {
+                "~/tabletop": [
+                    {
+                        "filter": "[patient]"
+                    }
+                ]
+            }
         },
         {
             "id": "treat.patient",
             "label": "Treat Patient",
             "warmup": 1,
             "description": "Allocate the necessary medical resources to treat the patient.",
-            "actionId": "cybersec.treat",
-            "movements": {
-                "~/tabletop": [
-                    {
-                        "filter": "*"
-                    }
-                ]
-            }
+            "actionId": "cybersec.treat"
         },
         {
             "id": "treat.patient1",
             "label": "Treat Patient",
             "warmup": 1,
             "description": "Allocate the necessary medical resources to treat the patient.",
+            "actionId": "cybersec.treat"
+        },
+        {
+            "id": "treatlowriskpatienttutorial",
+            "label": "Treat Low-Risk Patient",
+            "warmup": 20,
+            "craftable": true,
+            "description": "Allocate the necessary medical resources to treat the patient.",
+            "requirements": {
+                "patient.lowrisk.tutorial": 1
+            },
+            "tablereqs": {
+                "medicalresources": 1
+            },
+            "effects": {
+                "hospitalfunds": 1,
+                "patient.lowrisk.tutorial": -1
+            },
             "actionId": "cybersec.treat",
-            "movements": {
-                "~/tabletop": [
-                    {
-                        "filter": "*"
-                    }
-                ]
-            }
+            "slots": [
+                {
+                    "id": "usemedicalresource",
+                    "label": "Medical Resources",
+                    "description": "Need resources to treat",
+                    "required": {
+                        "medicalresources": 1
+                    },
+                    "actionId": "cybersec.treat",
+                    "greedy": true,
+                    "consumes": true
+                }
+            ],
+            "inductions": [
+                {
+                    "id": "spawnsickpatients.tutorial"
+                }
+            ]
+        },
+        {
+            "id": "treathighriskpatienttutorial",
+            "label": "Treat Low-Risk Patient",
+            "warmup": 30,
+            "craftable": true,
+            "description": "Allocate the necessary medical resources to treat the patient.",
+            "requirements": {
+                "patient.highrisk.tutorial": 1
+            },
+            "tablereqs": {
+                "medicalresources": 2
+            },
+            "effects": {
+                "hospitalfunds": 1,
+                "patient.highrisk.tutorial": -1
+            },
+            "actionId": "cybersec.treat",
+            "slots": [
+                {
+                    "id": "usemedicalresource",
+                    "label": "Medical Resources",
+                    "description": "Need resources to treat",
+                    "required": {
+                        "medicalresources": 1
+                    },
+                    "actionId": "cybersec.treat",
+                    "greedy": true,
+                    "consumes": true
+                },
+                {
+                    "id": "usemedicalresourceagain",
+                    "label": "Medical Resources",
+                    "description": "Need resources to treat",
+                    "required": {
+                        "medicalresources": 1
+                    },
+                    "actionId": "cybersec.treat",
+                    "consumes": true,
+                    "greedy": true
+                }
+            ],
+            "inductions": [
+                {
+                    "id": "temp.spawnsickpatients"
+                }
+            ]
         },
         {
             "id": "treatlowriskpatient",
@@ -252,17 +357,6 @@
             ]
         },
         {
-            "id": "patientrestored",
-            "warmup": 5,
-            "requirements": {
-                "medicalresources": 1
-            },
-            "effects": {
-                "hospitalfunds": 2
-            },
-            "actionId": "cybersec.healthypatientbilled"
-        },
-        {
             "id": "temp.createtask",
             "label": "Something to do",
             "warmup": 1,
@@ -274,6 +368,19 @@
                     "chance": 100
                 }
             ]
+        },
+        {
+            "id": "patientstillill",
+            "warmup": 5,
+            "signalEndingFlavour": "Melancholy",
+            "signalimportantloop": true,
+            "requirements": {
+                "dailtytask.read.task.missed": 1
+            },
+            "effects": {
+                "dailtytask.read.task.missed": -1
+            },
+            "actionId": "cybersec.stillillpatient"
         },
         {
             "id": "createtask",
@@ -490,7 +597,7 @@
                 "defence": 1
             },
             "warmup": 5,
-            "rootEffects": {
+            "rootAdd": {
                 "medicalthiefscenariotrigger": -1
             },
             "actionId": "cybersec.deletethief",
@@ -548,30 +655,9 @@
             ],
             "effects": {
                 "dailytask.read.email": -1
-            }
-        },
-        {
-            "id": "readinglogs",
-            "label": "Going Through The Logs",
-            "craftable": true,
-            "warmup": 15,
-            "actionId": "sometasking",
-            "requirements": {
-                "read": 1,
-                "dailythings": 1,
-                "logs": 1
             },
-            "slots": [
-                {
-                    "id": "logs.cybersecslot",
-                    "label": "Check?",
-                    "required": {
-                        "cybersecurityresources": 1
-                    }
-                }
-            ],
-            "effects": {
-                "dailytask.read.logs": -1
+            "deckeffects": {
+                "cybersec.deck.dailytasks": 1
             }
         },
         {

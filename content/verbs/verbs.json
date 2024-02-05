@@ -55,6 +55,13 @@
             "description": "A patient is coming"
         },
         {
+            "id": "cybersec.scenariogeneratorer.tutorial",
+            "icon": "cybersec.scenariogeneratorer",
+            "label": "Things to do",
+            "description": "A patient is coming",
+            "spontaneous": true
+        },
+        {
             "id": "traderesources",
             "label": "Trade supplies for money",
             "icon": "trader",
@@ -76,7 +83,8 @@
                 "description": "Place a patient card here to allocate treatment.",
                 "required": {
                     "patient": 1,
-                    "treatthecausenotthesymptom": 1
+                    "treatthecausenotthesymptom": 1,
+                    "dailtytask.read.task.missed": 1
                 }
             },
             "multiple": true
@@ -94,6 +102,13 @@
             "description": "Stealing resource description.",
             "spontaneous": true,
             "maxUnique": 1
+        },
+        {
+            "id": "cybersec.spawnerer.tutorial",
+            "icon": "spawnerer_icon",
+            "label": "Spawns Patients",
+            "description": "A patient is coming",
+            "spontaneous": true
         },
         {
             "id": "cybersec.spawnerer",

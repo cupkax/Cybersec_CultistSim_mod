@@ -104,10 +104,6 @@
             "isAspect": true
         },
         {
-            "id": "logs",
-            "isAspect": true
-        },
-        {
             "id": "moneysolveseverything",
             "isAspect": true,
             "isHidden": true
@@ -121,6 +117,10 @@
             "id": "medicalresourcesolution",
             "isAspect": true,
             "isHidden": true
+        },
+        {
+            "id": "missedtask",
+            "isAspect": true
         }
     ]
 }
