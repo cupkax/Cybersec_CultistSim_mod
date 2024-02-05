@@ -76,14 +76,16 @@
             "actionId": "sometasking",
             "requirements": {
                 "pregame.drink.coffee": 1,
-                "dailytask.drink.coffee": 1
+                "dailytask.drink.coffee": 1,
+                "dailytask.drink.coffee.tutorial": 1
             },
             "craftable": true,
-            "label": "Cup of Coffee",
-            "description": "I need a cup",
-            "warmup": 10,
+            "label": "Coffee Break",
+            "description": "A well needed break",
+            "warmup": 15,
             "effects": {
-                "dailytask.drink.coffee": -1
+                "dailytask.drink.coffee": -1,
+                "dailytask.drink.coffee.tutorial": -1
             },
             "alt": [
                 {
@@ -104,17 +106,8 @@
             "grandReqs": {
                 "root/reqbeveragetostarttheday": 1
             },
-            "deleteverb": {
-                "travelling": 1
-            },
             "effects": {
-                "pregame.drink.coffee": -1,
-                "cybersecurityresources": 2,
-                "hospitalfunds": 1,
-                "medicalresources": 3,
-                "statusemployeemorale": 1,
-                "statushospitalreputation": 1,
-                "statushospitalmortality": 0
+                "pregame.drink.coffee": -1
             },
             "rootAdd": {
                 "reqbeveragetostarttheday": -1
@@ -122,9 +115,65 @@
             "actionId": "sometasking",
             "inductions": [
                 {
-                    "id": "treat.patient"
+                    "id": "createtask.tutorial"
                 }
             ]
+        },
+        {
+            "id": "createtask.tutorial",
+            "label": "Something to do",
+            "warmup": 10,
+            "description": "Work and break",
+            "actionId": "cybersec.scenariogeneratorer.tutorial",
+            "deckeffects": {
+                "cybersec.deck.dailytasks.tutorial": 1
+            },
+            "movements": {
+                "~/tabletop": [
+                    {
+                        "filter": "[dailythings]"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "scenario.readingemail.tutorial",
+            "label": "Reading An Email",
+            "craftable": true,
+            "warmup": 15,
+            "actionId": "sometasking",
+            "requirements": {
+                "scenario.read.email": 1
+            },
+            "slots": [
+                {
+                    "id": "email.cybersecslot",
+                    "label": "Check?",
+                    "required": {
+                        "cybersecurityresources": 1
+                    }
+                }
+            ],
+            "effects": {
+                "scenario.read.email": -1
+            }
+        },
+        {
+            "id": "spawnsickpatients.tutorial",
+            "label": "A patient in bound",
+            "warmup": 5,
+            "description": "A person with an ailment",
+            "actionId": "cybersec.spawnerer.tutorial",
+            "deckeffects": {
+                "cybersec.deck.patients.tutorial": 1
+            },
+            "movements": {
+                "~/tabletop": [
+                    {
+                        "filter": "[patient]"
+                    }
+                ]
+            }
         },
         {
             "id": "treat.patient",
@@ -163,18 +212,16 @@
                     "label": "Medical Resources",
                     "description": "Need resources to treat",
                     "required": {
-                        "medicalresources": 1,
-                        "dailtytask.read.task.missed": 1
+                        "medicalresources": 1
                     },
                     "actionId": "cybersec.treat",
                     "greedy": true,
                     "consumes": true
                 }
             ],
-            "alt": [
+            "inductions": [
                 {
-                    "id": "patientstillill",
-                    "chance": 100
+                    "id": "spawnsickpatients.tutorial"
                 }
             ]
         },
@@ -608,30 +655,9 @@
             ],
             "effects": {
                 "dailytask.read.email": -1
-            }
-        },
-        {
-            "id": "readinglogs",
-            "label": "Going Through The Logs",
-            "craftable": true,
-            "warmup": 15,
-            "actionId": "sometasking",
-            "requirements": {
-                "read": 1,
-                "dailythings": 1,
-                "logs": 1
             },
-            "slots": [
-                {
-                    "id": "logs.cybersecslot",
-                    "label": "Check?",
-                    "required": {
-                        "cybersecurityresources": 1
-                    }
-                }
-            ],
-            "effects": {
-                "dailytask.read.logs": -1
+            "deckeffects": {
+                "cybersec.deck.dailytasks": 1
             }
         },
         {
