@@ -3,7 +3,7 @@
         {
             "id": "statusemployeemorale",
             "label": "Morale",
-            "description": "Indicates the overall spirit and motivation of your hospital staff.",
+            "description": "Resilience amid care and mortality.",
             "icon": "morale",
             "aspects": {
                 "status": 1
@@ -12,7 +12,7 @@
         {
             "id": "statushospitalreputation",
             "label": "Reputation",
-            "description": "Reflects the public's trust in your hospital.",
+            "description": "Public trust built on the foundation of compassionate, skilled healthcare delivery.",
             "icon": "reputation",
             "aspects": {
                 "status": 1
@@ -21,7 +21,7 @@
         {
             "id": "statushospitalmortality",
             "label": "Mortality Rate",
-            "description": "Indicates the overall mortality rate of the hospital.",
+            "description": "Life and death intersect, navigated with care in sacred spaces.",
             "icon": "mortality",
             "aspects": {
                 "status": 1,
@@ -31,7 +31,7 @@
         {
             "id": "medicalresources",
             "label": "Medical Resources",
-            "description": "Vital supplies and equipment necessary for patient care. Proper management is essential to maintain hospital operations.",
+            "description": "Vital resources, the backbone of care, strategically managed for healing.",
             "icon": "medicalresources",
             "aspects": {
                 "physicalresource": 1
@@ -56,7 +56,7 @@
         {
             "id": "hospitalfunds",
             "label": "Hospital Funds",
-            "description": "The financial resources available to the hospital. Funds are required for everything from purchasing medical supplies to paying staff salaries.",
+            "description": "Crucial financial lifelines, wisely managed to ensure enduring care.",
             "icon": "hospitalfunds",
             "aspects": {
                 "physicalresource": 1,
@@ -142,6 +142,7 @@
             "id": "myoffice",
             "icon": "myoffice",
             "label": "My Office",
+            "description": "A secluded sanctuary lined with shelves of tomes and artifacts of accomplishment, where destinies are crafted from keystrokes under the soft hum of machinery and the watchful eyes of framed achievements.",
             "aspects": {
                 "place": 1
             }
@@ -149,6 +150,7 @@
         {
             "id": "pregame.drink.coffee",
             "label": "Coffee",
+            "description": "A dark elixir, brewed with meticulous care, offering both solace and awakenings to the desk-bound wage seeker.",
             "icon": "coffee",
             "aspects": {
                 "beverage": 1,
@@ -158,12 +160,13 @@
         {
             "id": "dailytask.drink.coffee",
             "label": "Coffee",
+            "description": "A dark elixir, brewed with meticulous care, offering both solace and awakenings to the desk-bound wage seeker.",
             "icon": "coffee",
             "aspects": {
                 "beverage": 1,
                 "dailythings": 1
             },
-            "lifetime": 10
+            "lifetime": 20
         },
         {
             "id": "dailytask.read.email",
@@ -175,7 +178,25 @@
                 "email": 1,
                 "dailythings": 1
             },
-            "lifetime": 15
+            "lifetime": 20
+        },
+        {
+            "id": "dailytask.email.misc1",
+            "label": "A Spam advert",
+            "description": "Useless spam adverts. Nothing to do here",
+            "lifetime": 10
+        },
+        {
+            "id": "dailytask.email.misc2",
+            "label": "Meeting Notice",
+            "description": "Conference meeting I need to attend in a few days",
+            "lifetime": 10
+        },
+        {
+            "id": "dailytask.email.misc3",
+            "label": "Lost and Found",
+            "description": "Some things left on desk are to be collected from the security",
+            "lifetime": 10
         },
         {
             "id": "scenario.read.email",
@@ -185,7 +206,7 @@
             "aspects": {
                 "scenario.email": 1
             },
-            "lifetime": 30,
+            "lifetime": 20,
             "decayTo": "scenario.ransomwarethreat"
         },
         {
@@ -194,18 +215,6 @@
             "aspects": {
                 "scenario.email": 1
             }
-        },
-        {
-            "id": "dailytask.read.logs",
-            "label": "Logs",
-            "description": "Virtual chronicles, methodically recording the silent whispers and traversing the hidden pathways.",
-            "icon": "logs",
-            "aspects": {
-                "read": 1,
-                "logs": 1,
-                "dailythings": 1
-            },
-            "lifetime": 15
         },
         {
             "id": "reqbeveragetostarttheday"

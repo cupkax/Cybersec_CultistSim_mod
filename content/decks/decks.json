@@ -1,6 +1,23 @@
 {
     "decks": [
         {
+            "id": "cybersec.deck.dailytasks.tutorial",
+            "resetonexhaustion": true,
+            "spec": [
+                "dailytask.read.email",
+                "dailytask.drink.coffee.tutorial",
+                "dailytask.read.email",
+                "scenario.read.email.tutorial"
+            ]
+        },
+        {
+            "id": "cybersec.deck.patients.tutorial",
+            "spec": [
+                "patient.lowrisk.tutorial",
+                "patient.highrisk.tutorial"
+            ]
+        },
+        {
             "id": "cybersec.deck.patients",
             "resetonexhaustion": true,
             "spec": [
@@ -27,19 +44,27 @@
                 "dailytask.read.email",
                 "dailytask.drink.coffee",
                 "scenario.read.email",
-                "dailytask.read.logs",
                 "dailytask.read.email",
                 "cybersec.scenario.thief1",
                 "scenario.read.email",
                 "scenario.read.email",
                 "dailytask.read.email",
                 "dailytask.drink.coffe",
-                "dailytask.read.logs",
                 "scenario.read.email",
                 "dailytask.drink.coffe",
                 "cybersec.scenario.thief2",
                 "dailytask.read.email"
             ]
+        },
+        {
+            "id": "cybersec.deck.dailtytask.email.content",
+            "resetonexhaustion": true,
+            "spec": [
+                "dailytask.email.misc1",
+                "dailytask.email.misc2",
+                "dailytask.email.misc3"
+            ],
+            "shuffleAfterDraw": true
         }
     ]
 }

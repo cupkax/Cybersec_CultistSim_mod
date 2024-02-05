@@ -104,10 +104,6 @@
             "isAspect": true
         },
         {
-            "id": "logs",
-            "isAspect": true
-        },
-        {
             "id": "moneysolveseverything",
             "isAspect": true,
             "isHidden": true
