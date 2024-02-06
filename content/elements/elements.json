@@ -169,6 +169,34 @@
             "lifetime": 20
         },
         {
+            "id": "scenario.checkpatients.email",
+            "label": "Patient Checkup Email",
+            "icon": "scenarioemail",
+            "description": "I need to check upon the patients",
+            "aspects": {
+                "scenario.read.email": 1
+            },
+            "unique": true
+        },
+        {
+            "id": "scenario.clinic",
+            "label": "The Clinic",
+            "icon": "thehospital",
+            "description": "I need to check upon the patients",
+            "aspects": {
+                "place": 1
+            }
+        },
+        {
+            "id": "dailytask.complain",
+            "label": "A Complain",
+            "description": "A complain made against you for not doing the job.",
+            "icon": "email",
+            "aspects": {
+                "complain": 1
+            }
+        },
+        {
             "id": "dailytask.read.email",
             "label": "An Email",
             "description": "A virtual scroll revealing tasks and directives.",
@@ -178,7 +206,19 @@
                 "email": 1,
                 "dailythings": 1
             },
-            "lifetime": 20
+            "lifetime": 20,
+            "decayTo": "dailytask.complain"
+        },
+        {
+            "id": "dailytask.read.email.tutorial",
+            "label": "An Email",
+            "description": "A virtual scroll revealing tasks and directives.",
+            "icon": "email",
+            "aspects": {
+                "read": 1,
+                "email": 1,
+                "dailythings": 1
+            }
         },
         {
             "id": "dailytask.email.misc1",

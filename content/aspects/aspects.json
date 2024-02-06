@@ -104,6 +104,10 @@
             "isAspect": true
         },
         {
+            "id": "complain",
+            "isAspect": true
+        },
+        {
             "id": "moneysolveseverything",
             "isAspect": true,
             "isHidden": true

@@ -76,16 +76,14 @@
             "actionId": "sometasking",
             "requirements": {
                 "pregame.drink.coffee": 1,
-                "dailytask.drink.coffee": 1,
-                "dailytask.drink.coffee.tutorial": 1
+                "dailytask.drink.coffee": 1
             },
             "craftable": true,
             "label": "Coffee Break",
             "description": "A well needed break",
             "warmup": 15,
             "effects": {
-                "dailytask.drink.coffee": -1,
-                "dailytask.drink.coffee.tutorial": -1
+                "dailytask.drink.coffee": -1
             },
             "alt": [
                 {
@@ -134,38 +132,82 @@
                         "filter": "[dailythings]"
                     }
                 ]
-            }
-        },
-        {
-            "id": "scenario.readingemail.tutorial",
-            "label": "Reading An Email",
-            "craftable": true,
-            "warmup": 15,
-            "actionId": "sometasking",
-            "requirements": {
-                "scenario.read.email": 1
             },
-            "slots": [
+            "maxexecutions": 5,
+            "linked": [
                 {
-                    "id": "email.cybersecslot",
-                    "label": "Check?",
-                    "required": {
-                        "cybersecurityresources": 1
-                    }
+                    "id": "createtask.tutorial"
                 }
-            ],
-            "effects": {
-                "scenario.read.email": -1
-            }
+            ]
         },
         {
-            "id": "spawnsickpatients.tutorial",
+            "id": "readingemail.checkpatients",
+            "actionid": "sometasking",
+            "requirements": {
+                "scenario.checkpatients.email": 1
+            },
+            "description": "I have been asked to go check up on the patients today.",
+            "craftable": true,
+            "label": "Reading An Email",
+            "effects": {
+                "scenario.clinic": 1,
+                "scenario.checkpatients.email": -1
+            },
+            "warmup": 10
+        },
+        {
+            "id": "travel.tocheckpatients",
+            "actionid": "travelling",
+            "requirements": {
+                "scenario.clinic": 1
+            },
+            "craftable": true,
+            "label": "Time to check on the patients",
+            "description": "Time to get to work.",
+            "effects": {
+                "scenario.clinic": -1,
+                "hospitalfunds": 1,
+                "medicalresources": 1
+            },
+            "warmup": 10,
+            "inductions": [
+                {
+                    "id": "spawnsickpatients.tutorial.lowrisk"
+                },
+                {
+                    "id": "treat.patient"
+                },
+                {
+                    "id": "treat.patient1"
+                }
+            ]
+        },
+        {
+            "id": "spawnsickpatients.tutorial.lowrisk",
             "label": "A patient in bound",
             "warmup": 5,
             "description": "A person with an ailment",
             "actionId": "cybersec.spawnerer.tutorial",
-            "deckeffects": {
-                "cybersec.deck.patients.tutorial": 1
+            "effects": {
+                "patient.lowrisk.tutorial": 1
+            },
+            "movements": {
+                "~/tabletop": [
+                    {
+                        "filter": "[patient]"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "spawnsickpatients.tutorial.highrisk",
+            "label": "A patient in bound",
+            "warmup": 5,
+            "startdescription": "I need to make sure I have enough resources, if not they need to be bought",
+            "description": "A person with an ailment",
+            "actionId": "cybersec.spawnerer.tutorial",
+            "effects": {
+                "patient.highrisk.tutorial": 1
             },
             "movements": {
                 "~/tabletop": [
@@ -221,7 +263,7 @@
             ],
             "inductions": [
                 {
-                    "id": "spawnsickpatients.tutorial"
+                    "id": "spawnsickpatients.tutorial.highrisk"
                 }
             ]
         },
@@ -277,6 +319,7 @@
             "label": "Treat Low-Risk Patient",
             "warmup": 20,
             "craftable": true,
+            "startdescription": "I need to make sure I have enough resources, if not they need to be bought",
             "description": "Allocate the necessary medical resources to treat the patient.",
             "requirements": {
                 "lowrisk": 1
@@ -314,6 +357,7 @@
             "label": "Treat High-Risk Patient",
             "warmup": 30,
             "craftable": true,
+            "startdescription": "I need to make sure I have enough resources, if not they need to be bought",
             "description": "Allocate the necessary medical resources to treat the patient.",
             "requirements": {
                 "highrisk": 1
@@ -657,7 +701,7 @@
                 "dailytask.read.email": -1
             },
             "deckeffects": {
-                "cybersec.deck.dailytasks": 1
+                "cybersec.deck.dailtytask.email.content": 1
             }
         },
         {
