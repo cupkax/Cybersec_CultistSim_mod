@@ -105,7 +105,9 @@
                 "root/reqbeveragetostarttheday": 1
             },
             "effects": {
-                "pregame.drink.coffee": -1
+                "pregame.drink.coffee": -1,
+                "statusemployeemorale": 5,
+                "statushospitalreputation": 5
             },
             "rootAdd": {
                 "reqbeveragetostarttheday": -1
@@ -148,12 +150,17 @@
             },
             "description": "I have been asked to go check up on the patients today.",
             "craftable": true,
-            "label": "Reading An Email",
+            "label": "Patient Checkup Notification",
             "effects": {
                 "scenario.clinic": 1,
                 "scenario.checkpatients.email": -1
             },
-            "warmup": 10
+            "warmup": 10,
+            "inductions": [
+                {
+                    "id": "createtask"
+                }
+            ]
         },
         {
             "id": "travel.tocheckpatients",
@@ -315,9 +322,9 @@
             ]
         },
         {
-            "id": "treatlowriskpatient",
+            "id": "treatlowriskpatientlowmorale",
             "label": "Treat Low-Risk Patient",
-            "warmup": 20,
+            "warmup": 30,
             "craftable": true,
             "startdescription": "I need to make sure I have enough resources, if not they need to be bought",
             "description": "Allocate the necessary medical resources to treat the patient.",
@@ -326,6 +333,9 @@
             },
             "tablereqs": {
                 "medicalresources": 1
+            },
+            "extantreqs": {
+                "statusemployeemorale": -5
             },
             "effects": {
                 "hospitalfunds": 1,
@@ -344,11 +354,40 @@
                     "greedy": true,
                     "consumes": true
                 }
-            ],
-            "inductions": [
+            ]
+        },
+        {
+            "id": "treatlowriskpatienthighmorale",
+            "label": "Treat Low-Risk Patient",
+            "warmup": 20,
+            "craftable": true,
+            "startdescription": "I need to make sure I have enough resources, if not they need to be bought",
+            "description": "Allocate the necessary medical resources to treat the patient.",
+            "requirements": {
+                "lowrisk": 1
+            },
+            "tablereqs": {
+                "medicalresources": 1
+            },
+            "extantreqs": {
+                "statusemployeemorale": 5
+            },
+            "effects": {
+                "hospitalfunds": 2,
+                "patient.lowrisk": -1
+            },
+            "actionId": "cybersec.treat",
+            "slots": [
                 {
-                    "id": "patientrestored",
-                    "chance": 100
+                    "id": "usemedicalresource",
+                    "label": "Medical Resources",
+                    "description": "Need resources to treat",
+                    "required": {
+                        "medicalresources": 1
+                    },
+                    "actionId": "cybersec.treat",
+                    "greedy": true,
+                    "consumes": true
                 }
             ]
         },
@@ -392,11 +431,6 @@
                     "actionId": "cybersec.treat",
                     "consumes": true,
                     "greedy": true
-                }
-            ],
-            "inductions": [
-                {
-                    "id": "patientrestored"
                 }
             ]
         },

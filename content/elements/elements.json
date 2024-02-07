@@ -2,6 +2,20 @@
     "elements": [
         {
             "id": "statusemployeemorale",
+            "overlays": [
+                {
+                    "image": "morale",
+                    "expression": "[statusemployeemorale] < 5",
+                    "grayscale": true,
+                    "layer": "base",
+                    "color": "#000000"
+                },
+                {
+                    "image": "hazard",
+                    "expression": "[statusemployeemorale] < 5",
+                    "layer": "top"
+                }
+            ],
             "label": "Morale",
             "description": "Resilience amid care and mortality.",
             "icon": "morale",
@@ -11,6 +25,20 @@
         },
         {
             "id": "statushospitalreputation",
+            "overlays": [
+                {
+                    "image": "reputation",
+                    "expression": "[statushospitalreputation] < 5",
+                    "grayscale": true,
+                    "layer": "base",
+                    "color": "#000000"
+                },
+                {
+                    "image": "hazard",
+                    "expression": "[statushospitalreputation] < 5",
+                    "layer": "top"
+                }
+            ],
             "label": "Reputation",
             "description": "Public trust built on the foundation of compassionate, skilled healthcare delivery.",
             "icon": "reputation",
