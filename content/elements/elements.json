@@ -2,6 +2,20 @@
     "elements": [
         {
             "id": "statusemployeemorale",
+            "overlays": [
+                {
+                    "image": "morale",
+                    "expression": "[statusemployeemorale] < 5",
+                    "grayscale": true,
+                    "layer": "base",
+                    "color": "#000000"
+                },
+                {
+                    "image": "hazard",
+                    "expression": "[statusemployeemorale] < 5",
+                    "layer": "top"
+                }
+            ],
             "label": "Morale",
             "description": "Resilience amid care and mortality.",
             "icon": "morale",
@@ -11,6 +25,20 @@
         },
         {
             "id": "statushospitalreputation",
+            "overlays": [
+                {
+                    "image": "reputation",
+                    "expression": "[statushospitalreputation] < 5",
+                    "grayscale": true,
+                    "layer": "base",
+                    "color": "#000000"
+                },
+                {
+                    "image": "hazard",
+                    "expression": "[statushospitalreputation] < 5",
+                    "layer": "top"
+                }
+            ],
             "label": "Reputation",
             "description": "Public trust built on the foundation of compassionate, skilled healthcare delivery.",
             "icon": "reputation",
@@ -169,6 +197,34 @@
             "lifetime": 20
         },
         {
+            "id": "scenario.checkpatients.email",
+            "label": "Patient Checkup Email",
+            "icon": "scenarioemail",
+            "description": "I need to check upon the patients",
+            "aspects": {
+                "scenario.read.email": 1
+            },
+            "unique": true
+        },
+        {
+            "id": "scenario.clinic",
+            "label": "The Clinic",
+            "icon": "thehospital",
+            "description": "I need to check upon the patients",
+            "aspects": {
+                "place": 1
+            }
+        },
+        {
+            "id": "dailytask.complain",
+            "label": "A Complain",
+            "description": "A complain made against you for not doing the job.",
+            "icon": "email",
+            "aspects": {
+                "complain": 1
+            }
+        },
+        {
             "id": "dailytask.read.email",
             "label": "An Email",
             "description": "A virtual scroll revealing tasks and directives.",
@@ -178,7 +234,19 @@
                 "email": 1,
                 "dailythings": 1
             },
-            "lifetime": 20
+            "lifetime": 20,
+            "decayTo": "dailytask.complain"
+        },
+        {
+            "id": "dailytask.read.email.tutorial",
+            "label": "An Email",
+            "description": "A virtual scroll revealing tasks and directives.",
+            "icon": "email",
+            "aspects": {
+                "read": 1,
+                "email": 1,
+                "dailythings": 1
+            }
         },
         {
             "id": "dailytask.email.misc1",

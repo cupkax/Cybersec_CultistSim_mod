@@ -5,9 +5,8 @@
             "resetonexhaustion": true,
             "spec": [
                 "dailytask.read.email",
-                "dailytask.drink.coffee.tutorial",
                 "dailytask.read.email",
-                "scenario.read.email.tutorial"
+                "scenario.checkpatients.email"
             ]
         },
         {
@@ -45,14 +44,12 @@
                 "dailytask.drink.coffee",
                 "scenario.read.email",
                 "dailytask.read.email",
-                "cybersec.scenario.thief1",
                 "scenario.read.email",
                 "scenario.read.email",
                 "dailytask.read.email",
                 "dailytask.drink.coffe",
                 "scenario.read.email",
                 "dailytask.drink.coffe",
-                "cybersec.scenario.thief2",
                 "dailytask.read.email"
             ]
         },
