@@ -13,10 +13,25 @@
         "pregame.thehospital": 1
       },
       "statusbarelements": [
-        "reputation",
-        "mortality",
-        "morale",
-        "hospitalfunds"
+        {
+          "icon": "morale",
+          "ids": "statusemployeemorale",
+          "styles": "colour_red_0"
+        },
+        {
+          "icon": "reputation",
+          "ids": "statushospitalreputation",
+          "styles": "colour_red_0"
+        },
+        {
+          "icon": "mortality",
+          "ids": "statushospitalmortality",
+          "styles": "colour_red_0"
+        },
+        {
+          "ids": "funds",
+          "styles": "colour_red_0"
+        }
       ]
     }
   ]
