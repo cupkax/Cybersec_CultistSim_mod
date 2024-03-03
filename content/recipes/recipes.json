@@ -186,6 +186,9 @@
                 },
                 {
                     "id": "treat.patient1"
+                },
+                {
+                    "id": "mortalityaffectsreputationandmorale.start"
                 }
             ]
         },
@@ -317,7 +320,7 @@
             ],
             "inductions": [
                 {
-                    "id": "temp.spawnsickpatients"
+                    "id": "temp.spawnsickpatientshighrep"
                 }
             ]
         },
@@ -448,6 +451,85 @@
             ]
         },
         {
+            "id": "mortalityaffectsreputationandmorale.start",
+            "label": "Hospital Reputation and Morale Affected",
+            "warmup": 10,
+            "tablereqs": {
+                "cybersec.corpse": 5
+            },
+            "rootAdd": {
+                "reqstartmortalitychecker": 1
+            },
+            "description": "Mortality is affecting your employee's morale and its reputation",
+            "actionId": "mortalitychecker",
+            "slots": [
+                {
+                    "id": "mortalitychecker.slot",
+                    "label": "Hospital Mortality",
+                    "required": {
+                        "cybersec.corpse": 1
+                    },
+                    "actionId": "mortalitychecker",
+                    "greedy": true,
+                    "consumes": true
+                },
+                {
+                    "id": "mortalitychecker.slot1",
+                    "label": "Hospital Reputation",
+                    "required": {
+                        "statushospitalreputation": 1,
+                        "statusemployeemorale": 1
+                    },
+                    "actionId": "mortalitychecker",
+                    "greedy": true,
+                    "consumes": true
+                }
+            ],
+            "linked": [
+                {
+                    "id": "mortalityaffectsreputationandmorale"
+                }
+            ]
+        },
+        {
+            "id": "mortalityaffectsreputationandmorale",
+            "label": "Hospital Reputation and Morale Affected",
+            "warmup": 10,
+            "description": "Mortality is affecting your employee's morale and its reputation",
+            "actionId": "mortalitychecker",
+            "grandReqs": {
+                "root/reqstartmortalitychecker": 1
+            },
+            "slots": [
+                {
+                    "id": "mortalitychecker.slot",
+                    "label": "Hospital Mortality",
+                    "required": {
+                        "cybersec.corpse": 1
+                    },
+                    "actionId": "mortalitychecker",
+                    "greedy": true,
+                    "consumes": true
+                },
+                {
+                    "id": "mortalitychecker.slot1",
+                    "label": "Hospital Reputation",
+                    "required": {
+                        "statushospitalreputation": 1,
+                        "statusemployeemorale": 1
+                    },
+                    "actionId": "mortalitychecker",
+                    "greedy": true,
+                    "consumes": true
+                }
+            ],
+            "linked": [
+                {
+                    "id": "mortalityaffectsreputationandmorale"
+                }
+            ]
+        },
+        {
             "id": "patientstillill",
             "warmup": 5,
             "signalEndingFlavour": "Melancholy",
@@ -491,30 +573,58 @@
                 },
                 {
                     "id": "temp.scenario.ransomware.startfromboard"
+                },
+                {
+                    "id": "mortalityaffectsreputationandmorale"
                 }
             ]
         },
         {
-            "id": "temp.spawnsickpatients",
+            "id": "temp.spawnsickpatientshighrep",
             "label": "A patient in bound",
+            "extantreqs": {
+                "statushospitalreputation": 4
+            },
             "warmup": 1,
             "description": "A person with an ailment",
-            "actionId": "cybersec.spawnerer",
+            "actionId": "cybersec.spawnerer.temp.high",
             "linked": [
                 {
-                    "id": "spawnsickpatients",
+                    "id": "spawnsickpatientshighrep",
                     "chance": 100
                 }
             ]
         },
         {
-            "id": "spawnsickpatients",
+            "id": "temp.spawnsickpatientslowrep",
+            "label": "A patient in bound",
+            "warmup": 1,
+            "description": "A person with an ailment",
+            "extantreqs": {
+                "statushospitalreputation": -4
+            },
+            "actionId": "cybersec.spawnerer.temp.low",
+            "linked": [
+                {
+                    "id": "spawnsickpatientslowrep",
+                    "chance": 100
+                }
+            ]
+        },
+        {
+            "id": "spawnsickpatientshighrep",
             "label": "A patient in bound",
             "warmup": 20,
             "description": "A person with an ailment",
-            "actionId": "cybersec.spawnerer",
+            "extantreqs": {
+                "statushospitalreputation": 4
+            },
+            "actionId": "cybersec.spawnerer1",
             "deckeffects": {
                 "cybersec.deck.patients": 1
+            },
+            "deleteverb": {
+                "cybersec.spawnerer1": 1
             },
             "movements": {
                 "~/tabletop": [
@@ -525,8 +635,45 @@
             },
             "linked": [
                 {
-                    "id": "spawnsickpatients",
-                    "chance": 100
+                    "id": "spawnsickpatientshighrep"
+                }
+            ],
+            "inductions": [
+                {
+                    "id": "temp.spawnsickpatientslowrep"
+                }
+            ]
+        },
+        {
+            "id": "spawnsickpatientslowrep",
+            "label": "A patient in bound",
+            "warmup": 35,
+            "description": "A person with an ailment",
+            "extantreqs": {
+                "statushospitalreputation": -4
+            },
+            "actionId": "cybersec.spawnerer2",
+            "deckeffects": {
+                "cybersec.deck.patients": 1
+            },
+            "deleteverb": {
+                "cybersec.spawnerer2": 1
+            },
+            "movements": {
+                "~/tabletop": [
+                    {
+                        "filter": "[patient]"
+                    }
+                ]
+            },
+            "linked": [
+                {
+                    "id": "spawnsickpatientslowrep"
+                }
+            ],
+            "inductions": [
+                {
+                    "id": "temp.spawnsickpatientshighrep"
                 }
             ]
         },

@@ -48,6 +48,23 @@
             }
         },
         {
+            "id": "mortalitychecker",
+            "label": "Routine Mortality Check",
+            "icon": "ascensionpowerb",
+            "slot": {
+                "id": "sometasking.slot",
+                "label": "The Task",
+                "description": "What needs my attention?",
+                "required": {
+                    "dailythings": 1,
+                    "hospitalfunds": 1,
+                    "scenario.read.email": 1,
+                    "beverage": 1
+                }
+            },
+            "maxUnique": 1
+        },
+        {
             "id": "cybersec.scenariogeneratorer",
             "icon": "cybersec.scenariogeneratorer",
             "label": "Things to do",
@@ -110,10 +127,30 @@
             "spontaneous": true
         },
         {
-            "id": "cybersec.spawnerer",
+            "id": "cybersec.spawnerer1",
             "icon": "spawnerer_icon",
             "label": "Spawns Patients",
             "description": "A patient is coming"
+        },
+        {
+            "id": "cybersec.spawnerer2",
+            "icon": "spawnerer_icon",
+            "label": "Spawns Patients",
+            "description": "A patient is coming"
+        },
+        {
+            "id": "cybersec.spawnerer.temp.low",
+            "icon": "spawnerer_icon",
+            "label": "Spawns Patients",
+            "description": "A patient is coming",
+            "spontaneous": true
+        },
+        {
+            "id": "cybersec.spawnerer.temp.high",
+            "icon": "spawnerer_icon",
+            "label": "Spawns Patients",
+            "description": "A patient is coming",
+            "spontaneous": true
         },
         {
             "id": "cybersec.usehopsitalmoney",
