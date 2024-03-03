@@ -134,7 +134,8 @@
         {
             "id": "cybersec.corpse",
             "label": "A Corpse",
-            "icon": "corpse_icon",
+            "description": "A reflection of your hospital mortality.",
+            "icon": "mortality",
             "aspects": {
                 "death": 1
             }
