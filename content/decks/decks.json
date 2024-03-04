@@ -41,16 +41,19 @@
             "resetonexhaustion": true,
             "spec": [
                 "dailytask.read.email",
+                "dailytask.drink.coffee",
                 "dailytask.read.email",
                 "dailytask.read.email",
-                "dailytask.read.email"
+                "dailytask.drink.coffee"
             ]
         },
         {
             "id": "cybersec.deck.dailtytask.email.content",
             "resetonexhaustion": true,
             "spec": [
-                "dailytask.email.spamadvert",
+                "dailytask.email.meetingnotice",
+                "dailytask.email.spam",
+                "dailytask.email.lostandfound",
                 "dailytask.email.meetingnotice",
                 "dailytask.email.lostandfound"
             ],

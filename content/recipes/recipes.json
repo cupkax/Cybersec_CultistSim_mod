@@ -78,7 +78,6 @@
             "id": "dailytasks.drink",
             "actionId": "sometasking",
             "requirements": {
-                "pregame.drink.coffee": 1,
                 "dailytask.drink.coffee": 1
             },
             "craftable": true,
@@ -87,12 +86,7 @@
             "warmup": 15,
             "effects": {
                 "dailytask.drink.coffee": -1
-            },
-            "alt": [
-                {
-                    "id": "daystart"
-                }
-            ]
+            }
         },
         {
             "id": "daystart",
@@ -914,15 +908,6 @@
                 "dailythings": 1,
                 "email": 1
             },
-            "slots": [
-                {
-                    "id": "email.cybersecslot",
-                    "label": "Check?",
-                    "required": {
-                        "cybersecurityresources": 1
-                    }
-                }
-            ],
             "effects": {
                 "dailytask.read.email": -1
             },
@@ -935,19 +920,10 @@
             "label": "Send notice regarding lost items",
             "craftable": true,
             "warmup": 15,
-            "actionId": "doingtaskstorecoverstats",
+            "actionId": "sometasking",
             "requirements": {
-                "routinerecoveryjobs": 1
+                "dailytask.email.lostandfound": 1
             },
-            "slots": [
-                {
-                    "id": "adminroutinejobs.slot",
-                    "label": "Check?",
-                    "required": {
-                        "routinerecoveryjobs": 1
-                    }
-                }
-            ],
             "effects": {
                 "dailytask.email.lostandfound": -1,
                 "statusemployeemorale": 1
@@ -958,19 +934,10 @@
             "label": "Attend a PR meeting",
             "craftable": true,
             "warmup": 15,
-            "actionId": "doingtaskstorecoverstats",
+            "actionId": "sometasking",
             "requirements": {
-                "routinerecoveryjobs": 1
+                "dailytask.email.meetingnotice": 1
             },
-            "slots": [
-                {
-                    "id": "adminroutinejobs.slot",
-                    "label": "Check?",
-                    "required": {
-                        "routinerecoveryjobs": 1
-                    }
-                }
-            ],
             "effects": {
                 "dailytask.email.meetingnotice": -1,
                 "statushospitalreputation": 1
@@ -978,25 +945,15 @@
         },
         {
             "id": "adminroutinejobs.spamadvert",
-            "label": "Attend a PR meeting",
+            "label": "Just getting in the way",
             "craftable": true,
             "warmup": 15,
-            "actionId": "doingtaskstorecoverstats",
+            "actionId": "sometasking",
             "requirements": {
-                "routinerecoveryjobs": 1
+                "dailytask.email.spam": 1
             },
-            "slots": [
-                {
-                    "id": "adminroutinejobs.slot",
-                    "label": "Check?",
-                    "required": {
-                        "routinerecoveryjobs": 1
-                    }
-                }
-            ],
             "effects": {
-                "dailytask.email.meetingnotice": -1,
-                "statushospitalreputation": 1
+                "dailytask.email.spam": -1
             }
         },
         {

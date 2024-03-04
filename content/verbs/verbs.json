@@ -43,7 +43,8 @@
                     "dailythings": 1,
                     "hospitalfunds": 1,
                     "scenario.read.email": 1,
-                    "beverage": 1
+                    "beverage": 1,
+                    "routinerecoveryjobs": 1
                 }
             }
         },

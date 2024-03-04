@@ -235,7 +235,7 @@
                 "email": 1,
                 "dailythings": 1
             },
-            "lifetime": 20,
+            "lifetime": 30,
             "decayTo": "dailytask.complain"
         },
         {
@@ -250,31 +250,31 @@
             }
         },
         {
-            "id": "dailytask.email.",
+            "id": "dailytask.email.spam",
             "label": "A Spam advert",
             "description": "Useless spam adverts. Nothing to do here",
             "aspects": {
                 "routinerecoveryjobs": 1
             },
-            "lifetime": 10
+            "lifetime": 15
         },
         {
             "id": "dailytask.email.meetingnotice",
             "label": "Meeting Notice",
-            "description": "Conference meeting I need to attend in a few days",
+            "description": "A PR meeting I need to attend to maintain hospital's reputation",
             "aspects": {
                 "routinerecoveryjobs": 1
             },
-            "lifetime": 10
+            "lifetime": 15
         },
         {
             "id": "dailytask.email.lostandfound",
             "label": "Lost and Found",
-            "description": "Some things left on desk are to be collected from the security",
+            "description": "Some things left on desk.",
             "aspects": {
                 "routinerecoveryjobs": 1
             },
-            "lifetime": 10
+            "lifetime": 15
         },
         {
             "id": "scenario.read.email",
