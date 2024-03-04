@@ -125,6 +125,10 @@
         {
             "id": "missedtask",
             "isAspect": true
+        },
+        {
+            "id": "routinerecoveryjobs",
+            "isAspect": true
         }
     ]
 }

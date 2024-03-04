@@ -134,7 +134,8 @@
         {
             "id": "cybersec.corpse",
             "label": "A Corpse",
-            "icon": "corpse_icon",
+            "description": "A reflection of your hospital mortality.",
+            "icon": "mortality",
             "aspects": {
                 "death": 1
             }
@@ -234,7 +235,7 @@
                 "email": 1,
                 "dailythings": 1
             },
-            "lifetime": 20,
+            "lifetime": 25,
             "decayTo": "dailytask.complain"
         },
         {
@@ -249,22 +250,31 @@
             }
         },
         {
-            "id": "dailytask.email.misc1",
+            "id": "dailytask.email.spam",
             "label": "A Spam advert",
             "description": "Useless spam adverts. Nothing to do here",
-            "lifetime": 10
+            "aspects": {
+                "routinerecoveryjobs": 1
+            },
+            "lifetime": 15
         },
         {
-            "id": "dailytask.email.misc2",
+            "id": "dailytask.email.meetingnotice",
             "label": "Meeting Notice",
-            "description": "Conference meeting I need to attend in a few days",
-            "lifetime": 10
+            "description": "A PR meeting I need to attend to maintain hospital's reputation",
+            "aspects": {
+                "routinerecoveryjobs": 1
+            },
+            "lifetime": 15
         },
         {
-            "id": "dailytask.email.misc3",
+            "id": "dailytask.email.lostandfound",
             "label": "Lost and Found",
-            "description": "Some things left on desk are to be collected from the security",
-            "lifetime": 10
+            "description": "Some things left on desk.",
+            "aspects": {
+                "routinerecoveryjobs": 1
+            },
+            "lifetime": 15
         },
         {
             "id": "scenario.read.email",

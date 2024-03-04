@@ -43,9 +43,42 @@
                     "dailythings": 1,
                     "hospitalfunds": 1,
                     "scenario.read.email": 1,
-                    "beverage": 1
+                    "beverage": 1,
+                    "routinerecoveryjobs": 1
                 }
             }
+        },
+        {
+            "id": "doingtaskstorecoverstats",
+            "icon": "sometasking",
+            "label": "Day To Day Tasks",
+            "slot": {
+                "id": "sometasking.slot",
+                "label": "The Task",
+                "description": "What needs my attention?",
+                "required": {
+                    "routinerecoveryjobs": 1
+                }
+            }
+        },
+        {
+            "id": "mortalitychecker",
+            "label": "Too Much Death",
+            "description": "Your reputation and morale are taking the toll",
+            "icon": "mortalitychecker_icon",
+            "slot": {
+                "id": "sometasking.slot",
+                "label": "The Task",
+                "description": "What needs my attention?",
+                "required": {
+                    "dailythings": 1,
+                    "hospitalfunds": 1,
+                    "scenario.read.email": 1,
+                    "beverage": 1
+                }
+            },
+            "spontaneous": true,
+            "maxUnique": 1
         },
         {
             "id": "cybersec.scenariogeneratorer",
@@ -110,10 +143,30 @@
             "spontaneous": true
         },
         {
-            "id": "cybersec.spawnerer",
-            "icon": "spawnerer_icon",
+            "id": "cybersec.spawnerer1",
+            "icon": "spawnerer_high_icon",
             "label": "Spawns Patients",
             "description": "A patient is coming"
+        },
+        {
+            "id": "cybersec.spawnerer2",
+            "icon": "spawnerer_low_icon",
+            "label": "Spawns Patients",
+            "description": "A patient is coming"
+        },
+        {
+            "id": "cybersec.spawnerer.temp.low",
+            "icon": "spawnerer_low_icon",
+            "label": "Spawns Patients",
+            "description": "A patient is coming",
+            "spontaneous": true
+        },
+        {
+            "id": "cybersec.spawnerer.temp.high",
+            "icon": "spawnerer_high_icon",
+            "label": "Spawns Patients",
+            "description": "A patient is coming",
+            "spontaneous": true
         },
         {
             "id": "cybersec.usehopsitalmoney",
