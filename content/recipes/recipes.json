@@ -322,7 +322,7 @@
             "label": "Treat Low-Risk Patient",
             "warmup": 25,
             "craftable": true,
-            "startdescription": "I need to make sure I have enough resources, if not they need to be bought",
+            "startdescription": "Your employees' morale is affecting patient care.",
             "description": "Your employees' morale is affecting patient care.",
             "signalEndingFlavour": "Melancholy",
             "requirements": {
@@ -389,7 +389,7 @@
             "label": "Treat High-Risk Patient",
             "warmup": 35,
             "craftable": true,
-            "startdescription": "Low Morale: I need to make sure I have enough resources, if not they need to be bought",
+            "startdescription": "Your employees' morale is affecting patient care.",
             "description": "Your employees' morale is affecting patient care.",
             "signalEndingFlavour": "Melancholy",
             "requirements": {

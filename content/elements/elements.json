@@ -235,7 +235,7 @@
                 "email": 1,
                 "dailythings": 1
             },
-            "lifetime": 30,
+            "lifetime": 25,
             "decayTo": "dailytask.complain"
         },
         {
