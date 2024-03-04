@@ -40,6 +40,9 @@
             "effects": {
                 "myoffice": 1,
                 "pregame.receptionist": -1
+            },
+            "deleteverb": {
+                "enquire": 1
             }
         },
         {
@@ -173,7 +176,6 @@
             "description": "Time to get to work.",
             "effects": {
                 "scenario.clinic": -1,
-                "hospitalfunds": 1,
                 "medicalresources": 1
             },
             "warmup": 10,
@@ -186,9 +188,6 @@
                 },
                 {
                     "id": "treat.patient1"
-                },
-                {
-                    "id": "mortalityaffectsreputationandmorale.start"
                 }
             ]
         },
@@ -327,18 +326,17 @@
         {
             "id": "treatlowriskpatientlowmorale",
             "label": "Treat Low-Risk Patient",
-            "warmup": 30,
+            "warmup": 25,
             "craftable": true,
             "startdescription": "I need to make sure I have enough resources, if not they need to be bought",
-            "description": "Allocate the necessary medical resources to treat the patient.",
+            "description": "Your employees' morale is affecting patient care.",
+            "signalEndingFlavour": "Melancholy",
             "requirements": {
                 "lowrisk": 1
             },
             "tablereqs": {
+                "statusemployeemorale": -5,
                 "medicalresources": 1
-            },
-            "extantreqs": {
-                "statusemployeemorale": -5
             },
             "effects": {
                 "hospitalfunds": 1,
@@ -370,13 +368,11 @@
                 "lowrisk": 1
             },
             "tablereqs": {
+                "statusemployeemorale": 5,
                 "medicalresources": 1
             },
-            "extantreqs": {
-                "statusemployeemorale": 5
-            },
             "effects": {
-                "hospitalfunds": 2,
+                "hospitalfunds": 1,
                 "patient.lowrisk": -1
             },
             "actionId": "cybersec.treat",
@@ -395,7 +391,52 @@
             ]
         },
         {
-            "id": "treathighriskpatient",
+            "id": "treathighriskpatientlowmorale",
+            "label": "Treat High-Risk Patient",
+            "warmup": 35,
+            "craftable": true,
+            "startdescription": "Low Morale: I need to make sure I have enough resources, if not they need to be bought",
+            "description": "Your employees' morale is affecting patient care.",
+            "signalEndingFlavour": "Melancholy",
+            "requirements": {
+                "highrisk": 1
+            },
+            "tablereqs": {
+                "statusemployeemorale": -5,
+                "medicalresources": 2
+            },
+            "effects": {
+                "hospitalfunds": 1,
+                "patient.highrisk": -1
+            },
+            "actionId": "cybersec.treat",
+            "slots": [
+                {
+                    "id": "usemedicalresource",
+                    "label": "Medical Resources",
+                    "description": "Need resources to treat",
+                    "required": {
+                        "medicalresources": 1
+                    },
+                    "actionId": "cybersec.treat",
+                    "consumes": true,
+                    "greedy": true
+                },
+                {
+                    "id": "usemedicalresourceagain",
+                    "label": "Medical Resources",
+                    "description": "Need resources to treat",
+                    "required": {
+                        "medicalresources": 1
+                    },
+                    "actionId": "cybersec.treat",
+                    "consumes": true,
+                    "greedy": true
+                }
+            ]
+        },
+        {
+            "id": "treathighriskpatienthighmorale",
             "label": "Treat High-Risk Patient",
             "warmup": 30,
             "craftable": true,
@@ -405,6 +446,7 @@
                 "highrisk": 1
             },
             "tablereqs": {
+                "statusemployeemorale": 5,
                 "medicalresources": 2
             },
             "effects": {
@@ -460,7 +502,7 @@
             "rootAdd": {
                 "reqstartmortalitychecker": 1
             },
-            "description": "Mortality is affecting your employee's morale and its reputation",
+            "description": "Your reputation and morale are taking the toll",
             "actionId": "mortalitychecker",
             "slots": [
                 {
@@ -494,8 +536,11 @@
         {
             "id": "mortalityaffectsreputationandmorale",
             "label": "Hospital Reputation and Morale Affected",
-            "warmup": 10,
-            "description": "Mortality is affecting your employee's morale and its reputation",
+            "warmup": 30,
+            "description": "Too much death. Your reputation and morale are taking the toll",
+            "tablereqs": {
+                "cybersec.corpse": 1
+            },
             "actionId": "mortalitychecker",
             "grandReqs": {
                 "root/reqstartmortalitychecker": 1
@@ -575,13 +620,13 @@
                     "id": "temp.scenario.ransomware.startfromboard"
                 },
                 {
-                    "id": "mortalityaffectsreputationandmorale"
+                    "id": "mortalityaffectsreputationandmorale.start"
                 }
             ]
         },
         {
             "id": "temp.spawnsickpatientshighrep",
-            "label": "A patient in bound",
+            "label": "Several patients in bound",
             "extantreqs": {
                 "statushospitalreputation": 4
             },
@@ -599,7 +644,7 @@
             "id": "temp.spawnsickpatientslowrep",
             "label": "A patient in bound",
             "warmup": 1,
-            "description": "A person with an ailment",
+            "description": "<margin=10em> <align=center><#FF0000>'Your reputation preceeds you. The patients are fewer and farther apart.</align></margin>",
             "extantreqs": {
                 "statushospitalreputation": -4
             },
@@ -883,6 +928,75 @@
             },
             "deckeffects": {
                 "cybersec.deck.dailtytask.email.content": 1
+            }
+        },
+        {
+            "id": "adminroutinejobs.lostandfound",
+            "label": "Send notice regarding lost items",
+            "craftable": true,
+            "warmup": 15,
+            "actionId": "doingtaskstorecoverstats",
+            "requirements": {
+                "routinerecoveryjobs": 1
+            },
+            "slots": [
+                {
+                    "id": "adminroutinejobs.slot",
+                    "label": "Check?",
+                    "required": {
+                        "routinerecoveryjobs": 1
+                    }
+                }
+            ],
+            "effects": {
+                "dailytask.email.lostandfound": -1,
+                "statusemployeemorale": 1
+            }
+        },
+        {
+            "id": "adminroutinejobs.meetingnotice",
+            "label": "Attend a PR meeting",
+            "craftable": true,
+            "warmup": 15,
+            "actionId": "doingtaskstorecoverstats",
+            "requirements": {
+                "routinerecoveryjobs": 1
+            },
+            "slots": [
+                {
+                    "id": "adminroutinejobs.slot",
+                    "label": "Check?",
+                    "required": {
+                        "routinerecoveryjobs": 1
+                    }
+                }
+            ],
+            "effects": {
+                "dailytask.email.meetingnotice": -1,
+                "statushospitalreputation": 1
+            }
+        },
+        {
+            "id": "adminroutinejobs.spamadvert",
+            "label": "Attend a PR meeting",
+            "craftable": true,
+            "warmup": 15,
+            "actionId": "doingtaskstorecoverstats",
+            "requirements": {
+                "routinerecoveryjobs": 1
+            },
+            "slots": [
+                {
+                    "id": "adminroutinejobs.slot",
+                    "label": "Check?",
+                    "required": {
+                        "routinerecoveryjobs": 1
+                    }
+                }
+            ],
+            "effects": {
+                "dailytask.email.meetingnotice": -1,
+                "statushospitalreputation": 1
             }
         },
         {

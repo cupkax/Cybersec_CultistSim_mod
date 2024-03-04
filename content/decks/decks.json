@@ -50,9 +50,9 @@
             "id": "cybersec.deck.dailtytask.email.content",
             "resetonexhaustion": true,
             "spec": [
-                "dailytask.email.misc1",
-                "dailytask.email.misc2",
-                "dailytask.email.misc3"
+                "dailytask.email.spamadvert",
+                "dailytask.email.meetingnotice",
+                "dailytask.email.lostandfound"
             ],
             "shuffleAfterDraw": true
         }

@@ -250,21 +250,30 @@
             }
         },
         {
-            "id": "dailytask.email.misc1",
+            "id": "dailytask.email.",
             "label": "A Spam advert",
             "description": "Useless spam adverts. Nothing to do here",
+            "aspects": {
+                "routinerecoveryjobs": 1
+            },
             "lifetime": 10
         },
         {
-            "id": "dailytask.email.misc2",
+            "id": "dailytask.email.meetingnotice",
             "label": "Meeting Notice",
             "description": "Conference meeting I need to attend in a few days",
+            "aspects": {
+                "routinerecoveryjobs": 1
+            },
             "lifetime": 10
         },
         {
-            "id": "dailytask.email.misc3",
+            "id": "dailytask.email.lostandfound",
             "label": "Lost and Found",
             "description": "Some things left on desk are to be collected from the security",
+            "aspects": {
+                "routinerecoveryjobs": 1
+            },
             "lifetime": 10
         },
         {
