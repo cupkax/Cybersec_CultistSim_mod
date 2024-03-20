@@ -44,7 +44,8 @@
                     "hospitalfunds": 1,
                     "scenario.read.email": 1,
                     "beverage": 1,
-                    "routinerecoveryjobs": 1
+                    "routinerecoveryjobs": 1,
+                    "complain": 1
                 }
             }
         },
