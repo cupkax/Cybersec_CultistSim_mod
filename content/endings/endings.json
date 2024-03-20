@@ -1,11 +1,14 @@
 {
     "endings": [
         {
-            "id": "nomoretheft",
-            "label": "Thievery has ended",
-            "flavour": "Grand",
-            "anim": "DramaticLightEvil",
-            "achievement": "XXX"
+            "id": "nomorale",
+            "flavour": "Vile",
+            "anim": "DramaticLightEvil"
+        },
+        {
+            "id": "noreputation",
+            "flavour": "Vile",
+            "anim": "DramaticLightEvil"
         }
     ]
 }

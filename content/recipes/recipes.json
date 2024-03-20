@@ -103,8 +103,8 @@
             },
             "effects": {
                 "pregame.drink.coffee": -1,
-                "statusemployeemorale": 5,
-                "statushospitalreputation": 5
+                "statusemployeemorale": 10,
+                "statushospitalreputation": 10
             },
             "rootAdd": {
                 "reqbeveragetostarttheday": -1
@@ -603,6 +603,14 @@
                     "chance": 100
                 }
             ],
+            "alt": [
+                {
+                    "id": "end.nomorale"
+                },
+                {
+                    "id": "end.noreputation"
+                }
+            ],
             "inductions": [
                 {
                     "id": "temp.medicalthiefscenario1"
@@ -944,6 +952,22 @@
             }
         },
         {
+            "id": "adminroutinejobs.complains",
+            "label": "Process a Complain",
+            "craftable": true,
+            "warmup": 15,
+            "actionId": "sometasking",
+            "requirements": {
+                "dailytask.complain": 1
+            },
+            "effects": {
+                "dailytask.complain": -1
+            },
+            "deckeffects": {
+                "cybersec.deck.dailtytask.complain.effects": 1
+            }
+        },
+        {
             "id": "adminroutinejobs.spamadvert",
             "label": "Just getting in the way",
             "craftable": true,
@@ -1184,6 +1208,30 @@
             "haltverb": {
                 "cybersec.slowdownhospital": 1
             }
+        },
+        {
+            "id": "end.nomorale",
+            "label": "No Morale Left",
+            "ending": "nomorale",
+            "startdescription": "Your employees have lost faith",
+            "tablereqs": {
+                "statusemployeemorale": -2
+            },
+            "signalEndingFlavour": "Pale",
+            "signalimportantloop": true,
+            "warmup": 20
+        },
+        {
+            "id": "end.noreputation",
+            "label": "Lost All Reputation",
+            "ending": "noreputation",
+            "startdescription": "Your hospital has lost all standing",
+            "tablereqs": {
+                "statushospitalreputation": -2
+            },
+            "signalEndingFlavour": "Pale",
+            "signalimportantloop": true,
+            "warmup": 20
         }
     ]
 }

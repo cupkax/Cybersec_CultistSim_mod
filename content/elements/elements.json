@@ -5,14 +5,14 @@
             "overlays": [
                 {
                     "image": "morale",
-                    "expression": "[statusemployeemorale] < 5",
+                    "expression": "[statusemployeemorale] < 6",
                     "grayscale": true,
                     "layer": "base",
                     "color": "#000000"
                 },
                 {
                     "image": "hazard",
-                    "expression": "[statusemployeemorale] < 5",
+                    "expression": "[statusemployeemorale] < 6",
                     "layer": "top"
                 }
             ],
@@ -28,14 +28,14 @@
             "overlays": [
                 {
                     "image": "reputation",
-                    "expression": "[statushospitalreputation] < 5",
+                    "expression": "[statushospitalreputation] < 6",
                     "grayscale": true,
                     "layer": "base",
                     "color": "#000000"
                 },
                 {
                     "image": "hazard",
-                    "expression": "[statushospitalreputation] < 5",
+                    "expression": "[statushospitalreputation] < 6",
                     "layer": "top"
                 }
             ],

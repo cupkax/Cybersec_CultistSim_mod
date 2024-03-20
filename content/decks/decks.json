@@ -58,6 +58,23 @@
                 "dailytask.email.lostandfound"
             ],
             "shuffleAfterDraw": true
+        },
+        {
+            "id": "cybersec.deck.dailtytask.complain.effects",
+            "resetonexhaustion": true,
+            "spec": [
+                "statusemployeemorale",
+                "statusemployeemorale",
+                "statushospitalreputation",
+                "statushospitalreputation",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "shuffleAfterDraw": true
         }
     ]
 }
