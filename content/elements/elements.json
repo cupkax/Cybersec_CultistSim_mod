@@ -223,7 +223,8 @@
             "icon": "email",
             "aspects": {
                 "complain": 1
-            }
+            },
+            "lifetime": 45
         },
         {
             "id": "dailytask.read.email",
@@ -332,7 +333,7 @@
         {
             "id": "cybersec.scenario.email.thief.sickchild",
             "icon": "apostlegrail.pillar2.dormant",
-            "lifetime": 15,
+            "lifetime": 45,
             "decayTo": "cybersec.scenario.email.thief.deadchild",
             "label": "A Thief's Dilemma",
             "description": " <margin=5em> <align=center><#FF0000>'...My child is sick. <page> It pains me to resort to thievery.<page> But if I had to choose...'</color> </align></margin>",
@@ -365,7 +366,7 @@
             "id": "cybersec.scenario.email.thief.drugaddict",
             "label": "An Irresistable Craving",
             "icon": "ingredientforged",
-            "lifetime": 15,
+            "lifetime": 45,
             "description": " <margin=10em> <align=center><#FF0000>'Just... ...Once... ...More... ...And... ...Not Again'</color> </align></margin>",
             "decayTo": "cybersec.scenario.email.thief.deadaddict",
             "aspects": {

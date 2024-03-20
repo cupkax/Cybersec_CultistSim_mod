@@ -104,7 +104,8 @@
             "effects": {
                 "pregame.drink.coffee": -1,
                 "statusemployeemorale": 10,
-                "statushospitalreputation": 10
+                "statushospitalreputation": 10,
+                "cybersecurityresources": 10
             },
             "rootAdd": {
                 "reqbeveragetostarttheday": -1
@@ -491,7 +492,7 @@
             "label": "Hospital Reputation and Morale Affected",
             "warmup": 10,
             "tablereqs": {
-                "cybersec.corpse": 5
+                "cybersec.corpse": 2
             },
             "rootAdd": {
                 "reqstartmortalitychecker": 1
@@ -744,7 +745,10 @@
             "label": "A Thief",
             "warmup": 1,
             "tablereqs": {
-                "cybersec.scenario.thief1": 1
+                "medicalresources": 2
+            },
+            "effects":{
+                "cybersec.scenario.thief1":1
             },
             "description": "Someone's stealing the meds!",
             "actionId": "cybersec.steal",
@@ -760,7 +764,7 @@
             "label": "A Thief",
             "warmup": 1,
             "tablereqs": {
-                "cybersec.scenario.thief2  ": 1
+                "medicalresources": 3
             },
             "description": "A thief amongus",
             "actionId": "cybersec.steal",
@@ -776,7 +780,7 @@
             "label": "A Thief",
             "description": "Someone's stealing the meds!",
             "warmup": 30,
-            "tablereqs": {
+            "extantreqs": {
                 "cybersec.scenario.thief1": 1
             },
             "actionId": "cybersec.steal",
@@ -818,7 +822,7 @@
             "label": "A Thief",
             "description": "Someone's stealing the meds!",
             "warmup": 30,
-            "tablereqs": {
+            "extantreqs": {
                 "cybersec.scenario.thief2": 1
             },
             "actionId": "cybersec.steal",
@@ -891,7 +895,7 @@
             "id": "investigatetheft",
             "label": "Investigating the theft",
             "craftable": true,
-            "warmup": 5,
+            "warmup": 10,
             "startdescription": "People are in need and essentials are being lost",
             "requirements": {
                 "thief": 1
