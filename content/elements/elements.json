@@ -218,8 +218,8 @@
         },
         {
             "id": "dailytask.complain",
-            "label": "A Complain",
-            "description": "A complain made against you for not doing the job.",
+            "label": "A Complaint",
+            "description": "A complaint made against you for not doing the job.",
             "icon": "email",
             "aspects": {
                 "complain": 1
@@ -333,7 +333,7 @@
         {
             "id": "cybersec.scenario.email.thief.sickchild",
             "icon": "apostlegrail.pillar2.dormant",
-            "lifetime": 45,
+            "lifetime": 30,
             "decayTo": "cybersec.scenario.email.thief.deadchild",
             "label": "A Thief's Dilemma",
             "description": " <margin=5em> <align=center><#FF0000>'...My child is sick. <page> It pains me to resort to thievery.<page> But if I had to choose...'</color> </align></margin>",
@@ -366,7 +366,7 @@
             "id": "cybersec.scenario.email.thief.drugaddict",
             "label": "An Irresistable Craving",
             "icon": "ingredientforged",
-            "lifetime": 45,
+            "lifetime": 30,
             "description": " <margin=10em> <align=center><#FF0000>'Just... ...Once... ...More... ...And... ...Not Again'</color> </align></margin>",
             "decayTo": "cybersec.scenario.email.thief.deadaddict",
             "aspects": {
@@ -402,7 +402,8 @@
             "aspects": {
                 "scenario.thief": 1,
                 "thief": 1
-            }
+            },
+            "lifetime": 30
         },
         {
             "id": "cybersec.scenario.thief2",
@@ -412,7 +413,8 @@
             "aspects": {
                 "scenario.thief": 1,
                 "thief": 1
-            }
+            },
+            "lifetime": 30
         }
     ]
 }
