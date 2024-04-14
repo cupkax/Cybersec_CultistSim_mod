@@ -177,7 +177,7 @@
         },
         {
             "id": "cybersec.slowdownhospital",
-            "icon": "",
+            "icon": "slowdown_icon",
             "label": "Hospital Stopped",
             "description": "All hospital functionalities disabled",
             "spontaneous": true
