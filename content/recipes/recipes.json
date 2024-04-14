@@ -14,7 +14,7 @@
                 "pregame.receptionist": 1,
                 "pregame.thehospital": -1
             },
-            "warmup": 5,
+            "warmup": 3,
             "inductions": [
                 {
                     "id": "talk.people"
@@ -24,7 +24,7 @@
         {
             "id": "talk.people",
             "actionId": "enquire",
-            "warmup": 2
+            "warmup": 1
         },
         {
             "id": "talk.receptionist",
@@ -36,7 +36,7 @@
             "label": "Speak with Martin",
             "startdescription": "Might as well say hello to Martin.",
             "description": "Looks like today is going to be a quite a long day for him.",
-            "warmup": 10,
+            "warmup": 3,
             "effects": {
                 "myoffice": 1,
                 "pregame.receptionist": -1
@@ -62,7 +62,7 @@
             "rootAdd": {
                 "reqbeveragetostarttheday": 1
             },
-            "warmup": 10,
+            "warmup": 3,
             "inductions": [
                 {
                     "id": "dailytasksspawn"
@@ -83,7 +83,7 @@
             "craftable": true,
             "label": "Coffee Break",
             "description": "A well needed break",
-            "warmup": 15,
+            "warmup": 5,
             "effects": {
                 "dailytask.drink.coffee": -1
             }
@@ -92,7 +92,7 @@
             "id": "daystart",
             "label": "The Day Begins",
             "maxexecutions": 1,
-            "warmup": 10,
+            "warmup": 5,
             "craftable": true,
             "description": "A new day begins with new challenges.",
             "requirements": {
@@ -173,7 +173,7 @@
                 "scenario.clinic": -1,
                 "medicalresources": 1
             },
-            "warmup": 10,
+            "warmup": 5,
             "inductions": [
                 {
                     "id": "spawnsickpatients.tutorial.lowrisk"
@@ -747,8 +747,8 @@
             "tablereqs": {
                 "medicalresources": 2
             },
-            "effects":{
-                "cybersec.scenario.thief1":1
+            "effects": {
+                "cybersec.scenario.thief1": 1
             },
             "description": "Someone's stealing the meds!",
             "actionId": "cybersec.steal",
