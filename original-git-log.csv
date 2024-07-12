@@ -1,0 +1,56 @@
+d796ede,cupkax,"Sun, 14 Apr 2024 18:07:03 +1000",update: New images for verbs
+205aa5b,cupkax,"Sun, 14 Apr 2024 11:16:00 +1000",update: lowered warmup times again based on feedback
+4fdac4f,cupkax,"Wed, 20 Mar 2024 21:05:33 +1100",fix(thieflink): Scenarios linked to new status mechanic
+d2cf007,cupkax,"Wed, 20 Mar 2024 18:16:32 +1100",update(complains): Added status effects for complain
+81c0e61,cupkax,"Mon, 4 Mar 2024 14:10:48 +1100",fix(patientcaredescription): Fixed leftover descriptions
+3868db5,cupkax,"Mon, 4 Mar 2024 14:04:06 +1100",update(statusrecovery): Added method to recover stats
+0b24886,cupkax,"Mon, 4 Mar 2024 12:10:03 +1100",update(statusintegration): Morale now affects patient treatment time
+d0835ce,cupkax,"Sun, 3 Mar 2024 18:50:38 +1100",add(statusintegration): Finally resolved linking patient frequency to reputation
+6e81b41,cupkax,"Wed, 7 Feb 2024 14:57:57 +1100",update|temp(remove ransomware): Temporarily ransomware for testing
+5ee25e3,cupkax,"Wed, 7 Feb 2024 14:56:09 +1100",update|temp(remove thief): Temporarily remove thief for testing
+88db130,cupkax,"Wed, 7 Feb 2024 13:00:48 +1100",add(visualfeedback): Added visual feedback for status elements when going below a threshold
+07bfc9f,cupkax,"Tue, 6 Feb 2024 15:42:24 +1100",update(tutorial): Expanded tutorial for email check and patient treatment
+1cfaee3,cupkax,"Tue, 6 Feb 2024 08:29:49 +1100","update(core loop): Added some necessary scaffolding for mortality, reputation and employee morale"
+d2cfca3,cupkax,"Thu, 1 Feb 2024 11:10:52 +1100",Resolve merge conflict by incorporating both suggestions
+d01d470,cupkax,"Mon, 15 Jan 2024 16:00:00 +1100",update(ignoredemail): Ignoring the scenario email leads to a ransomware attack
+9d625f6,cupkax,"Fri, 5 Jan 2024 13:20:08 +1100",fix(thiefmoneyresol): Fixed thief scenario's money resolution
+369972e,cupkax,"Fri, 5 Jan 2024 11:10:58 +1100",New(ransomware scenario): A new scenario with ransomware; slows down the hospital functionality
+9ca0829,cupkax,"Thu, 4 Jan 2024 12:16:46 +1100",honestly no idea what I changed in this commit
+47d5364,cupkax,"Sat, 30 Dec 2023 03:25:33 +1100",new(thiefscenario): The thief scenario can now be treated as normal patients but take a very long time and use lot of resources. Tradeoff: 1 bed is used for a long time
+1800df9,cupkax,"Fri, 29 Dec 2023 07:17:23 +1100",added(new stausbatr|verb icons): Added new icons for statusbar and fixed the work icons
+1fe6d7f,cupkax,"Fri, 29 Dec 2023 06:19:15 +1100",update|refactor(enquire|modding): Changed enquire image to converse and added dev assets folder for modding guide doc and other art assets
+068921d,cupkax,"Fri, 29 Dec 2023 13:33:36 +1100",improvement(conver|invedstigate): Streamline some gameplay by combining talk and investigate verbs into enquire.
+e8de095,cupkax,"Wed, 20 Dec 2023 13:57:47 +1100",fix(coreloop): Fix to replace the old admin work verb and unify trading and other activities
+7.69E+65,cupkax,"Wed, 20 Dec 2023 13:07:32 +1100",added(images): Added images and refined code for thief scenarios
+dd2257b,cupkax,"Tue, 19 Dec 2023 19:57:10 +1100",added(properintro): The game's intro now has parity with the scripted version
+23199ce,cupkax,"Mon, 18 Dec 2023 19:30:11 +1100",fix(introtogame): Fixed flow from intro to gamestart
+f86cabe,cupkax,"Mon, 18 Dec 2023 18:28:32 +1100",add(intro): Added some intro non-cybersec/hospital elements to the game
+54f293e,cupkax,"Wed, 13 Dec 2023 13:56:05 +1100",debug(startdebugcards): Added some debug cards
+f16b718,cupkax,"Wed, 13 Dec 2023 13:29:11 +1100",added(images|burns): Added images for trader and burn image for organharvester
+1288387,cupkax,"Wed, 13 Dec 2023 12:09:45 +1100",added(icons): Added icons for status bar and fixed naming to remove special characters due to incompatibility
+32af341,cupkax,"Wed, 13 Dec 2023 11:57:50 +1100","update(coreloop|thiefscenario): Added a step after treatment to make room for garbage resources to be used, leaving the patient untreated. Added some flavour to moneysolveseverything solution"
+beb3306,cupkax,"Tue, 12 Dec 2023 23:54:15 +1100","forgot to push local | new(ransomscenario): New ransom scenario framework, adds damaged medical supplies, slowing down patient treatment"
+0f354c9,cupkax,"Fri, 8 Dec 2023 12:46:16 +1100",new(artassets): Some art assets for moneysolveseverything resolution burn
+50b2337,cupkax,"Wed, 6 Dec 2023 14:57:25 +1100",update(thiefscenariomoneyresol): Added money to solve resolution for thief scenairos
+0d8a1d0,cupkax,"Wed, 6 Dec 2023 12:44:37 +1100",update(thiefscenario.drugaddict): Added a branch for thief scenario re: drug addiction
+05b0a2f,cupkax,"Tue, 5 Dec 2023 14:12:26 +1100",update(thiefscenario): Added burn image for money resolution
+7067843,cupkax,"Mon, 4 Dec 2023 15:14:59 +1100",update(thiefscenario): Added some flavour text and formatting to the child scenario resolution
+f40388d,cupkax,"Wed, 29 Nov 2023 15:42:29 +1100",update(thiefconclusion): Added temp ending for theif scenario
+fced4f2,cupkax,"Tue, 28 Nov 2023 17:35:00 +1100",update(readme): Updated checklist for thief scenario
+5344a57,cupkax,"Tue, 28 Nov 2023 17:31:19 +1100",update(core|thiefscenario): Pushing older changes | Improved negative feedbackloop and added investigation for thief
+4a8c3c7,cupkax,"Fri, 24 Nov 2023 16:25:54 +1100",update(readme): branch info
+4f292e5,cupkax,"Fri, 24 Nov 2023 11:27:45 +1100",update(thiefscenarioending): Added compounding thieves if intial left unchecked
+8659ee7,cupkax,"Fri, 24 Nov 2023 10:47:45 +1100",update(thiefscenarioending): Added ending for theief scenario
+2bab950,cupkax,"Thu, 23 Nov 2023 13:17:07 +1100",update(readme): Add tasklist
+557c075,cupkax,"Thu, 23 Nov 2023 13:04:59 +1100","update(coreloop): Finally fixed core loop, reminder: avoid overwriting existing assets, causes massive headaches"
+3b0831f,cupkax,"Tue, 21 Nov 2023 10:03:47 +1100",update(README): add MACOS tree
+b47a88b,cupkax,"Tue, 21 Nov 2023 10:00:24 +1100",update(medthiefscenario): Improve balance for first round
+79b457a,cupkax,"Tue, 21 Nov 2023 06:18:10 +1100",fix(README): More formatting issues
+c1e9595,cupkax,"Tue, 21 Nov 2023 06:16:41 +1100",fix(README): Formatting issues
+bc9a6a1,cupkax,"Mon, 20 Nov 2023 17:03:51 +1100",update(README): Add MacOS instructions
+a1bcb98,cupkax,"Wed, 15 Nov 2023 10:36:53 +1100",update(reademe): Added instructions for mod installation for Windows
+e0eda2a,cupkax,"Tue, 14 Nov 2023 12:14:55 +1100",feat: Added images
+2168c4b,cupkax,"Mon, 13 Nov 2023 18:49:34 +1100",feat: Fixed hospital loop and added thief scenario
+4be5014,cupkax,"Tue, 7 Nov 2023 20:55:27 +1100",update(readme): modding guide link
+38d74d2,cupkax,"Tue, 7 Nov 2023 20:53:37 +1100",Initial Commit: Initial framework of the game
+7305762,cupkax,"Tue, 7 Nov 2023 20:50:15 +1100",Initial commit
